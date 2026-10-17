@@ -1,0 +1,31 @@
+[experiment]
+name = "qft-recovery"
+protocol_version = "0.1.0"
+comparison_group = "qft-recovery-baseline"
+description = "Recover the two-qubit QFT with its parameterized gate layout."
+initialization_seed = 42
+
+[circuit]
+qubits = 2
+initialization_scale = 1.0
+
+[data]
+seed = 2026
+train_size = 64
+validation_size = 32
+test_size = 64
+
+[optimizer]
+name = "L-BFGS-B"
+max_iterations = 300
+ftol = 1e-12
+gtol = 1e-8
+max_line_search_steps = 30
+
+[tracking]
+mode = "auto" # auto: use MLflow when installed/configured, otherwise keep a portable local run
+experiment_name = "qft-recovery"
+tracking_uri_env = "MLFLOW_TRACKING_URI"
+
+[output]
+root = "results/runs"

@@ -1,0 +1,797 @@
+{
+  "schema_version": "1.0.0",
+  "title": "Quantum function-learning hypothesis tree",
+  "scope": "Study whether randomized QFT-layout quantum circuits recover the canonical two-qubit QFT or perform declared function tasks without recovering the full unitary.",
+  "status_vocabulary": [
+    "open",
+    "supported",
+    "not_supported",
+    "planned",
+    "completed"
+  ],
+  "metric_conventions": {
+    "mse": "Mean squared prediction error on the named split.",
+    "absolute_error_over_period": "Pointwise |f_QNN(x)-g(x)| on a dense grid over x in [0,1); report mean and maximum.",
+    "circular_angle_change": "(final-initial+pi) mod 2pi - pi; a shortest signed angle difference, not an ordinary subtraction.",
+    "process_fidelity": "|Tr(U_target^dagger U_model)|^2/d^2; a normalized Frobenius/Hilbert-Schmidt overlap used only as a diagnostic in the MSE experiment."
+  },
+  "nodes": [
+    {
+      "id": "ROOT",
+      "parent_id": null,
+      "title": "Does a randomly initialized QFT-layout circuit recover QFT or succeed at the task without recovery?",
+      "question": "For declared circuit and encoding choices, do randomized parameters converge to the canonical full QFT, and if they do not, can the circuit still predict the target function and recover its frequencies? The goal is to understand these outcomes, not select a best ansatz.",
+      "status": "open",
+      "observations": [
+        "The first scalar experiment uses ideal statevector expectations and supervised MSE only.",
+        "The current experiment is a one-frequency proof of method, not evidence for arbitrary-function learning or quantum advantage.",
+        "Algorithm recovery and task success are separate outcomes: full-unitary process fidelity assesses QFT recovery, while held-out MSE and frequency-support metrics assess function-task performance.",
+        "Zero-offset single-frequency MSE runs reached near-numerical-zero function error while QFT process fidelity remained low, demonstrating task success without full-unitary recovery for that task.",
+        "A fixed encoding can be varied while preserving the seven-parameter trainable block, although this changes the overall model function class. Re-uploading between blocks changes the input-dependent circuit; the completed re-upload sweep also changed trainable depth and parameter count."
+      ],
+      "children": [
+        "ENCODING_REVERSIBILITY",
+        "CURRENT_FIT",
+        "PARAMETER_MOVEMENT",
+        "SPECTRAL_COMPLEXITY",
+        "QFT_RECOVERY_VS_TASK",
+        "ENCODING_FACTOR_DESIGN"
+      ]
+    },
+    {
+      "id": "ENCODING_REVERSIBILITY",
+      "parent_id": "ROOT",
+      "title": "Is the feature encoding reversible on its declared domain?",
+      "question": "Does the chosen encoding preserve the input state under its inverse, and what information can measurements recover?",
+      "status": "supported",
+      "configuration": "x in [0,1) mapped to RY(2*pi*x)|0> on qubit 0; qubit 1 starts in |0>.",
+      "hypotheses": [
+        {
+          "id": "ENCODING_REVERSIBLE_UNITARY",
+          "claim": "RY(2*pi*x) is a unitary operation with inverse RY(-2*pi*x), and the encoded pure-state map is injective on [0,1).",
+          "status": "supported",
+          "basis": "Gate identity and the restricted interval for the real amplitudes cos(pi*x), sin(pi*x).",
+          "next_experiment": "Numerically encode a fixed x grid, apply the inverse rotation, and record state fidelity to |0> across the grid."
+        },
+        {
+          "id": "ENCODING_MEASUREMENT_DECODING",
+          "claim": "A single measurement does not generally recover an arbitrary continuous x exactly because distinct encoded states are nonorthogonal and outcomes are probabilistic.",
+          "status": "supported",
+          "next_experiment": "If input decoding becomes a research question, quantify distinguishability and estimator error versus shot count; do not label the measured pipeline lossless."
+        }
+      ],
+      "caveats": [
+        "The endpoints are periodic and x=0 and x=1 represent the same point; the declared domain excludes 1."
+      ]
+    },
+    {
+      "id": "CURRENT_FIT",
+      "parent_id": "ROOT",
+      "title": "Why did the first MSE configuration not learn the target perfectly?",
+      "question": "The QNN found the correct dominant frequency and improved over a constant predictor, but retained test MSE near 0.0104. Which model or optimization factor limits the fit?",
+      "status": "open",
+      "experiment": {
+        "comparison_group": "periodic-function-mse-ry-angle-encoding-z1-readout",
+        "target": "g(x)=0.10+0.55*cos(2*pi*x)+0.25*sin(2*pi*x)",
+        "encoding": "RY(2*pi*x)|0> on qubit 0; period-one domain [0,1).",
+        "readout": "Ideal Pauli-Z expectation on qubit 1 after the trainable QFT-layout block.",
+        "training_objective": "Training-set MSE only. No Frobenius/process-fidelity term, PINN residual, or frequency label.",
+        "data": "64 train, 128 validation, 512 test examples; fixed data seed 314159.",
+        "trials": "10 initialization seeds, 42 through 51; all use the same data split.",
+        "results": {
+          "test_mse_mean": 0.010387421433322656,
+          "test_mse_population_std": 1.4943549904835434e-10,
+          "test_r2_mean": 0.9435097446203621,
+          "dominant_frequency_accuracy": "10/10 at k=1",
+          "seed_42_dense_grid_fourier_coefficients": {
+            "target": {
+              "dc": 0.1,
+              "cos_k1": 0.55,
+              "sin_k1": 0.25
+            },
+            "qnn_prediction": {
+              "dc": 0.0,
+              "cos_k1": 0.5212828009013383,
+              "sin_k1": 0.2515603887027213
+            }
+          },
+          "seed_42_dense_grid_absolute_error_mean": 0.1,
+          "seed_42_dense_grid_absolute_error_max": 0.12875954807820222,
+          "constant_predictor_test_mse": 0.1898933590235803,
+          "known_frequency_fourier_regression_test_mse": 7.212394812967852e-32,
+          "mean_qft_process_fidelity_diagnostic_only": 0.08957405580654812
+        },
+        "evidence": [
+          "results/periodic-function-mse-z1-readout/summary.json",
+          "results/periodic-function-mse-z1-readout/index.html",
+          "METHODOLOGY.tex Results section"
+        ],
+        "readout_control_pilot": {
+          "group_path": "results/periodic-function-mse",
+          "readout": "Pauli-Z on qubit 0 after final SWAP",
+          "n_trials": 10,
+          "test_mse_mean": 0.18989335868055202,
+          "classification": "excluded control pilot; readout expectation was independent of encoded x"
+        },
+        "zero_offset_control": {
+          "comparison_group": "periodic-function-mse-zero-offset-ry-angle-encoding-z1-readout",
+          "paired_comparison_group": "periodic-function-mse-ry-angle-encoding-z1-readout",
+          "target": "g_0(x)=0.55*cos(2*pi*x)+0.25*sin(2*pi*x)",
+          "changed_factor": "target_offset: 0.10 -> 0.0; all circuit, optimizer, harmonic, and data-split factors held fixed",
+          "data_seed": 314159,
+          "same_input_points_verified": true,
+          "input_label_difference": "The paired labels differ by exactly 0.10 on train, validation, and test inputs.",
+          "seeds": [
+            42,
+            43,
+            44,
+            45,
+            46
+          ],
+          "n_trials": 5,
+          "test_mse_mean": 4.042972239649253e-17,
+          "test_mse_population_std": 4.089606304447078e-17,
+          "validation_mse_mean": 3.8513169911282926e-17,
+          "validation_mse_population_std": 3.840199926060435e-17,
+          "mean_iterations": 8.0,
+          "iterations_population_std": 1.7888543819998317,
+          "dominant_frequency_accuracy": "5/5 at k=1",
+          "dense_grid_absolute_error_mae_range": [
+            2.6646674428337357e-09,
+            9.736311043277658e-09
+          ],
+          "qft_process_fidelity_diagnostic_mean": 0.16011849954156862,
+          "qft_process_fidelity_diagnostic_population_std": 0.19900354439445853,
+          "interpretation": "The unchanged model fits the zero-DC first harmonic to numerical precision, supporting the structural DC limitation as the cause of the original error floor. Function fitting does not imply full QFT unitary recovery.",
+          "scope_limit": "Proof of concept over five initialization seeds on one fixed dataset; this does not measure variation across data seeds.",
+          "artifacts": [
+            "results/periodic-function-mse-zero-offset-z1-readout/index.html",
+            "results/periodic-function-mse-zero-offset-z1-readout/summary.json"
+          ]
+        }
+      },
+      "provisional_success_criterion": "For this noiseless benchmark, target test R^2 >= 0.99 (equivalently normalized MSE <= 0.01 using target variance), with correct k=1 support. This is a proposed next milestone, not a preregistered criterion for the completed pilot.",
+      "hypotheses": [
+        {
+          "id": "FIT_ANSATZ_REACHABILITY",
+          "claim": "For this exact QFT-layout gate order and Z1 readout after SWAP, the effective observable on encoded qubit 0 is traceless, so the model's period-average/DC component is constrained to zero. The target has DC offset 0.10.",
+          "status": "supported",
+          "derivation": "Before the final SWAP, measuring Z1 is measuring Z0. The first U prepares qubit 1 in a superposition. Because the controlled-phase gate is diagonal and qubit 1 branches are orthogonal, the reduced effective observable on q0 is a weighted sum of U0^dagger Z U0 and its controlled-phase-rotated conjugate. Each term is traceless; their mixture is traceless. The uniform encoded-circle average state is I/2, giving zero mean prediction.",
+          "consequence": "Under a uniform period-one evaluation, a target DC offset b0 produces irreducible MSE at least b0^2 if the nonconstant harmonics are otherwise exact. For b0=0.10 this floor is 0.01.",
+          "follow_up": "The paired zero-offset control is complete: five seeds fit the unchanged first harmonic to numerical precision on exactly the same input points. Next add a trainable scalar output bias or a modified circuit/readout and test recovery of nonzero offsets."
+        },
+        {
+          "id": "FIT_FIRST_HARMONIC_OPTIMUM",
+          "claim": "The QNN reached the empirical least-squares optimum within the zero-DC first-harmonic family on the fixed training sample; the remaining error is not primarily a failed L-BFGS-B search.",
+          "status": "supported",
+          "evidence": "Classical least squares constrained to a*cos(2*pi*x)+b*sin(2*pi*x), with no intercept, gives coefficients (0.5212828060, 0.2515603834) and train/validation/test MSE (0.00958298405, 0.01022628674, 0.01038742147). The learned QNN coefficients and scores agree to numerical precision. The paired zero-offset control (seeds 42-46, same data points) achieves mean test MSE 4.04e-17 and identifies k=1 in 5/5 trials.",
+          "interpretation": "For the nonzero-offset split, the residual above the 0.01 DC floor is largely the finite-sample compromise in harmonic coefficients. The paired zero-offset experiment confirms that the unchanged circuit can fit the first-harmonic function to numerical precision; the 25-run follow-up shows this result across five independently sampled datasets."
+        },
+        {
+          "id": "FIT_OPTIMIZER_STATIONARY_POINT",
+          "claim": "Optimizer failure is the primary cause of the residual in the current fixed-split results.",
+          "status": "not_supported",
+          "evidence": "All ten runs reach the constrained zero-intercept Fourier least-squares coefficients and the matching train/validation/test errors. The DC limitation is derived from the circuit/readout structure.",
+          "follow_up": "Compare optimizers after adding a bias or using a zero-offset target; do not attribute the current 0.01 error floor to L-BFGS-B."
+        },
+        {
+          "id": "FIT_DATA_SAMPLING",
+          "claim": "Finite training coverage could contribute to the residual even though the target is noiseless.",
+          "status": "open",
+          "discriminating_experiment": "Repeat with nested train sizes (e.g. 16, 32, 64, 128, 256), multiple independent data seeds, and a dense-grid objective as a separately labeled control.",
+          "interpretation": "Multiple data seeds have now been checked for the zero-offset one-frequency target and remain at numerical precision. A sample-size sweep and more data seeds can quantify robustness and the finite-sample coefficient compromise for nonzero-offset targets; neither changes the structural DC limitation."
+        }
+      ],
+      "children": [
+        "ZERO_OFFSET_DATASET_ROBUSTNESS"
+      ]
+    },
+    {
+      "id": "PARAMETER_MOVEMENT",
+      "parent_id": "ROOT",
+      "title": "Why do only a few angles move during MSE optimization?",
+      "question": "The seed-42 plot shows large motion in u0_theta and u0_lambda, smaller motion in u1_theta, and almost no motion in the remaining angles. What determines these update magnitudes?",
+      "status": "open",
+      "observed_seed_42_wrapped_deltas_radians": {
+        "u0_theta": 1.527416053110299,
+        "u0_lambda": -0.7322218383784951,
+        "u1_theta": -0.5644198966581637,
+        "controlled_phase": -0.1043669502748843,
+        "u0_phi": -9.188334848531099e-08,
+        "u1_phi": -3.612743482150904e-07,
+        "u1_lambda": 0.0
+      },
+      "ten_seed_mean_absolute_wrapped_delta_radians": {
+        "u0_theta": 0.9189908982707012,
+        "u0_lambda": 0.2908740242834964,
+        "u1_theta": 0.22660976384742337,
+        "controlled_phase": 0.1361660620417621,
+        "u0_phi": 4.540816163078887e-08,
+        "u1_phi": 8.32166326070194e-08,
+        "u1_lambda": 0.0
+      },
+      "observed_sign_crossings": "None among seeds 42-51 when comparing stored raw initial and final angles.",
+      "hypotheses": [
+        {
+          "id": "PARAM_LOW_SENSITIVITY",
+          "claim": "Some angles have near-zero loss sensitivity at the visited parameters and on the chosen encoded inputs.",
+          "status": "supported",
+          "experiment": "Record per-parameter finite-difference gradients and prediction Jacobians at initialization, intermediate checkpoints, and final parameters; perturb each angle by fixed small amounts. Compare with automatic differentiation as an independent gradient check.",
+          "evidence": "Saved post-hoc central finite differences at initialization across 25 zero-offset runs show median absolute loss derivatives: u0_theta=0.4925, u0_lambda=0.08109, controlled_phase=0.04577, u1_theta=0.02701, u0_phi=3.469e-13, u1_phi=3.469e-13, u1_lambda=0. The saved 512-point prediction Jacobian likewise has near-zero medians for u0_phi, u1_phi, and u1_lambda. This supports low sensitivity for some angles at these initial/final points; it does not establish causal importance or explain the full optimizer trajectory."
+        },
+        {
+          "id": "PARAM_REDUNDANCY",
+          "claim": "Gate symmetries or redundant parameter combinations may let the function fit change while some individual angles remain fixed.",
+          "status": "open",
+          "experiment": "Freeze/ablate one parameter at a time and compare best attainable MSE; inspect singular values of the prediction Jacobian over the training set."
+        },
+        {
+          "id": "PARAM_OPTIMIZER_STOPPING",
+          "claim": "L-BFGS-B's projected-gradient stopping rule may terminate with a residual even when an alternate parameter direction or optimizer could improve it.",
+          "status": "open",
+          "experiment": "Record gradient norms and termination criteria; continue from final parameters under tighter tolerances and compare controlled optimizer budgets."
+        },
+        {
+          "id": "PARAM_SIGN_INTERPRETATION",
+          "claim": "No observed negative-to-positive raw angle crossing may reflect the local path, but raw sign is not an invariant because rotations are periodic and Euler decompositions are non-unique.",
+          "status": "supported",
+          "experiment": "Track raw and wrapped angles at every optimizer iteration, report shortest circular deltas, and compare gate/unitary or function outputs rather than interpreting angle sign alone."
+        }
+      ],
+      "plot_convention": "parameters.png displays initial and final angles, canonical QFT angles in green, and shortest signed change modulo 2*pi in a second panel.",
+      "zero_offset_multidataset_diagnostic": {
+        "comparison_group": "periodic-function-mse-zero-offset-multidataset-ry-angle-encoding-z1-readout",
+        "n_runs": 25,
+        "movement_measure": "Shortest signed angle difference modulo 2*pi; absolute values used for ranking movement.",
+        "u0_theta_largest_wrapped_move_count": "24/25",
+        "mean_absolute_wrapped_change_radians": {
+          "u1_theta": 0.22018487553978844,
+          "u1_phi": 1.0204781226264003e-07,
+          "u1_lambda": 0.0,
+          "controlled_phase": 0.20883239212792173,
+          "u0_theta": 1.2070239199029684,
+          "u0_phi": 3.3765175135869185e-08,
+          "u0_lambda": 0.3225208316474191
+        },
+        "posthoc_initial_loss_sensitivity": {
+          "method": "Central finite-difference derivative of training MSE at each stored initialization, h=1e-5; report median absolute derivative across 25 runs.",
+          "median_absolute_derivative": {
+            "u1_theta": 0.027006185686351266,
+            "u1_phi": 3.4694469519536137e-13,
+            "u1_lambda": 0.0,
+            "controlled_phase": 0.04576703789282987,
+            "u0_theta": 0.4925044749359841,
+            "u0_phi": 3.4694469519536137e-13,
+            "u0_lambda": 0.08108616640356558
+          }
+        },
+        "interpretation": "The initial loss is most sensitive to u0_theta among these coordinates, consistent with its usually largest update. Update magnitude is not itself a gradient or causal importance measure; L-BFGS-B combines the gradient estimate with its quasi-Newton history and line search.",
+        "optimizer_gradient_method": "run_function_mse calls scipy.optimize.minimize with method L-BFGS-B and no jac argument; SciPy numerically estimates gradients by forward finite differences. The finite-difference evaluations are deterministic, not random perturbations.",
+        "gate_order": "Input RY(2*pi*x) on q0 -> U(u1_*) on q1 -> CP -> U(u0_*) on q0 -> SWAP -> measure Z1. The u0 prefix denotes wire 0; u0_theta is in the second trainable U, near the end of the circuit.",
+        "next_steps": [
+          "Record sensitivity/Jacobian across optimizer iterations.",
+          "Compute singular values of the prediction Jacobian to quantify redundant parameter directions.",
+          "Freeze/ablate each angle and compare function fit."
+        ],
+        "largest_change_count_by_parameter": {
+          "u1_theta": 0,
+          "u1_phi": 0,
+          "u1_lambda": 0,
+          "controlled_phase": 0,
+          "u0_theta": 24,
+          "u0_phi": 0,
+          "u0_lambda": 1
+        },
+        "posthoc_final_prediction_sensitivity": {
+          "method": "Root-mean-square central finite-difference derivative of the prediction over a 512-point uniform grid at final parameters; h=1e-5.",
+          "median_rms_by_parameter": {
+            "u1_theta": 0.1579877484442638,
+            "u1_phi": 4.153838740142648e-12,
+            "u1_lambda": 0.0,
+            "controlled_phase": 0.1528010596268879,
+            "u0_theta": 0.6019159953990111,
+            "u0_phi": 7.141527042446646e-12,
+            "u0_lambda": 0.49334302537743757
+          }
+        },
+        "artifacts": [
+          "results/periodic-function-mse-zero-offset-multidataset-z1-readout/parameter_sensitivity.json",
+          "results/periodic-function-mse-zero-offset-multidataset-z1-readout/parameter_sensitivity.png"
+        ]
+      }
+    },
+    {
+      "id": "SPECTRAL_COMPLEXITY",
+      "parent_id": "ROOT",
+      "title": "How does learnability change as target frequency content grows?",
+      "question": "Does fit quality or frequency recovery degrade when targets include additional or higher Fourier modes?",
+      "status": "open",
+      "current_evidence": "Completed a nested zero-intercept sweep with 2, 3, and 4 distinct non-DC frequencies, ten initializations per target, and one shared input split. All 30 runs predict support {k=1} only and recover the dominant k=1, while support recall is 1/N. Test MSE increases with target complexity and QFT process fidelity remains low.",
+      "next_experiments": [
+        "Add data re-uploading or another declared encoding/depth factor and repeat the nested target sweep with zero intercept.",
+        "Measure MSE, Fourier coefficient error, support precision/recall, and QFT process fidelity together.",
+        "Vary frequency spacing and amplitudes after the model is given enough encoding capacity."
+      ],
+      "frequency_baseline_note": "Classical Fourier regression includes all known target frequencies and is an informed reference, not an equal-information frequency-discovery baseline.",
+      "children": [
+        "SPECTRAL_COMPONENT_SWEEP"
+      ],
+      "completed_experiment": {
+        "comparison_group": "periodic-function-mse-zero-offset-component-sweep-z1-readout",
+        "target_family": "g_N(x)=sum_{k=1}^N [a_k*cos(2*pi*k*x)+b_k*sin(2*pi*k*x)] with zero intercept",
+        "data_seed": 314159,
+        "dataset_sizes": {
+          "train": 64,
+          "validation": 128,
+          "test": 512
+        },
+        "initialization_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51
+        ],
+        "n_runs": 30,
+        "frequency_support_threshold_function_amplitude": 0.001,
+        "results": [
+          {
+            "n_components": 2,
+            "components": [
+              [
+                1,
+                0.55,
+                0.25
+              ],
+              [
+                2,
+                0.16,
+                0.08
+              ]
+            ],
+            "test_mse_mean": 0.01627189202667461,
+            "dominant_frequency_accuracy": "10/10 at k=1",
+            "support_precision_mean": 1.0,
+            "support_recall_mean": 0.5,
+            "support_f1_mean": 0.6666666666666666,
+            "learned_support_all_runs": [
+              1
+            ],
+            "qft_process_fidelity_mean": 0.08826793264134897,
+            "qft_process_fidelity_max": 0.5325424117847204
+          },
+          {
+            "n_components": 3,
+            "components": [
+              [
+                1,
+                0.55,
+                0.25
+              ],
+              [
+                2,
+                0.16,
+                0.08
+              ],
+              [
+                3,
+                0.1,
+                0.05
+              ]
+            ],
+            "test_mse_mean": 0.02246088493641133,
+            "dominant_frequency_accuracy": "10/10 at k=1",
+            "support_precision_mean": 1.0,
+            "support_recall_mean": 0.3333333333333333,
+            "support_f1_mean": 0.5,
+            "learned_support_all_runs": [
+              1
+            ],
+            "qft_process_fidelity_mean": 0.08997978796477633,
+            "qft_process_fidelity_max": 0.549678744079009
+          },
+          {
+            "n_components": 4,
+            "components": [
+              [
+                1,
+                0.55,
+                0.25
+              ],
+              [
+                2,
+                0.16,
+                0.08
+              ],
+              [
+                3,
+                0.1,
+                0.05
+              ],
+              [
+                4,
+                0.07,
+                0.035
+              ]
+            ],
+            "test_mse_mean": 0.02659685712916004,
+            "dominant_frequency_accuracy": "10/10 at k=1",
+            "support_precision_mean": 1.0,
+            "support_recall_mean": 0.25,
+            "support_f1_mean": 0.4,
+            "learned_support_all_runs": [
+              1
+            ],
+            "qft_process_fidelity_mean": 0.08899117776507055,
+            "qft_process_fidelity_max": 0.5390420927322702
+          }
+        ],
+        "artifacts": [
+          "results/periodic-function-mse-zero-offset-component-sweep-z1-readout/index.html",
+          "results/periodic-function-mse-zero-offset-component-sweep-z1-readout/summary.json",
+          "results/periodic-function-mse-zero-offset-component-sweep-z1-readout/metrics.csv"
+        ]
+      }
+    },
+    {
+      "id": "ZERO_OFFSET_DATASET_ROBUSTNESS",
+      "parent_id": "CURRENT_FIT",
+      "title": "Does low-MSE function learning persist across datasets while QFT process fidelity remains low?",
+      "question": "For a zero-intercept target with one non-DC frequency, does the QFT-layout QNN fit independently sampled datasets while implementing a unitary far from the canonical QFT?",
+      "status": "supported",
+      "observations": [
+        "The target contains exactly one non-DC frequency k=1. Its cosine and sine coefficients are quadrature components at the same frequency, not two distinct frequencies.",
+        "The y-intercept remains fixed at zero for every dataset in this experiment.",
+        "The frequency metric checks only whether the largest non-DC Fourier amplitude is at the target frequency. It does not measure full spectral support recovery."
+      ],
+      "experiment": {
+        "comparison_group": "periodic-function-mse-zero-offset-multidataset-ry-angle-encoding-z1-readout",
+        "target": "g(x)=0.55*cos(2*pi*x)+0.25*sin(2*pi*x)",
+        "encoding": "RY(2*pi*x)|0> on q0 over x in [0,1); period 1.",
+        "readout": "Ideal Pauli-Z expectation on q1 after the trainable QFT-layout block.",
+        "training_objective": "Training-set MSE only; QFT process fidelity is diagnostic only.",
+        "data": "Five independent data seeds; 64 train, 128 validation, 512 test examples per dataset.",
+        "trials": "Five initialization seeds (42-46) per data seed; 25 runs total.",
+        "dataset_seeds": [
+          314159,
+          271828,
+          8675309,
+          20261016,
+          12345
+        ],
+        "initialization_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46
+        ],
+        "results": {
+          "test_mse_mean_across_trials": 3.693779727645851e-17,
+          "test_mse_min": 5.422967258620874e-19,
+          "test_mse_max": 1.604786663556338e-16,
+          "dominant_frequency_accuracy": "25/25 at k=1",
+          "qft_process_fidelity_mean": 0.13968727146326726,
+          "qft_process_fidelity_max": 0.543970767792795,
+          "best_run": {
+            "run_id": "20261017T014017983244Z_periodic-function-mse-zero-offset-multidataset_seed-0043_08a24406",
+            "data_seed": 12345,
+            "initialization_seed": 43
+          },
+          "worst_run": {
+            "run_id": "20261017T014018739033Z_periodic-function-mse-zero-offset-multidataset_seed-0044_08a24406",
+            "data_seed": 12345,
+            "initialization_seed": 44
+          }
+        },
+        "evidence": [
+          "results/periodic-function-mse-zero-offset-multidataset-z1-readout/index.html",
+          "results/periodic-function-mse-zero-offset-multidataset-z1-readout/summary.json"
+        ]
+      },
+      "interpretation": "Across these five sampled datasets, function MSE is at numerical precision and dominant k=1 is recovered, while process fidelity remains well below 1. This is preliminary evidence for stable single-frequency function fitting without full QFT recovery.",
+      "scope_limit": "Five independent fabricated datasets and five initializations per dataset are preliminary. The target has only one non-DC frequency, so no conclusion about multi-frequency recovery is supported.",
+      "next_experiments": [
+        "Retain zero intercept and add at least one second non-DC Fourier component.",
+        "Evaluate spectral coefficient error and frequency-support precision/recall, in addition to dominant-frequency accuracy and function MSE.",
+        "Increase independent data seeds before making a broader dataset-robustness claim."
+      ]
+    },
+    {
+      "id": "SPECTRAL_COMPONENT_SWEEP",
+      "parent_id": "SPECTRAL_COMPLEXITY",
+      "title": "Does the current single-upload encoding learn more than the fundamental frequency?",
+      "question": "When zero-intercept targets contain nested harmonics k=1 through k=N, which spectral components appear in the learned QNN output?",
+      "status": "supported",
+      "claim": "With the current single RY(2*pi*x) data upload and fixed expectation readout, the output is an affine combination of the encoded qubit Bloch coordinates and therefore contains only DC and the fundamental k=1. The zero-intercept multi-frequency experiment is consistent with this expressivity limit: all runs learn support {k=1} only.",
+      "evidence": "Across ten initializations each for 2-, 3-, and 4-frequency targets, all 30 runs recover dominant k=1, support precision is 1.0, and support recall is 1/N. The extra target harmonics account for the increasing MSE. Targets all have zero y-intercept.",
+      "derivation": "Write the encoded state as |psi_x> = cos(pi*x)|0> + sin(pi*x)|1> on q0, with q1 fixed to |0>. All later gates are independent of x. Pulling the measured observable backward through those gates and taking its matrix element on q1 gives a fixed effective 2x2 Hermitian observable A_eff on q0. Its expectation is <psi_x|A_eff|psi_x> = c0 + c_cos*cos(2*pi*x) + c_sin*sin(2*pi*x). Therefore this exact single-upload architecture can express only DC and k=1, independent of the number of x-independent trainable gates or ancillary qubits.",
+      "missing_harmonic_mse_floor": {
+        "assumption": "Uniform average over one period and exact fitting of the reachable k=1 coefficients.",
+        "two_components_k2": 0.016,
+        "three_components_k2_k3": 0.02225,
+        "four_components_k2_k3_k4": 0.0253125,
+        "calculation": "For each omitted harmonic k, add (a_k^2+b_k^2)/2 by Fourier orthogonality."
+      },
+      "caveat": "Support is thresholded at function amplitude 1e-3 on a 2048-point dense grid. One data seed was used; this experiment tests optimizer-seed variation and spectral expressivity on a paired split, not dataset-level variation.",
+      "interpretation": "The observed test MSE values (0.01627, 0.02246, 0.02660) are close to the omitted-harmonic floors (0.01600, 0.02225, 0.0253125). The prior approximately 0.01 plateau belonged to a different target with DC offset 0.10; that circuit's zero-DC output makes 0.10^2=0.01 an irreducible offset floor. Neither result establishes that two qubits are inherently insufficient.",
+      "children": [
+        "SPECTRAL_MORE_QUBITS_ONLY",
+        "SPECTRAL_DATA_REUPLOAD"
+      ],
+      "follow_up": "The re-upload sweep supports an encoding-bandwidth explanation. Add a depth-matched single-upload control to separate the effect of repeating x from the additional trainable layers. A wider single-upload control is also useful to test the qubit-count claim empirically."
+    },
+    {
+      "id": "SPECTRAL_MORE_QUBITS_ONLY",
+      "parent_id": "SPECTRAL_COMPONENT_SWEEP",
+      "title": "Would adding qubits alone recover higher frequencies?",
+      "question": "If the input is still encoded once on one qubit and all subsequent operations are x-independent, does adding more qubits increase the available Fourier frequencies?",
+      "status": "supported",
+      "claim": "No. Under this single-upload protocol, any fixed-width circuit and fixed observable induce an effective 2x2 observable on the one encoded qubit. Its expectation contains only DC and k=1. Extra unencoded ancillas or more x-independent gates cannot add harmonics.",
+      "basis": "Effective-observable derivation recorded in SPECTRAL_COMPONENT_SWEEP; consistent with all 30 runs having learned spectral support {k=1}.",
+      "scope": "This conclusion applies to this encoding pattern. Encoding x on multiple qubits in parallel changes the accessible spectrum, so qubit count and encoding design must be specified together.",
+      "discriminating_experiment": "Add an unencoded ancilla/register while keeping the single RY(2*pi*x) upload on q0 and x-independent downstream operations; verify the dense-grid output remains limited to DC and k=1. Compare against an explicitly documented parallel-encoding control if desired."
+    },
+    {
+      "id": "SPECTRAL_DATA_REUPLOAD",
+      "parent_id": "SPECTRAL_COMPONENT_SWEEP",
+      "title": "Does repeated data encoding unlock the missing harmonics?",
+      "question": "Can the same two-qubit model learn k=2 and higher when x is encoded repeatedly between trainable blocks?",
+      "status": "supported",
+      "observations": [
+        "The one-upload simulator matched the existing QFT-layout model to maximum absolute prediction difference 6.66e-16 on a 73-point check; its paired test-MSE difference from the previous 30 runs was at most 3.64e-11.",
+        "Across 24 random parameter settings per upload count, the observed spectral union was {1} for one upload, {1,2} for two, {1,2,3} for three, and {1,2,3,4} for four.",
+        "With ten initialization seeds, every target frequency was recovered in all runs once uploads equaled the target's highest frequency; test MSE was approximately 1e-13 or lower in those conditions.",
+        "The targets use consecutive harmonics k=1..N, so the number of nonzero components equals the highest k. This experiment therefore shows uploads scaling with maximum harmonic k, but does not show one upload per arbitrary nonzero component.",
+        "For targets already fit near machine precision, more uploads gave slightly different residual MSEs: e.g. the two-frequency target averaged 2.92e-15, 5.70e-14, and 5.50e-11 at 2, 3, and 4 uploads. These are all effectively zero for this task and are non-monotonic optimizer residuals, not evidence that added uploads worsened the representable function.",
+        "A single fixed data seed was used. This measures initialization-seed robustness, not generalization across independently fabricated datasets.",
+        "This research program is not an ansatz leaderboard: the re-upload sweep is evidence about task success and encoding bandwidth, not a decision that re-uploading is the preferred architecture. The lab has not yet selected the next encoding/depth comparison."
+      ],
+      "experiment": {
+        "comparison_group": "periodic-function-mse-zero-offset-reupload-sweep-z1-readout",
+        "architecture": "Two qubits; each layer applies RY(2*pi*x) on q0, trainable U on q1, controlled phase, and trainable U on q0; final SWAP; ideal Z1 expectation.",
+        "controls": "Zero-intercept nested targets with 2, 3, and 4 frequencies; data seed 314159; same input points, 64/128/512 train/validation/test sizes, and initialization seeds 42-51 for each condition.",
+        "objective": "Training-set MSE only; no frequency labels, PINN residual, or process-fidelity term.",
+        "n_runs": 120,
+        "trainable_parameter_count_by_upload": {
+          "1": 7,
+          "2": 14,
+          "3": 21,
+          "4": 28
+        },
+        "group_results": [
+          {
+            "target_frequencies": 2,
+            "uploads": 1,
+            "test_mse_mean": 0.016271892,
+            "support_recall": 0.5
+          },
+          {
+            "target_frequencies": 2,
+            "uploads": 2,
+            "test_mse_mean": 2.9233547e-15,
+            "support_recall": 1.0
+          },
+          {
+            "target_frequencies": 2,
+            "uploads": 3,
+            "test_mse_mean": 5.6986809e-14,
+            "support_recall": 1.0
+          },
+          {
+            "target_frequencies": 2,
+            "uploads": 4,
+            "test_mse_mean": 5.4975901e-11,
+            "support_recall": 1.0
+          },
+          {
+            "target_frequencies": 3,
+            "uploads": 1,
+            "test_mse_mean": 0.0224608849,
+            "support_recall": 0.3333333
+          },
+          {
+            "target_frequencies": 3,
+            "uploads": 2,
+            "test_mse_mean": 0.0070979164,
+            "support_recall": 0.6666667
+          },
+          {
+            "target_frequencies": 3,
+            "uploads": 3,
+            "test_mse_mean": 1.9761484e-13,
+            "support_recall": 1.0
+          },
+          {
+            "target_frequencies": 3,
+            "uploads": 4,
+            "test_mse_mean": 3.4711632e-13,
+            "support_recall": 1.0
+          },
+          {
+            "target_frequencies": 4,
+            "uploads": 1,
+            "test_mse_mean": 0.0265968571,
+            "support_recall": 0.25
+          },
+          {
+            "target_frequencies": 4,
+            "uploads": 2,
+            "test_mse_mean": 0.0106268702,
+            "support_recall": 0.5
+          },
+          {
+            "target_frequencies": 4,
+            "uploads": 3,
+            "test_mse_mean": 0.0032683464,
+            "support_recall": 0.75
+          },
+          {
+            "target_frequencies": 4,
+            "uploads": 4,
+            "test_mse_mean": 1.7830304e-13,
+            "support_recall": 1.0
+          }
+        ],
+        "random_parameter_spectral_support": {
+          "1_upload": [
+            1
+          ],
+          "2_uploads": [
+            1,
+            2
+          ],
+          "3_uploads": [
+            1,
+            2,
+            3
+          ],
+          "4_uploads": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "random_parameter_samples_per_condition": 24,
+          "amplitude_threshold": 1e-08
+        },
+        "artifacts": [
+          "results/periodic-function-mse-zero-offset-reupload-sweep-z1-readout/index.html",
+          "results/periodic-function-mse-zero-offset-reupload-sweep-z1-readout/summary.json",
+          "results/periodic-function-mse-zero-offset-reupload-sweep-z1-readout/metrics.csv"
+        ]
+      },
+      "interpretation": "In this ideal two-qubit simulator, repeating the input encoding expanded the observed spectrum and allowed the MSE-trained model to recover these nested target spectra when upload count reached the maximum target harmonic. This supports an encoding-bandwidth explanation for the prior missing harmonics. Because the targets contained consecutive harmonics and each upload added a trainable block, it does not establish a universal one-upload-per-component rule or isolate re-uploading from added trainable depth.",
+      "limitations": [
+        "Only one data seed was used.",
+        "Each additional upload also added a trainable block, increasing parameter count from 7 to 28; upload count and trainable depth were therefore not independently varied.",
+        "Random-spectrum checks are numerical support checks at finite amplitude threshold, not a proof of every possible coefficient vector being reachable.",
+        "The circuit is data-dependent for multiple uploads, so a single unitary process fidelity to the canonical QFT is not an appropriate comparison metric here."
+      ],
+      "children": [
+        "SPECTRAL_REUPLOAD_DEPTH_CONTROL",
+        "SPECTRAL_UPLOADS_VS_MAX_HARMONIC"
+      ],
+      "hypotheses": [
+        {
+          "id": "SPECTRAL_REUPLOAD_EXPANDS_BANDWIDTH",
+          "claim": "Repeated applications of the x-dependent encoding can expand the accessible Fourier-frequency set; it does not guarantee that optimization will recover the target coefficients.",
+          "status": "supported",
+          "basis": "Fourier analysis of variational quantum models ties accessible frequencies to the encoding gates and their repetition; see Schuld, Sweke, and Meyer (2021), https://arxiv.org/abs/2008.08605.",
+          "evidence": "Random parameter scans observe support through k=L with L uploads, and the trained sweep recovers all target bins whenever L reaches the maximum target frequency. See the completed 120-run experiment above."
+        },
+        {
+          "id": "SPECTRAL_REUPLOAD_OPTIMIZATION",
+          "claim": "If the expanded model's analytic accessible spectrum includes target modes but trained outputs still omit them, the remaining issue is coefficient reachability, optimization, or data coverage rather than the original single-upload frequency ceiling.",
+          "status": "open",
+          "next_experiment": "Before training, numerically characterize reachable support and coefficient Jacobian; then compare learned coefficients with a least-squares Fourier target and repeat across data and initialization seeds."
+        }
+      ],
+      "design_controls": [
+        "Keep the qubit count fixed at two and pair targets, data, seeds, and objective across upload counts; record that trainable depth and parameter count co-vary with uploads.",
+        "Keep the target zero-intercept and preserve its coefficients across nested frequency conditions.",
+        "Retain MSE as the sole training objective; report process fidelity only as a diagnostic.",
+        "Separate expressivity checks from optimizer outcomes by evaluating analytic/random circuit spectra before training."
+      ],
+      "next_experiments": [
+        "Run a depth-matched one-upload control with L trainable blocks but encode x only before block 1, paired against L uploads with the same L blocks, parameters, data, and seeds.",
+        "Repeat the most informative upload-count conditions across independent data seeds.",
+        "Compare a wider circuit with one input upload against the two-qubit re-uploaded circuit to test qubit count separately from encoding pattern."
+      ]
+    },
+    {
+      "id": "SPECTRAL_REUPLOAD_DEPTH_CONTROL",
+      "parent_id": "SPECTRAL_DATA_REUPLOAD",
+      "title": "Is the training improvement caused by repeated uploads rather than added trainable depth?",
+      "question": "At fixed qubit count, trainable-layer count, parameter count, data, and initialization, does uploading x at every layer outperform uploading it only once?",
+      "status": "planned",
+      "design": "For each depth L=2,3,4, compare (A) one RY(2*pi*x) before the first of L trainable QFT-layout blocks with (B) the same RY encoding before every block. Pair target conditions and random seeds; keep MSE, data split, optimizer, and total 7L parameters fixed.",
+      "expected_discriminator": "Both architectures should remain limited to k<=1 in condition A, while condition B has an accessible frequency ceiling that grows with L. If only B recovers higher target modes, that supports an upload-specific training benefit beyond parameter count/depth.",
+      "artifacts_to_report": [
+        "test/validation/train MSE",
+        "dense-grid Fourier amplitudes and support",
+        "optimizer traces",
+        "per-run parameter counts"
+      ]
+    },
+    {
+      "id": "SPECTRAL_UPLOADS_VS_MAX_HARMONIC",
+      "parent_id": "SPECTRAL_DATA_REUPLOAD",
+      "title": "Does required upload count track the highest harmonic or the number of components?",
+      "question": "The completed targets had consecutive harmonics, so component count and maximum frequency were identical. Which one determines the upload requirement for sparse targets?",
+      "status": "supported",
+      "claim": "For this RY(2*pi*x) encoding repeated L times, the accessible integer spectrum is bounded by |k|<=L. Exact representation of a target with a nonzero coefficient at k_max therefore requires at least k_max uploads, regardless of how many lower-frequency components are also present. This is a bandwidth bound, not a one-upload-per-nonzero-component rule.",
+      "evidence": "Analytic encoding-spectrum bound plus random-parameter scans for L=1..4. The current training sweep used only consecutive targets k=1..N, so it did not independently compare component count and maximum k.",
+      "next_experiment": "Compare zero-offset targets with the same maximum k=4 but different sparsity, such as {4}, {1,4}, and {1,2,3,4}, across upload counts 1..4. Record whether the k=4 coefficient appears and whether lower components are recovered.",
+      "caveat": "Having the harmonic in the accessible spectrum is necessary but does not guarantee that the trainable circuit can reach arbitrary coefficients or that the optimizer will find them."
+    },
+    {
+      "id": "QFT_RECOVERY_VS_TASK",
+      "parent_id": "ROOT",
+      "title": "Does MSE training recover the QFT, or only perform the task?",
+      "question": "Starting from randomized parameters, does training converge to the canonical two-qubit QFT, and can the circuit still achieve accurate function predictions if full-unitary recovery does not occur?",
+      "status": "supported",
+      "observations": [
+        "The direct QFT-recovery pilot from randomized initialization seed 42 increased process fidelity from 0.0921116 to 0.999999999999979 in 17 L-BFGS-B iterations and 176 objective evaluations.",
+        "This demonstrates QFT convergence for one randomized initialization; it does not establish a high or reliable convergence rate across seeds.",
+        "For the zero-offset single-frequency MSE task, held-out MSE reached near numerical precision across tested data seeds while QFT process fidelity remained low. This demonstrates task success without full-unitary recovery for that task.",
+        "Scalar MSE constrains measured input-output behavior and generally does not uniquely determine a full unitary."
+      ],
+      "outcomes_to_measure": {
+        "algorithm_recovery": "For input-independent learned unitaries, report phase-insensitive process fidelity against the canonical QFT and an aligned matrix error.",
+        "task_success": "Report held-out MSE, dense-grid absolute error, Fourier coefficient error, and frequency-support precision/recall.",
+        "interpretation": "Classify each run/group as QFT recovery, task success without recovery, both, or neither. Do not treat either metric as a proxy for the other."
+      },
+      "next_experiment": "Repeat direct QFT recovery over a preregistered set of randomized initialization seeds to estimate convergence probability and iteration/evaluation distributions. Keep the supervised function-MSE arm separate and compare its task metrics with its post-training QFT fidelity.",
+      "direct_qft_recovery_pilot": {
+        "run_id": "20261017T000333116098Z_qft-recovery_seed-0042_b7a380cf",
+        "initialization_seed": 42,
+        "initial_process_fidelity": 0.09211160392656959,
+        "final_process_fidelity": 0.9999999999999791,
+        "iterations": 17,
+        "objective_evaluations": 176,
+        "test_state_fidelity_mean": 0.9999999999999825,
+        "test_state_fidelity_min": 0.9999999999999707,
+        "test_output_total_variation_mean": 6.852469536917398e-08,
+        "artifact": "results/runs/20261017T000333116098Z_qft-recovery_seed-0042_b7a380cf/artifacts/report.html"
+      }
+    },
+    {
+      "id": "ENCODING_FACTOR_DESIGN",
+      "parent_id": "ROOT",
+      "title": "Which encoding comparison should the lab run next?",
+      "question": "How can we study encoding choices while keeping the central QFT-recovery versus task-success question identifiable, without turning the project into an ansatz optimization exercise?",
+      "status": "planned",
+      "decision_status": "Pending lab group discussion; no next architecture is selected.",
+      "candidate_designs": [
+        {
+          "name": "fixed_encoding_sweep",
+          "description": "Compare predetermined encodings, such as integer-scaled RY(2*pi*k*x), while keeping the original seven-parameter trainable QFT-layout block, parameter count, data, seeds, optimizer, and budget fixed.",
+          "interpretation": "The trainable gate ansatz is held fixed in the narrow sense, but changing the encoding still changes the overall model function class. For period-one targets use integer scales; a single scaled rotation does not generally supply a mixture of harmonics."
+        },
+        {
+          "name": "repeated_data_encoding",
+          "description": "Insert the same fixed RY(2*pi*x) encoding between trainable blocks and compare to a matched-depth single-upload control.",
+          "interpretation": "This changes the input-dependent circuit structure. The previous sweep also increased the number of trainable blocks with upload count, so it does not isolate the effect of repetition."
+        },
+        {
+          "name": "direct_qft_recovery",
+          "description": "Train the QFT-layout circuit from randomized parameters against the canonical full QFT in a separately labeled circuit-recovery experiment.",
+          "interpretation": "This tests algorithm recovery directly and must be reported separately from function-MSE task learning."
+        }
+      ],
+      "decision_controls": [
+        "State the target and primary success tolerances before running.",
+        "Preserve randomized initialization and report every seed.",
+        "Keep QFT process fidelity separate from MSE unless explicitly designing a separate hybrid-objective study.",
+        "Do not rank architectures as a general best-ansatz contest."
+      ],
+      "next_step": "At lab meeting, select a candidate comparison and define controls and success criteria before launching the next sweep."
+    }
+  ]
+}

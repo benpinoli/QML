@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qft-qnn-lab"
+version = "0.1.0"
+description = "Reproducible experiments for QFT recovery and quantum function learning"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.0",
+  "scipy>=1.12",
+  "qiskit>=1.0",
+  "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+tracking = ["mlflow>=2.15"]
+tables = ["pandas>=2.2", "pyarrow>=15"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
