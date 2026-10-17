@@ -1,0 +1,4763 @@
+{
+  "comparison_group": "periodic-function-mse-zero-offset-component-sweep-z1-readout",
+  "objective": "Training-set MSE only; process fidelity is diagnostic only.",
+  "encoding": "RY(2*pi*x)|0> on q0, x in [0,1), period 1; ideal Pauli-Z readout on q1",
+  "target_family": "g_N(x)=sum_{k=1}^N [a_k cos(2*pi*k*x)+b_k sin(2*pi*k*x)] with zero intercept",
+  "shared_data_seed": 314159,
+  "dataset_sizes": {
+    "train": 64,
+    "validation": 128,
+    "test": 512
+  },
+  "initialization_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "n_initializations_per_component_count": 10,
+  "n_runs": 30,
+  "components": [
+    {
+      "n_components": 2,
+      "target_offset": 0.0,
+      "target_components": [
+        [
+          1,
+          0.55,
+          0.25
+        ],
+        [
+          2,
+          0.16,
+          0.08
+        ]
+      ],
+      "test_mse_mean": 0.01627189202667461,
+      "test_mse_population_std": 5.6967083114366904e-11,
+      "dominant_frequency_accuracy": 1.0,
+      "frequency_support_precision_mean": 1.0,
+      "frequency_support_recall_mean": 0.5,
+      "frequency_support_f1_mean": 0.6666666666666667,
+      "qft_process_fidelity_mean": 0.08826793264134897,
+      "qft_process_fidelity_population_std": 0.157629771516949,
+      "qft_process_fidelity_max": 0.5325424117847204,
+      "best_run_id": "20261017T020257811460Z_periodic-function-mse-k2-zero-offset_seed-0044_cbc825e0",
+      "worst_run_id": "20261017T020302161400Z_periodic-function-mse-k2-zero-offset_seed-0050_cbc825e0"
+    },
+    {
+      "n_components": 3,
+      "target_offset": 0.0,
+      "target_components": [
+        [
+          1,
+          0.55,
+          0.25
+        ],
+        [
+          2,
+          0.16,
+          0.08
+        ],
+        [
+          3,
+          0.1,
+          0.05
+        ]
+      ],
+      "test_mse_mean": 0.02246088493641133,
+      "test_mse_population_std": 1.4438912241406415e-10,
+      "dominant_frequency_accuracy": 1.0,
+      "frequency_support_precision_mean": 1.0,
+      "frequency_support_recall_mean": 0.33333333333333337,
+      "frequency_support_f1_mean": 0.5,
+      "qft_process_fidelity_mean": 0.08997978796477633,
+      "qft_process_fidelity_population_std": 0.16252334118292894,
+      "qft_process_fidelity_max": 0.549678744079009,
+      "best_run_id": "20261017T020307890659Z_periodic-function-mse-k3-zero-offset_seed-0048_fea99a4e",
+      "worst_run_id": "20261017T020309381446Z_periodic-function-mse-k3-zero-offset_seed-0050_fea99a4e"
+    },
+    {
+      "n_components": 4,
+      "target_offset": 0.0,
+      "target_components": [
+        [
+          1,
+          0.55,
+          0.25
+        ],
+        [
+          2,
+          0.16,
+          0.08
+        ],
+        [
+          3,
+          0.1,
+          0.05
+        ],
+        [
+          4,
+          0.07,
+          0.035
+        ]
+      ],
+      "test_mse_mean": 0.02659685712916004,
+      "test_mse_population_std": 1.1332035795427814e-10,
+      "dominant_frequency_accuracy": 1.0,
+      "frequency_support_precision_mean": 1.0,
+      "frequency_support_recall_mean": 0.25,
+      "frequency_support_f1_mean": 0.4,
+      "qft_process_fidelity_mean": 0.08899117776507055,
+      "qft_process_fidelity_population_std": 0.15954677236396314,
+      "qft_process_fidelity_max": 0.5390420927322702,
+      "best_run_id": "20261017T020315316620Z_periodic-function-mse-k4-zero-offset_seed-0048_c5f42dc8",
+      "worst_run_id": "20261017T020312298930Z_periodic-function-mse-k4-zero-offset_seed-0044_c5f42dc8"
+    }
+  ],
+  "frequency_support_metric": "Non-DC spectral amplitude threshold 1e-3 on the dense 2048-point grid; precision/recall/F1 are reported per run and averaged per target.",
+  "featured_runs": {
+    "lowest_test_mse": {
+      "run_id": "20261017T020257811460Z_periodic-function-mse-k2-zero-offset_seed-0044_cbc825e0",
+      "n_components": 2,
+      "seed": 44,
+      "test_mse": 0.016271891947300263
+    },
+    "highest_test_mse": {
+      "run_id": "20261017T020312298930Z_periodic-function-mse-k4-zero-offset_seed-0044_c5f42dc8",
+      "n_components": 4,
+      "seed": 44,
+      "test_mse": 0.02659685734175564
+    }
+  },
+  "run_color_by_id": {
+    "20261017T020256114753Z_periodic-function-mse-k2-zero-offset_seed-0042_cbc825e0": "#1f77b4",
+    "20261017T020257030885Z_periodic-function-mse-k2-zero-offset_seed-0043_cbc825e0": "#ff7f0e",
+    "20261017T020257811460Z_periodic-function-mse-k2-zero-offset_seed-0044_cbc825e0": "#2ca02c",
+    "20261017T020258526618Z_periodic-function-mse-k2-zero-offset_seed-0045_cbc825e0": "#d62728",
+    "20261017T020259298254Z_periodic-function-mse-k2-zero-offset_seed-0046_cbc825e0": "#9467bd",
+    "20261017T020259988877Z_periodic-function-mse-k2-zero-offset_seed-0047_cbc825e0": "#8c564b",
+    "20261017T020300719861Z_periodic-function-mse-k2-zero-offset_seed-0048_cbc825e0": "#e377c2",
+    "20261017T020301491933Z_periodic-function-mse-k2-zero-offset_seed-0049_cbc825e0": "#7f7f7f",
+    "20261017T020302161400Z_periodic-function-mse-k2-zero-offset_seed-0050_cbc825e0": "#bcbd22",
+    "20261017T020302877128Z_periodic-function-mse-k2-zero-offset_seed-0051_cbc825e0": "#17becf",
+    "20261017T020303658643Z_periodic-function-mse-k3-zero-offset_seed-0042_fea99a4e": "#1f77b4",
+    "20261017T020304362381Z_periodic-function-mse-k3-zero-offset_seed-0043_fea99a4e": "#ff7f0e",
+    "20261017T020305024413Z_periodic-function-mse-k3-zero-offset_seed-0044_fea99a4e": "#2ca02c",
+    "20261017T020305775253Z_periodic-function-mse-k3-zero-offset_seed-0045_fea99a4e": "#d62728",
+    "20261017T020306500272Z_periodic-function-mse-k3-zero-offset_seed-0046_fea99a4e": "#9467bd",
+    "20261017T020307232297Z_periodic-function-mse-k3-zero-offset_seed-0047_fea99a4e": "#8c564b",
+    "20261017T020307890659Z_periodic-function-mse-k3-zero-offset_seed-0048_fea99a4e": "#e377c2",
+    "20261017T020308722341Z_periodic-function-mse-k3-zero-offset_seed-0049_fea99a4e": "#7f7f7f",
+    "20261017T020309381446Z_periodic-function-mse-k3-zero-offset_seed-0050_fea99a4e": "#bcbd22",
+    "20261017T020310094620Z_periodic-function-mse-k3-zero-offset_seed-0051_fea99a4e": "#17becf",
+    "20261017T020310872916Z_periodic-function-mse-k4-zero-offset_seed-0042_c5f42dc8": "#1f77b4",
+    "20261017T020311658166Z_periodic-function-mse-k4-zero-offset_seed-0043_c5f42dc8": "#ff7f0e",
+    "20261017T020312298930Z_periodic-function-mse-k4-zero-offset_seed-0044_c5f42dc8": "#2ca02c",
+    "20261017T020313055836Z_periodic-function-mse-k4-zero-offset_seed-0045_c5f42dc8": "#d62728",
+    "20261017T020313697840Z_periodic-function-mse-k4-zero-offset_seed-0046_c5f42dc8": "#9467bd",
+    "20261017T020314535707Z_periodic-function-mse-k4-zero-offset_seed-0047_c5f42dc8": "#8c564b",
+    "20261017T020315316620Z_periodic-function-mse-k4-zero-offset_seed-0048_c5f42dc8": "#e377c2",
+    "20261017T020316012653Z_periodic-function-mse-k4-zero-offset_seed-0049_c5f42dc8": "#7f7f7f",
+    "20261017T020316662845Z_periodic-function-mse-k4-zero-offset_seed-0050_c5f42dc8": "#bcbd22",
+    "20261017T020317445643Z_periodic-function-mse-k4-zero-offset_seed-0051_c5f42dc8": "#17becf"
+  },
+  "runs_sorted_by_test_mse": [
+    {
+      "run_id": "20261017T020257811460Z_periodic-function-mse-k2-zero-offset_seed-0044_cbc825e0",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k2-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 44,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        }
+      ],
+      "iterations": 7,
+      "function_evaluations": 64,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.10790563600312453,
+      "initial_train_mse": 0.6020614903936508,
+      "final_train_mse": 0.016317001290239705,
+      "validation_mse": 0.017552910115843166,
+      "test": {
+        "mse": 0.016271891947300263,
+        "rmse": 0.12756132622115632,
+        "r2": 0.9174045895516765
+      },
+      "constant_baseline_test": {
+        "mse": 0.2032802999417505,
+        "rmse": 0.450866166330709,
+        "r2": -0.031841894238542556
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 1.9968722039537117e-32,
+        "rmse": 1.413107286781054e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0004773093370451626,
+      "dense_grid_absolute_error_mae": 0.11428876843749633,
+      "dense_grid_absolute_error_max": 0.19650304601738522,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.05754961346915173,
+      "initial_qft_process_fidelity_diagnostic_only": 0.04906630204776559,
+      "n_components": 2,
+      "run_dir": "results/runs/20261017T020257811460Z_periodic-function-mse-k2-zero-offset_seed-0044_cbc825e0",
+      "initial_parameters": {
+        "u1_theta": -2.3714908440399456,
+        "u1_phi": -1.5198203745865597,
+        "u1_lambda": -0.5920599784604952,
+        "controlled_phase": 2.947969689345541,
+        "u0_theta": -2.1217240800334842,
+        "u0_phi": 2.2449423600401266,
+        "u0_lambda": -2.1171490019909616
+      },
+      "final_parameters": {
+        "u1_theta": -2.268089965102009,
+        "u1_phi": -1.5198203524277123,
+        "u1_lambda": -0.5920599784604952,
+        "controlled_phase": 3.1148137700263,
+        "u0_theta": -1.0053772628850104,
+        "u0_phi": 2.2449423507752,
+        "u0_lambda": -1.982824341648732
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 3.402087014046196e-17,
+          "4": 1.1323340723711445e-17,
+          "5": 9.938690980430836e-18,
+          "6": 4.6922517800280036e-18,
+          "7": 9.373740922729999e-18,
+          "8": 1.7250611716194027e-18,
+          "9": 1.530158748162744e-17,
+          "10": 2.04244267811301e-18,
+          "11": 4.98898752229069e-18,
+          "12": 2.3501315884486092e-18,
+          "13": 7.198939290036171e-18,
+          "14": 1.065804665009402e-18,
+          "15": 1.2627840714523446e-17,
+          "16": 3.4240002976248174e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5846594357785306,
+          "2": 1.9914711647959855e-17,
+          "3": 1.2889513501806201e-17,
+          "4": 5.366962505135821e-18,
+          "5": 1.4231023718753792e-17,
+          "6": 3.3430567401776478e-18,
+          "7": 1.62050548747563e-17,
+          "8": 1.2309451364483054e-18,
+          "9": 9.925843686085968e-18,
+          "10": 3.0354902506300448e-18,
+          "11": 2.356884035347412e-18,
+          "12": 1.5431365814751607e-18,
+          "13": 1.1531759945902201e-17,
+          "14": 4.548364222573805e-18,
+          "15": 1.9695645540962798e-17,
+          "16": 3.3933827857283258e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.10340087893793637,
+        "u1_phi": 2.215884720158101e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.16684408068075873,
+        "u0_theta": 1.1163468171484734,
+        "u0_phi": -9.264926603691492e-09,
+        "u0_lambda": 0.13432466034222967
+      },
+      "plot_color": "#2ca02c"
+    },
+    {
+      "run_id": "20261017T020302877128Z_periodic-function-mse-k2-zero-offset_seed-0051_cbc825e0",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k2-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 51,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        }
+      ],
+      "iterations": 8,
+      "function_evaluations": 120,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.12787380300142104,
+      "initial_train_mse": 0.9610189365523814,
+      "final_train_mse": 0.0163170012902397,
+      "validation_mse": 0.0175529103032248,
+      "test": {
+        "mse": 0.016271891981562467,
+        "rmse": 0.1275613263554533,
+        "r2": 0.917404589377763
+      },
+      "constant_baseline_test": {
+        "mse": 0.2032802999417505,
+        "rmse": 0.450866166330709,
+        "r2": -0.031841894238542556
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 1.9968722039537117e-32,
+        "rmse": 1.413107286781054e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.00047730933575459343,
+      "dense_grid_absolute_error_mae": 0.11428876835700141,
+      "dense_grid_absolute_error_max": 0.19650303834976024,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.06952736874674059,
+      "initial_qft_process_fidelity_diagnostic_only": 0.07936420216729839,
+      "n_components": 2,
+      "run_dir": "results/runs/20261017T020302877128Z_periodic-function-mse-k2-zero-offset_seed-0051_cbc825e0",
+      "initial_parameters": {
+        "u1_theta": 2.7799400236972422,
+        "u1_phi": -1.2117854178107583,
+        "u1_lambda": -1.5399670335349012,
+        "controlled_phase": -1.7428392082652453,
+        "u0_theta": 1.7982741542662763,
+        "u0_phi": -1.7799758510131818,
+        "u0_lambda": 1.920936276761287
+      },
+      "final_parameters": {
+        "u1_theta": 1.8854835631940883,
+        "u1_phi": -1.2117854793541103,
+        "u1_lambda": -1.5399670335349012,
+        "controlled_phase": -1.11884252056238,
+        "u0_theta": 1.0053772518438295,
+        "u0_phi": -1.779975773414715,
+        "u0_lambda": 2.648501661824214
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 3.402087014046196e-17,
+          "4": 1.1323340723711445e-17,
+          "5": 9.938690980430836e-18,
+          "6": 4.6922517800280036e-18,
+          "7": 9.373740922729999e-18,
+          "8": 1.7250611716194027e-18,
+          "9": 1.530158748162744e-17,
+          "10": 2.04244267811301e-18,
+          "11": 4.98898752229069e-18,
+          "12": 2.3501315884486092e-18,
+          "13": 7.198939290036171e-18,
+          "14": 1.065804665009402e-18,
+          "15": 1.2627840714523446e-17,
+          "16": 3.4240002976248174e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5846594420939499,
+          "2": 1.5931177151746878e-17,
+          "3": 1.904458522097897e-17,
+          "4": 1.1248047684939828e-17,
+          "5": 6.080705447483527e-18,
+          "6": 8.652426051166661e-18,
+          "7": 1.1740240298416462e-17,
+          "8": 4.0994625852158606e-18,
+          "9": 7.709090414738925e-18,
+          "10": 5.27146051240381e-18,
+          "11": 3.5306792697974564e-18,
+          "12": 2.1677869852354393e-18,
+          "13": 6.013940200963691e-19,
+          "14": 2.140931476107939e-18,
+          "15": 8.813867744189823e-18,
+          "16": 7.978766791936488e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.8944564605031537,
+        "u1_phi": -6.154335174812786e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.6239966877028653,
+        "u0_theta": -0.7928969024224468,
+        "u0_phi": 7.759846676336224e-08,
+        "u0_lambda": 0.7275653850629271
+      },
+      "plot_color": "#17becf"
+    },
+    {
+      "run_id": "20261017T020256114753Z_periodic-function-mse-k2-zero-offset_seed-0042_cbc825e0",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k2-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 42,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        }
+      ],
+      "iterations": 12,
+      "function_evaluations": 144,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.1740615250018891,
+      "initial_train_mse": 1.1080776094204272,
+      "final_train_mse": 0.016317001290239705,
+      "validation_mse": 0.01755291017778854,
+      "test": {
+        "mse": 0.01627189198718731,
+        "rmse": 0.12756132637750092,
+        "r2": 0.9174045893492117
+      },
+      "constant_baseline_test": {
+        "mse": 0.2032802999417505,
+        "rmse": 0.450866166330709,
+        "r2": -0.031841894238542556
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 1.9968722039537117e-32,
+        "rmse": 1.413107286781054e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.00047730933807405945,
+      "dense_grid_absolute_error_mae": 0.11428876849885902,
+      "dense_grid_absolute_error_max": 0.19650304666565344,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.5325424117847204,
+      "initial_qft_process_fidelity_diagnostic_only": 0.2993071074832549,
+      "n_components": 2,
+      "run_dir": "results/runs/20261017T020256114753Z_periodic-function-mse-k2-zero-offset_seed-0042_cbc825e0",
+      "initial_parameters": {
+        "u1_theta": 1.721316619099806,
+        "u1_phi": -0.38403808930179695,
+        "u1_lambda": 2.2531371815723604,
+        "controlled_phase": 1.2400999002927886,
+        "u0_theta": -2.5498589250729733,
+        "u0_phi": 2.988423371570267,
+        "u0_lambda": 1.6407891386670412
+      },
+      "final_parameters": {
+        "u1_theta": 1.1367110820305413,
+        "u1_phi": -0.3840383530862717,
+        "u1_lambda": 2.2531371815723604,
+        "controlled_phase": 1.1132437879817632,
+        "u0_theta": -1.0053772630570978,
+        "u0_phi": 2.988423330400976,
+        "u0_lambda": 0.9488087542293953
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 3.402087014046196e-17,
+          "4": 1.1323340723711445e-17,
+          "5": 9.938690980430836e-18,
+          "6": 4.6922517800280036e-18,
+          "7": 9.373740922729999e-18,
+          "8": 1.7250611716194027e-18,
+          "9": 1.530158748162744e-17,
+          "10": 2.04244267811301e-18,
+          "11": 4.98898752229069e-18,
+          "12": 2.3501315884486092e-18,
+          "13": 7.198939290036171e-18,
+          "14": 1.065804665009402e-18,
+          "15": 1.2627840714523446e-17,
+          "16": 3.4240002976248174e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5846594348194981,
+          "2": 2.1393238234521704e-17,
+          "3": 2.6194275734192685e-17,
+          "4": 6.056407179609745e-18,
+          "5": 1.9808996760673345e-17,
+          "6": 1.0850913252464412e-17,
+          "7": 1.269380562654524e-17,
+          "8": 3.2777719006860703e-18,
+          "9": 9.15775011695075e-18,
+          "10": 6.911138879293098e-18,
+          "11": 4.912616161136241e-18,
+          "12": 3.06210871827221e-18,
+          "13": 6.402405956536297e-18,
+          "14": 6.346340896984889e-18,
+          "15": 8.098613383433745e-18,
+          "16": 8.7313910079195e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.5846055370692644,
+        "u1_phi": -2.6378447470776223e-07,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.12685611231102545,
+        "u0_theta": 1.5444816620158752,
+        "u0_phi": -4.1169291087328475e-08,
+        "u0_lambda": -0.6919803844376462
+      },
+      "plot_color": "#1f77b4"
+    },
+    {
+      "run_id": "20261017T020300719861Z_periodic-function-mse-k2-zero-offset_seed-0048_cbc825e0",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k2-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 48,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        }
+      ],
+      "iterations": 9,
+      "function_evaluations": 104,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.10043845399923157,
+      "initial_train_mse": 0.35231170920136634,
+      "final_train_mse": 0.016317001290239705,
+      "validation_mse": 0.01755291029476862,
+      "test": {
+        "mse": 0.016271891990647887,
+        "rmse": 0.12756132639106527,
+        "r2": 0.9174045893316459
+      },
+      "constant_baseline_test": {
+        "mse": 0.2032802999417505,
+        "rmse": 0.450866166330709,
+        "r2": -0.031841894238542556
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 1.9968722039537117e-32,
+        "rmse": 1.413107286781054e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.00047730933635465624,
+      "dense_grid_absolute_error_mae": 0.11428876839338184,
+      "dense_grid_absolute_error_max": 0.19650303988067597,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.014671977940153076,
+      "initial_qft_process_fidelity_diagnostic_only": 0.005913035419745105,
+      "n_components": 2,
+      "run_dir": "results/runs/20261017T020300719861Z_periodic-function-mse-k2-zero-offset_seed-0048_cbc825e0",
+      "initial_parameters": {
+        "u1_theta": -0.7056025124495435,
+        "u1_phi": 0.6017625853696598,
+        "u1_lambda": 0.08671138191442607,
+        "controlled_phase": 1.2220286736246937,
+        "u0_theta": 0.958165337443142,
+        "u0_phi": 2.2815301750714383,
+        "u0_lambda": 0.5645002099909942
+      },
+      "final_parameters": {
+        "u1_theta": -1.2319835525725709,
+        "u1_phi": 0.6017625572875376,
+        "u1_lambda": 0.08671138191442607,
+        "controlled_phase": 1.4352467189543476,
+        "u0_theta": 1.005377253764878,
+        "u0_phi": 2.2815301887299877,
+        "u0_lambda": 1.4966937168741228
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 3.402087014046196e-17,
+          "4": 1.1323340723711445e-17,
+          "5": 9.938690980430836e-18,
+          "6": 4.6922517800280036e-18,
+          "7": 9.373740922729999e-18,
+          "8": 1.7250611716194027e-18,
+          "9": 1.530158748162744e-17,
+          "10": 2.04244267811301e-18,
+          "11": 4.98898752229069e-18,
+          "12": 2.3501315884486092e-18,
+          "13": 7.198939290036171e-18,
+          "14": 1.065804665009402e-18,
+          "15": 1.2627840714523446e-17,
+          "16": 3.4240002976248174e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5846594406747764,
+          "2": 2.0026595168662214e-17,
+          "3": 1.727874180986584e-17,
+          "4": 3.866846706741555e-18,
+          "5": 8.568592522886533e-18,
+          "6": 8.610433679590505e-18,
+          "7": 8.86104507020893e-18,
+          "8": 1.6258473852862232e-18,
+          "9": 1.6576436778042906e-17,
+          "10": 9.396547337473724e-18,
+          "11": 3.3630557645260507e-18,
+          "12": 4.223717493697699e-18,
+          "13": 1.0298513499491753e-17,
+          "14": 1.4722803761411202e-17,
+          "15": 2.5494000543593992e-17,
+          "16": 6.546290498299434e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.5263810401230273,
+        "u1_phi": -2.8082122405237442e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.21321804532965416,
+        "u0_theta": 0.047211916321735714,
+        "u0_phi": 1.3658549402606468e-08,
+        "u0_lambda": 0.9321935068831291
+      },
+      "plot_color": "#e377c2"
+    },
+    {
+      "run_id": "20261017T020257030885Z_periodic-function-mse-k2-zero-offset_seed-0043_cbc825e0",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k2-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 43,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        }
+      ],
+      "iterations": 6,
+      "function_evaluations": 72,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.05224653500044951,
+      "initial_train_mse": 0.07677759821415518,
+      "final_train_mse": 0.016317001290239705,
+      "validation_mse": 0.01755291030870971,
+      "test": {
+        "mse": 0.016271892003897514,
+        "rmse": 0.1275613264429996,
+        "r2": 0.9174045892643914
+      },
+      "constant_baseline_test": {
+        "mse": 0.2032802999417505,
+        "rmse": 0.450866166330709,
+        "r2": -0.031841894238542556
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 1.9968722039537117e-32,
+        "rmse": 1.413107286781054e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0004773093368039735,
+      "dense_grid_absolute_error_mae": 0.11428876842035318,
+      "dense_grid_absolute_error_max": 0.19650304050278156,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.016085988239438936,
+      "initial_qft_process_fidelity_diagnostic_only": 0.010632960674679542,
+      "n_components": 2,
+      "run_dir": "results/runs/20261017T020257030885Z_periodic-function-mse-k2-zero-offset_seed-0043_cbc825e0",
+      "initial_parameters": {
+        "u1_theta": 0.9569244896966458,
+        "u1_phi": -2.8665441832842182,
+        "u1_lambda": -3.015743047632837,
+        "controlled_phase": 2.131335514443747,
+        "u0_theta": 0.5475359162281404,
+        "u0_phi": -1.7297280527279735,
+        "u0_lambda": 1.582057502752094
+      },
+      "final_parameters": {
+        "u1_theta": 1.0116063635820662,
+        "u1_phi": -2.8665441821054984,
+        "u1_lambda": -3.015743047632837,
+        "controlled_phase": 2.1121894065082025,
+        "u0_theta": 1.0053772543754251,
+        "u0_phi": -1.7297280478311599,
+        "u0_lambda": 1.6913261564909152
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 3.402087014046196e-17,
+          "4": 1.1323340723711445e-17,
+          "5": 9.938690980430836e-18,
+          "6": 4.6922517800280036e-18,
+          "7": 9.373740922729999e-18,
+          "8": 1.7250611716194027e-18,
+          "9": 1.530158748162744e-17,
+          "10": 2.04244267811301e-18,
+          "11": 4.98898752229069e-18,
+          "12": 2.3501315884486092e-18,
+          "13": 7.198939290036171e-18,
+          "14": 1.065804665009402e-18,
+          "15": 1.2627840714523446e-17,
+          "16": 3.4240002976248174e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5846594400031168,
+          "2": 2.003087971149689e-17,
+          "3": 2.059721733183957e-17,
+          "4": 6.646938171161107e-18,
+          "5": 1.467034842113999e-17,
+          "6": 5.6092851111683005e-18,
+          "7": 1.5526059975024048e-17,
+          "8": 5.8244326029576e-18,
+          "9": 6.624165376027827e-18,
+          "10": 8.552060132861532e-18,
+          "11": 6.774120982414669e-18,
+          "12": 5.594483670567329e-18,
+          "13": 1.1090838395966833e-17,
+          "14": 8.351817669105e-18,
+          "15": 2.1539103610905086e-17,
+          "16": 8.49113437200964e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.05468187388542045,
+        "u1_phi": 1.17871978844164e-09,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.01914610793554461,
+        "u0_theta": 0.45784133814728456,
+        "u0_phi": 4.896813621257934e-09,
+        "u0_lambda": 0.10926865373882144
+      },
+      "plot_color": "#ff7f0e"
+    },
+    {
+      "run_id": "20261017T020259988877Z_periodic-function-mse-k2-zero-offset_seed-0047_cbc825e0",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k2-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 47,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        }
+      ],
+      "iterations": 8,
+      "function_evaluations": 88,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.13270451300195418,
+      "initial_train_mse": 1.184303657004715,
+      "final_train_mse": 0.016317001290239705,
+      "validation_mse": 0.01755291033468194,
+      "test": {
+        "mse": 0.016271892018536314,
+        "rmse": 0.12756132650037907,
+        "r2": 0.9174045891900855
+      },
+      "constant_baseline_test": {
+        "mse": 0.2032802999417505,
+        "rmse": 0.450866166330709,
+        "r2": -0.031841894238542556
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 1.9968722039537117e-32,
+        "rmse": 1.413107286781054e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.00047730933712911264,
+      "dense_grid_absolute_error_mae": 0.11428876843965916,
+      "dense_grid_absolute_error_max": 0.196503040542224,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.0016579445237257836,
+      "initial_qft_process_fidelity_diagnostic_only": 0.0018887892252928541,
+      "n_components": 2,
+      "run_dir": "results/runs/20261017T020259988877Z_periodic-function-mse-k2-zero-offset_seed-0047_cbc825e0",
+      "initial_parameters": {
+        "u1_theta": 1.519286739984854,
+        "u1_phi": 1.5938481846155454,
+        "u1_lambda": -0.2187771306004107,
+        "controlled_phase": -2.489869071319391,
+        "u0_theta": 2.9333166834546605,
+        "u0_phi": -1.1262589501679572,
+        "u0_lambda": -1.8828723944096823
+      },
+      "final_parameters": {
+        "u1_theta": 1.4910672673221141,
+        "u1_phi": 1.5938483120592597,
+        "u1_lambda": -0.2187771306004107,
+        "controlled_phase": -2.582064855961541,
+        "u0_theta": 1.0053772541685655,
+        "u0_phi": -1.1262589394671825,
+        "u0_lambda": -1.8647342426689575
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 3.402087014046196e-17,
+          "4": 1.1323340723711445e-17,
+          "5": 9.938690980430836e-18,
+          "6": 4.6922517800280036e-18,
+          "7": 9.373740922729999e-18,
+          "8": 1.7250611716194027e-18,
+          "9": 1.530158748162744e-17,
+          "10": 2.04244267811301e-18,
+          "11": 4.98898752229069e-18,
+          "12": 2.3501315884486092e-18,
+          "13": 7.198939290036171e-18,
+          "14": 1.065804665009402e-18,
+          "15": 1.2627840714523446e-17,
+          "16": 3.4240002976248174e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5846594398234316,
+          "2": 2.004378308344543e-17,
+          "3": 2.2330581838297418e-17,
+          "4": 1.059566120523216e-17,
+          "5": 1.582834759200717e-17,
+          "6": 6.8057694960836175e-18,
+          "7": 1.6289132600472028e-17,
+          "8": 4.556826824227672e-18,
+          "9": 1.9750751529049198e-17,
+          "10": 7.207545571560378e-18,
+          "11": 3.527431912186104e-18,
+          "12": 4.7246835714057936e-18,
+          "13": 4.848016395258462e-18,
+          "14": 1.0604366644245946e-18,
+          "15": 1.6234255344555266e-17,
+          "16": 6.703160441452896e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.028219472662740053,
+        "u1_phi": 1.2744371424844303e-07,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.09219578464215017,
+        "u0_theta": -1.927939429286095,
+        "u0_phi": 1.0700774488725528e-08,
+        "u0_lambda": 0.01813815174072486
+      },
+      "plot_color": "#8c564b"
+    },
+    {
+      "run_id": "20261017T020259298254Z_periodic-function-mse-k2-zero-offset_seed-0046_cbc825e0",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k2-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 46,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        }
+      ],
+      "iterations": 8,
+      "function_evaluations": 96,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.08640841099986574,
+      "initial_train_mse": 1.1077513445869203,
+      "final_train_mse": 0.016317001290239705,
+      "validation_mse": 0.017552910386381803,
+      "test": {
+        "mse": 0.016271892041982563,
+        "rmse": 0.12756132659228095,
+        "r2": 0.9174045890710734
+      },
+      "constant_baseline_test": {
+        "mse": 0.2032802999417505,
+        "rmse": 0.450866166330709,
+        "r2": -0.031841894238542556
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 1.9968722039537117e-32,
+        "rmse": 1.413107286781054e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.00047730933748616904,
+      "dense_grid_absolute_error_mae": 0.11428876846055197,
+      "dense_grid_absolute_error_max": 0.19650303998619856,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.0037065284085291074,
+      "initial_qft_process_fidelity_diagnostic_only": 0.033182246779634494,
+      "n_components": 2,
+      "run_dir": "results/runs/20261017T020259298254Z_periodic-function-mse-k2-zero-offset_seed-0046_cbc825e0",
+      "initial_parameters": {
+        "u1_theta": 2.5484868318297726,
+        "u1_phi": -2.656362401161172,
+        "u1_lambda": -1.4289863680202823,
+        "controlled_phase": 0.7656091597216501,
+        "u0_theta": 2.727080917862276,
+        "u0_phi": -2.6078562500039575,
+        "u0_lambda": 0.811974571555377
+      },
+      "final_parameters": {
+        "u1_theta": 2.5653327833123365,
+        "u1_phi": -2.656362327263414,
+        "u1_lambda": -1.4289863680202823,
+        "controlled_phase": 0.9360804416637316,
+        "u0_theta": 1.0053772529948588,
+        "u0_phi": -2.6078563228803233,
+        "u0_lambda": 0.9918538903785618
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 3.402087014046196e-17,
+          "4": 1.1323340723711445e-17,
+          "5": 9.938690980430836e-18,
+          "6": 4.6922517800280036e-18,
+          "7": 9.373740922729999e-18,
+          "8": 1.7250611716194027e-18,
+          "9": 1.530158748162744e-17,
+          "10": 2.04244267811301e-18,
+          "11": 4.98898752229069e-18,
+          "12": 2.3501315884486092e-18,
+          "13": 7.198939290036171e-18,
+          "14": 1.065804665009402e-18,
+          "15": 1.2627840714523446e-17,
+          "16": 3.4240002976248174e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5846594400731311,
+          "2": 2.4830649105088143e-17,
+          "3": 2.070443141823871e-17,
+          "4": 1.4824567238483982e-17,
+          "5": 8.782883862885277e-18,
+          "6": 6.885374511303645e-18,
+          "7": 1.6163554560541162e-17,
+          "8": 7.161112707882518e-18,
+          "9": 4.444099580947517e-18,
+          "10": 9.409479821741612e-18,
+          "11": 6.541869802531195e-18,
+          "12": 8.528552870976431e-19,
+          "13": 5.444793088674698e-18,
+          "14": 4.2877368530387335e-18,
+          "15": 2.061983479588445e-17,
+          "16": 3.1496727648186963e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.016845951482563848,
+        "u1_phi": 7.389775813493316e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.17047128194208128,
+        "u0_theta": -1.721703664867417,
+        "u0_phi": -7.28763658308651e-08,
+        "u0_lambda": 0.17987931882318486
+      },
+      "plot_color": "#9467bd"
+    },
+    {
+      "run_id": "20261017T020301491933Z_periodic-function-mse-k2-zero-offset_seed-0049_cbc825e0",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k2-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 49,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        }
+      ],
+      "iterations": 5,
+      "function_evaluations": 56,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.031077840001671575,
+      "initial_train_mse": 0.01657110704769267,
+      "final_train_mse": 0.016317001290239695,
+      "validation_mse": 0.01755291035935941,
+      "test": {
+        "mse": 0.016271892043748,
+        "rmse": 0.1275613265992009,
+        "r2": 0.9174045890621121
+      },
+      "constant_baseline_test": {
+        "mse": 0.2032802999417505,
+        "rmse": 0.450866166330709,
+        "r2": -0.031841894238542556
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 1.9968722039537117e-32,
+        "rmse": 1.413107286781054e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.00047730933801406355,
+      "dense_grid_absolute_error_mae": 0.11428876849281751,
+      "dense_grid_absolute_error_max": 0.19650304183937806,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.001334491579620103,
+      "initial_qft_process_fidelity_diagnostic_only": 0.0014377045308242645,
+      "n_components": 2,
+      "run_dir": "results/runs/20261017T020301491933Z_periodic-function-mse-k2-zero-offset_seed-0049_cbc825e0",
+      "initial_parameters": {
+        "u1_theta": -0.8617125240318573,
+        "u1_phi": 0.5857013194739991,
+        "u1_lambda": -0.6788968406304887,
+        "controlled_phase": 0.7772255342719081,
+        "u0_theta": 0.9790124832449649,
+        "u0_phi": -3.056230167109086,
+        "u0_lambda": 1.7362677989726425
+      },
+      "final_parameters": {
+        "u1_theta": -0.8617286473721278,
+        "u1_phi": 0.5857013210020825,
+        "u1_lambda": -0.6788968406304887,
+        "controlled_phase": 0.7772327453898848,
+        "u0_theta": 1.0053772554846008,
+        "u0_phi": -3.056230166916743,
+        "u0_lambda": 1.7363286800464721
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 3.402087014046196e-17,
+          "4": 1.1323340723711445e-17,
+          "5": 9.938690980430836e-18,
+          "6": 4.6922517800280036e-18,
+          "7": 9.373740922729999e-18,
+          "8": 1.7250611716194027e-18,
+          "9": 1.530158748162744e-17,
+          "10": 2.04244267811301e-18,
+          "11": 4.98898752229069e-18,
+          "12": 2.3501315884486092e-18,
+          "13": 7.198939290036171e-18,
+          "14": 1.065804665009402e-18,
+          "15": 1.2627840714523446e-17,
+          "16": 3.4240002976248174e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.584659438446948,
+          "2": 1.1411517700289874e-17,
+          "3": 2.103363950602972e-17,
+          "4": 9.343416479928882e-18,
+          "5": 1.0795713648497578e-17,
+          "6": 8.217416085401957e-18,
+          "7": 1.5400139935698062e-17,
+          "8": 2.720526340614166e-18,
+          "9": 9.988697624284589e-18,
+          "10": 2.1724705348640774e-18,
+          "11": 9.220285390020623e-19,
+          "12": 6.724879537905043e-18,
+          "13": 2.4044980872816325e-18,
+          "14": 9.063897158489451e-18,
+          "15": 1.5241760054212804e-17,
+          "16": 1.0078582705414639e-17
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": -1.6123340270457476e-05,
+        "u1_phi": 1.5280834375630548e-09,
+        "u1_lambda": 0.0,
+        "controlled_phase": 7.211117976524406e-06,
+        "u0_theta": 0.026364772239635847,
+        "u0_phi": 1.9234303039183942e-10,
+        "u0_lambda": 6.088107382939967e-05
+      },
+      "plot_color": "#7f7f7f"
+    },
+    {
+      "run_id": "20261017T020258526618Z_periodic-function-mse-k2-zero-offset_seed-0045_cbc825e0",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k2-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 45,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        }
+      ],
+      "iterations": 7,
+      "function_evaluations": 72,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.07201056399935624,
+      "initial_train_mse": 0.14720420094170092,
+      "final_train_mse": 0.016317001290239823,
+      "validation_mse": 0.017552910594943544,
+      "test": {
+        "mse": 0.016271892111091528,
+        "rmse": 0.1275613268631662,
+        "r2": 0.9174045887202793
+      },
+      "constant_baseline_test": {
+        "mse": 0.2032802999417505,
+        "rmse": 0.450866166330709,
+        "r2": -0.031841894238542556
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 1.9968722039537117e-32,
+        "rmse": 1.413107286781054e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0004773093376282635,
+      "dense_grid_absolute_error_mae": 0.11428876846636563,
+      "dense_grid_absolute_error_max": 0.19650303490393162,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.18477911653124288,
+      "initial_qft_process_fidelity_diagnostic_only": 0.20703761366933787,
+      "n_components": 2,
+      "run_dir": "results/runs/20261017T020258526618Z_periodic-function-mse-k2-zero-offset_seed-0045_cbc825e0",
+      "initial_parameters": {
+        "u1_theta": 0.45949346923695833,
+        "u1_phi": 0.17901514471813895,
+        "u1_lambda": 1.6565633129578359,
+        "controlled_phase": 1.9584234140289132,
+        "u0_theta": 0.06426979270645461,
+        "u0_phi": 1.7551429253221373,
+        "u0_lambda": 1.8605347638437486
+      },
+      "final_parameters": {
+        "u1_theta": 0.4618384340997315,
+        "u1_phi": 0.17901514484605432,
+        "u1_lambda": 1.6565633129578359,
+        "controlled_phase": 1.961696358931861,
+        "u0_theta": 1.0053772448507838,
+        "u0_phi": 1.75514304374516,
+        "u0_lambda": 1.8216466126484607
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 3.402087014046196e-17,
+          "4": 1.1323340723711445e-17,
+          "5": 9.938690980430836e-18,
+          "6": 4.6922517800280036e-18,
+          "7": 9.373740922729999e-18,
+          "8": 1.7250611716194027e-18,
+          "9": 1.530158748162744e-17,
+          "10": 2.04244267811301e-18,
+          "11": 4.98898752229069e-18,
+          "12": 2.3501315884486092e-18,
+          "13": 7.198939290036171e-18,
+          "14": 1.065804665009402e-18,
+          "15": 1.2627840714523446e-17,
+          "16": 3.4240002976248174e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5846594437981177,
+          "2": 1.74882242619083e-17,
+          "3": 2.1973426578990313e-17,
+          "4": 7.818923255245875e-18,
+          "5": 1.5598342451821528e-17,
+          "6": 4.577232932689768e-18,
+          "7": 4.831212083510673e-18,
+          "8": 6.969478911474739e-18,
+          "9": 9.047656690673496e-18,
+          "10": 9.04453765370964e-18,
+          "11": 4.906632197674461e-18,
+          "12": 4.159892689344222e-18,
+          "13": 7.848626704376768e-18,
+          "14": 4.611511706721919e-18,
+          "15": 1.4468450819842905e-17,
+          "16": 4.251001204761831e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.0023449648627731356,
+        "u1_phi": 1.2791545600521204e-10,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.0032729449029478275,
+        "u0_theta": 0.9411074521443297,
+        "u0_phi": 1.1842302249931436e-07,
+        "u0_lambda": -0.03888815119528788
+      },
+      "plot_color": "#d62728"
+    },
+    {
+      "run_id": "20261017T020302161400Z_periodic-function-mse-k2-zero-offset_seed-0050_cbc825e0",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k2-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 50,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        }
+      ],
+      "iterations": 9,
+      "function_evaluations": 80,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.11140345099556725,
+      "initial_train_mse": 0.20913361757671084,
+      "final_train_mse": 0.016317001290239726,
+      "validation_mse": 0.017552910383795656,
+      "test": {
+        "mse": 0.016271892140792284,
+        "rmse": 0.12756132697958375,
+        "r2": 0.9174045885695195
+      },
+      "constant_baseline_test": {
+        "mse": 0.2032802999417505,
+        "rmse": 0.450866166330709,
+        "r2": -0.031841894238542556
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 1.9968722039537117e-32,
+        "rmse": 1.413107286781054e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.00047730934256375095,
+      "dense_grid_absolute_error_mae": 0.1142887687674764,
+      "dense_grid_absolute_error_max": 0.19650305115704425,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.0008238851901671252,
+      "initial_qft_process_fidelity_diagnostic_only": 0.0009141799603543556,
+      "n_components": 2,
+      "run_dir": "results/runs/20261017T020302161400Z_periodic-function-mse-k2-zero-offset_seed-0050_cbc825e0",
+      "initial_parameters": {
+        "u1_theta": 1.8059300346120386,
+        "u1_phi": 2.096506260511955,
+        "u1_lambda": 0.3009926003778922,
+        "controlled_phase": 2.9747684045650127,
+        "u0_theta": -1.6535235222677882,
+        "u0_phi": 0.9231465915914692,
+        "u0_lambda": -2.7330217992033035
+      },
+      "final_parameters": {
+        "u1_theta": 1.8384893107688416,
+        "u1_phi": 2.0965062513688766,
+        "u1_lambda": 0.3009926003778922,
+        "controlled_phase": 2.9694635285221964,
+        "u0_theta": -1.0053772664337866,
+        "u0_phi": 0.9231465936359914,
+        "u0_lambda": -2.733063546929915
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 3.402087014046196e-17,
+          "4": 1.1323340723711445e-17,
+          "5": 9.938690980430836e-18,
+          "6": 4.6922517800280036e-18,
+          "7": 9.373740922729999e-18,
+          "8": 1.7250611716194027e-18,
+          "9": 1.530158748162744e-17,
+          "10": 2.04244267811301e-18,
+          "11": 4.98898752229069e-18,
+          "12": 2.3501315884486092e-18,
+          "13": 7.198939290036171e-18,
+          "14": 1.065804665009402e-18,
+          "15": 1.2627840714523446e-17,
+          "16": 3.4240002976248174e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5846594293945945,
+          "2": 1.9132863074544295e-17,
+          "3": 2.1540085631668495e-17,
+          "4": 3.938906272391561e-18,
+          "5": 1.23729822131423e-17,
+          "6": 8.71656705117237e-18,
+          "7": 2.2444783950002308e-17,
+          "8": 7.276440029540576e-18,
+          "9": 8.846213348882876e-18,
+          "10": 5.944492437358567e-19,
+          "11": 1.5913508412013463e-17,
+          "12": 2.9179390541389353e-18,
+          "13": 3.575016592955784e-18,
+          "14": 1.5662166697164585e-18,
+          "15": 1.6084025985960866e-17,
+          "16": 1.8243615755061597e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.03255927615680321,
+        "u1_phi": -9.143078294471252e-09,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.0053048760428162645,
+        "u0_theta": 0.6481462558340016,
+        "u0_phi": 2.04452232921426e-09,
+        "u0_lambda": -4.174772661169612e-05
+      },
+      "plot_color": "#bcbd22"
+    },
+    {
+      "run_id": "20261017T020307890659Z_periodic-function-mse-k3-zero-offset_seed-0048_fea99a4e",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k3-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 48,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        }
+      ],
+      "iterations": 8,
+      "function_evaluations": 88,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.13618445100291865,
+      "initial_train_mse": 0.3740195297497788,
+      "final_train_mse": 0.020081083481016643,
+      "validation_mse": 0.02267283845727713,
+      "test": {
+        "mse": 0.02246088469972237,
+        "rmse": 0.14986955894951573,
+        "r2": 0.8904240469252249
+      },
+      "constant_baseline_test": {
+        "mse": 0.20984084994548421,
+        "rmse": 0.4580838896375687,
+        "r2": -0.023713510584981945
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.126123450199506e-31,
+        "rmse": 4.610990620462707e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0006604349791639997,
+      "dense_grid_absolute_error_mae": 0.12348074176563549,
+      "dense_grid_absolute_error_max": 0.30759679062546963,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.014940407861941297,
+      "initial_qft_process_fidelity_diagnostic_only": 0.005913035419745105,
+      "n_components": 3,
+      "run_dir": "results/runs/20261017T020307890659Z_periodic-function-mse-k3-zero-offset_seed-0048_fea99a4e",
+      "initial_parameters": {
+        "u1_theta": -0.7056025124495435,
+        "u1_phi": 0.6017625853696598,
+        "u1_lambda": 0.08671138191442607,
+        "controlled_phase": 1.2220286736246937,
+        "u0_theta": 0.958165337443142,
+        "u0_phi": 2.2815301750714383,
+        "u0_lambda": 0.5645002099909942
+      },
+      "final_parameters": {
+        "u1_theta": -1.2441547747480985,
+        "u1_phi": 0.601762595846379,
+        "u1_lambda": 0.08671138191442607,
+        "controlled_phase": 1.4451176554425582,
+        "u0_theta": 1.0115890322413839,
+        "u0_phi": 2.2815301654942632,
+        "u0_lambda": 1.5208520664922642
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "f1": 0.5,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498952,
+          "4": 2.1726615721703016e-17,
+          "5": 2.08338919985173e-17,
+          "6": 7.086725680473781e-18,
+          "7": 1.617279816428843e-17,
+          "8": 3.84330175122779e-18,
+          "9": 9.78496767727623e-18,
+          "10": 2.5811241320803445e-18,
+          "11": 5.559232478380886e-18,
+          "12": 4.36389433120424e-18,
+          "13": 8.739851310843146e-19,
+          "14": 2.3793742160921822e-18,
+          "15": 1.2134355070255081e-17,
+          "16": 6.278752932072422e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5888200285858735,
+          "2": 1.2071521402265468e-17,
+          "3": 1.4384252415090233e-17,
+          "4": 3.775164639931281e-18,
+          "5": 1.4484313309139786e-17,
+          "6": 1.1221997254987798e-17,
+          "7": 2.150771156746433e-17,
+          "8": 5.012118560248997e-18,
+          "9": 1.662017953664838e-17,
+          "10": 3.874506509634193e-18,
+          "11": 8.022901012097188e-18,
+          "12": 3.1921459581113145e-18,
+          "13": 4.723814336047827e-18,
+          "14": 1.1146679548512369e-17,
+          "15": 8.752974966213486e-18,
+          "16": 2.5032310186760117e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.538552262298555,
+        "u1_phi": 1.0476719047858296e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.22308898181786452,
+        "u0_theta": 0.053423694798241605,
+        "u0_phi": -9.577175053010478e-09,
+        "u0_lambda": 0.9563518565012696
+      },
+      "plot_color": "#e377c2"
+    },
+    {
+      "run_id": "20261017T020308722341Z_periodic-function-mse-k3-zero-offset_seed-0049_fea99a4e",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k3-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 49,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        }
+      ],
+      "iterations": 6,
+      "function_evaluations": 64,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.09971020300145028,
+      "initial_train_mse": 0.020782852175279955,
+      "final_train_mse": 0.020081083481016546,
+      "validation_mse": 0.022672838449222094,
+      "test": {
+        "mse": 0.02246088486028155,
+        "rmse": 0.14986955948517883,
+        "r2": 0.8904240461419332
+      },
+      "constant_baseline_test": {
+        "mse": 0.20984084994548421,
+        "rmse": 0.4580838896375687,
+        "r2": -0.023713510584981945
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.126123450199506e-31,
+        "rmse": 4.610990620462707e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.000660434983947391,
+      "dense_grid_absolute_error_mae": 0.12348074133144321,
+      "dense_grid_absolute_error_max": 0.3075967954247215,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.0013309841097608557,
+      "initial_qft_process_fidelity_diagnostic_only": 0.0014377045308242645,
+      "n_components": 3,
+      "run_dir": "results/runs/20261017T020308722341Z_periodic-function-mse-k3-zero-offset_seed-0049_fea99a4e",
+      "initial_parameters": {
+        "u1_theta": -0.8617125240318573,
+        "u1_phi": 0.5857013194739991,
+        "u1_lambda": -0.6788968406304887,
+        "controlled_phase": 0.7772255342719081,
+        "u0_theta": 0.9790124832449649,
+        "u0_phi": -3.056230167109086,
+        "u0_lambda": 1.7362677989726425
+      },
+      "final_parameters": {
+        "u1_theta": -0.8682562885421792,
+        "u1_phi": 0.585701318850521,
+        "u1_lambda": -0.6788968406304887,
+        "controlled_phase": 0.7799561805958295,
+        "u0_theta": 1.0115890396119247,
+        "u0_phi": -3.05623016853717,
+        "u0_lambda": 1.760788362861319
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "f1": 0.5,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498952,
+          "4": 2.1726615721703016e-17,
+          "5": 2.08338919985173e-17,
+          "6": 7.086725680473781e-18,
+          "7": 1.617279816428843e-17,
+          "8": 3.84330175122779e-18,
+          "9": 9.78496767727623e-18,
+          "10": 2.5811241320803445e-18,
+          "11": 5.559232478380886e-18,
+          "12": 4.36389433120424e-18,
+          "13": 8.739851310843146e-19,
+          "14": 2.3793742160921822e-18,
+          "15": 1.2134355070255081e-17,
+          "16": 6.278752932072422e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5888200262018428,
+          "2": 1.848125757371995e-17,
+          "3": 1.6931445944887562e-17,
+          "4": 1.1950060275896825e-17,
+          "5": 1.3442075411668393e-17,
+          "6": 1.314192269081409e-17,
+          "7": 1.0307275983198551e-17,
+          "8": 5.923051456436248e-18,
+          "9": 1.016385647660417e-17,
+          "10": 1.3237928889492378e-17,
+          "11": 1.1712233720532737e-17,
+          "12": 2.8628901218076043e-18,
+          "13": 5.273759550100258e-18,
+          "14": 5.388789110399752e-18,
+          "15": 2.3413925459934975e-17,
+          "16": 6.702365749089566e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.006543764510321903,
+        "u1_phi": -6.234781579905757e-10,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.002730646323921171,
+        "u0_theta": 0.032576556366959775,
+        "u0_phi": -1.4280843174674374e-09,
+        "u0_lambda": 0.024520563888676516
+      },
+      "plot_color": "#7f7f7f"
+    },
+    {
+      "run_id": "20261017T020310094620Z_periodic-function-mse-k3-zero-offset_seed-0051_fea99a4e",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k3-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 51,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        }
+      ],
+      "iterations": 7,
+      "function_evaluations": 112,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.10857478800608078,
+      "initial_train_mse": 0.98540264194256,
+      "final_train_mse": 0.020081083481016546,
+      "validation_mse": 0.02267283841686285,
+      "test": {
+        "mse": 0.02246088486392043,
+        "rmse": 0.14986955949731898,
+        "r2": 0.8904240461241808
+      },
+      "constant_baseline_test": {
+        "mse": 0.20984084994548421,
+        "rmse": 0.4580838896375687,
+        "r2": -0.023713510584981945
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.126123450199506e-31,
+        "rmse": 4.610990620462707e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0006604349840044807,
+      "dense_grid_absolute_error_mae": 0.12348074147487909,
+      "dense_grid_absolute_error_max": 0.3075967948497459,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.06854500157752048,
+      "initial_qft_process_fidelity_diagnostic_only": 0.07936420216729839,
+      "n_components": 3,
+      "run_dir": "results/runs/20261017T020310094620Z_periodic-function-mse-k3-zero-offset_seed-0051_fea99a4e",
+      "initial_parameters": {
+        "u1_theta": 2.7799400236972422,
+        "u1_phi": -1.2117854178107583,
+        "u1_lambda": -1.5399670335349012,
+        "controlled_phase": -1.7428392082652453,
+        "u0_theta": 1.7982741542662763,
+        "u0_phi": -1.7799758510131818,
+        "u0_lambda": 1.920936276761287
+      },
+      "final_parameters": {
+        "u1_theta": 1.8599025453526543,
+        "u1_phi": -1.2117855077356148,
+        "u1_lambda": -1.5399670335349012,
+        "controlled_phase": -1.1140717546888397,
+        "u0_theta": 1.011589039240975,
+        "u0_phi": -1.7799758179869376,
+        "u0_lambda": 2.6606882608826115
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "f1": 0.5,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498952,
+          "4": 2.1726615721703016e-17,
+          "5": 2.08338919985173e-17,
+          "6": 7.086725680473781e-18,
+          "7": 1.617279816428843e-17,
+          "8": 3.84330175122779e-18,
+          "9": 9.78496767727623e-18,
+          "10": 2.5811241320803445e-18,
+          "11": 5.559232478380886e-18,
+          "12": 4.36389433120424e-18,
+          "13": 8.739851310843146e-19,
+          "14": 2.3793742160921822e-18,
+          "15": 1.2134355070255081e-17,
+          "16": 6.278752932072422e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5888200271254215,
+          "2": 1.520533638624291e-17,
+          "3": 1.3771091681364927e-17,
+          "4": 9.353571917976382e-18,
+          "5": 1.525437672558286e-17,
+          "6": 4.848784772082908e-18,
+          "7": 1.7679267314496487e-17,
+          "8": 4.005723470871992e-18,
+          "9": 7.208105737692156e-18,
+          "10": 8.369806648851402e-18,
+          "11": 1.3678373425198881e-18,
+          "12": 4.121384877948136e-18,
+          "13": 9.396872681248828e-18,
+          "14": 4.927357944643216e-18,
+          "15": 1.7034388692060633e-17,
+          "16": 1.0377533020130231e-17
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.9200374783445877,
+        "u1_phi": -8.992485645009651e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.6287674535764056,
+        "u0_theta": -0.7866851150253016,
+        "u0_phi": 3.302624396184228e-08,
+        "u0_lambda": 0.7397519841213245
+      },
+      "plot_color": "#17becf"
+    },
+    {
+      "run_id": "20261017T020305775253Z_periodic-function-mse-k3-zero-offset_seed-0045_fea99a4e",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k3-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 45,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        }
+      ],
+      "iterations": 7,
+      "function_evaluations": 72,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.05435371500061592,
+      "initial_train_mse": 0.15826576510287182,
+      "final_train_mse": 0.020081083481016546,
+      "validation_mse": 0.022672838482672538,
+      "test": {
+        "mse": 0.022460884865559416,
+        "rmse": 0.14986955950278702,
+        "r2": 0.890424046116185
+      },
+      "constant_baseline_test": {
+        "mse": 0.20984084994548421,
+        "rmse": 0.4580838896375687,
+        "r2": -0.023713510584981945
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.126123450199506e-31,
+        "rmse": 4.610990620462707e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0006604349841584038,
+      "dense_grid_absolute_error_mae": 0.12348074115656532,
+      "dense_grid_absolute_error_max": 0.30759679629891945,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.18560683114126894,
+      "initial_qft_process_fidelity_diagnostic_only": 0.20703761366933787,
+      "n_components": 3,
+      "run_dir": "results/runs/20261017T020305775253Z_periodic-function-mse-k3-zero-offset_seed-0045_fea99a4e",
+      "initial_parameters": {
+        "u1_theta": 0.45949346923695833,
+        "u1_phi": 0.17901514471813895,
+        "u1_lambda": 1.6565633129578359,
+        "controlled_phase": 1.9584234140289132,
+        "u0_theta": 0.06426979270645461,
+        "u0_phi": 1.7551429253221373,
+        "u0_lambda": 1.8605347638437486
+      },
+      "final_parameters": {
+        "u1_theta": 0.4643983128113116,
+        "u1_phi": 0.17901514449879632,
+        "u1_lambda": 1.6565633129578359,
+        "controlled_phase": 1.9604849674912213,
+        "u0_theta": 1.0115890404179255,
+        "u0_phi": 1.7551430336112546,
+        "u0_lambda": 1.8486715097541062
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "f1": 0.5,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498952,
+          "4": 2.1726615721703016e-17,
+          "5": 2.08338919985173e-17,
+          "6": 7.086725680473781e-18,
+          "7": 1.617279816428843e-17,
+          "8": 3.84330175122779e-18,
+          "9": 9.78496767727623e-18,
+          "10": 2.5811241320803445e-18,
+          "11": 5.559232478380886e-18,
+          "12": 4.36389433120424e-18,
+          "13": 8.739851310843146e-19,
+          "14": 2.3793742160921822e-18,
+          "15": 1.2134355070255081e-17,
+          "16": 6.278752932072422e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5888200250991209,
+          "2": 1.3881144420303037e-17,
+          "3": 1.519287994504437e-17,
+          "4": 7.277018859464939e-18,
+          "5": 6.042226405228467e-18,
+          "6": 8.76872736447496e-18,
+          "7": 7.94246915485416e-18,
+          "8": 6.389305470254311e-18,
+          "9": 1.2482387900237461e-17,
+          "10": 1.0892498995397966e-17,
+          "11": 1.0300049105098727e-17,
+          "12": 5.428601464902028e-18,
+          "13": 6.224721459306521e-18,
+          "14": 5.829336845849035e-18,
+          "15": 2.2444761482242278e-18,
+          "16": 5.5784325411742466e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.004904843574353279,
+        "u1_phi": -2.1934276617230353e-10,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.0020615534623082965,
+        "u0_theta": 0.9473192477114711,
+        "u0_phi": 1.082891172288214e-07,
+        "u0_lambda": -0.011863254089642616
+      },
+      "plot_color": "#d62728"
+    },
+    {
+      "run_id": "20261017T020304362381Z_periodic-function-mse-k3-zero-offset_seed-0043_fea99a4e",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k3-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 43,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        }
+      ],
+      "iterations": 7,
+      "function_evaluations": 80,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.08020652499544667,
+      "initial_train_mse": 0.08541180245774257,
+      "final_train_mse": 0.02008108348101655,
+      "validation_mse": 0.022672838487732452,
+      "test": {
+        "mse": 0.022460884897380913,
+        "rmse": 0.149869559608951,
+        "r2": 0.890424045960943
+      },
+      "constant_baseline_test": {
+        "mse": 0.20984084994548421,
+        "rmse": 0.4580838896375687,
+        "r2": -0.023713510584981945
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.126123450199506e-31,
+        "rmse": 4.610990620462707e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0006604349851170489,
+      "dense_grid_absolute_error_mae": 0.12348074103880394,
+      "dense_grid_absolute_error_max": 0.30759679739153645,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.016315287527670697,
+      "initial_qft_process_fidelity_diagnostic_only": 0.010632960674679542,
+      "n_components": 3,
+      "run_dir": "results/runs/20261017T020304362381Z_periodic-function-mse-k3-zero-offset_seed-0043_fea99a4e",
+      "initial_parameters": {
+        "u1_theta": 0.9569244896966458,
+        "u1_phi": -2.8665441832842182,
+        "u1_lambda": -3.015743047632837,
+        "controlled_phase": 2.131335514443747,
+        "u0_theta": 0.5475359162281404,
+        "u0_phi": -1.7297280527279735,
+        "u0_lambda": 1.582057502752094
+      },
+      "final_parameters": {
+        "u1_theta": 1.0266307694623689,
+        "u1_phi": -2.8665441830473113,
+        "u1_lambda": -3.015743047632837,
+        "controlled_phase": 2.105598954127495,
+        "u0_theta": 1.011589041989999,
+        "u0_phi": -1.7297280442829637,
+        "u0_lambda": 1.7227923836055052
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "f1": 0.5,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498952,
+          "4": 2.1726615721703016e-17,
+          "5": 2.08338919985173e-17,
+          "6": 7.086725680473781e-18,
+          "7": 1.617279816428843e-17,
+          "8": 3.84330175122779e-18,
+          "9": 9.78496767727623e-18,
+          "10": 2.5811241320803445e-18,
+          "11": 5.559232478380886e-18,
+          "12": 4.36389433120424e-18,
+          "13": 8.739851310843146e-19,
+          "14": 2.3793742160921822e-18,
+          "15": 1.2134355070255081e-17,
+          "16": 6.278752932072422e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5888200244243892,
+          "2": 1.6366909712317043e-17,
+          "3": 1.5405322646597188e-17,
+          "4": 6.368165840893341e-18,
+          "5": 2.0237218115429356e-17,
+          "6": 8.510910000682358e-18,
+          "7": 1.8450126814327896e-17,
+          "8": 7.662887178966263e-18,
+          "9": 9.411896522774582e-18,
+          "10": 8.496142573427368e-18,
+          "11": 9.798258910403418e-18,
+          "12": 4.563252316104937e-18,
+          "13": 6.038248328770578e-18,
+          "14": 5.166347523529008e-18,
+          "15": 9.574163567808599e-18,
+          "16": 7.840101004194692e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.06970627976572308,
+        "u1_phi": 2.3690693851108335e-10,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.025736560316252266,
+        "u0_theta": 0.46405312576185853,
+        "u0_phi": 8.44501002461584e-09,
+        "u0_lambda": 0.14073488085341124
+      },
+      "plot_color": "#ff7f0e"
+    },
+    {
+      "run_id": "20261017T020306500272Z_periodic-function-mse-k3-zero-offset_seed-0046_fea99a4e",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k3-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 46,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        }
+      ],
+      "iterations": 9,
+      "function_evaluations": 96,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.15713341000082437,
+      "initial_train_mse": 1.1093391484972757,
+      "final_train_mse": 0.020081083481016566,
+      "validation_mse": 0.022672838280802254,
+      "test": {
+        "mse": 0.02246088491318908,
+        "rmse": 0.14986955966169074,
+        "r2": 0.8904240458838226
+      },
+      "constant_baseline_test": {
+        "mse": 0.20984084994548421,
+        "rmse": 0.4580838896375687,
+        "r2": -0.023713510584981945
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.126123450199506e-31,
+        "rmse": 4.610990620462707e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0006604349852592283,
+      "dense_grid_absolute_error_mae": 0.12348074197800635,
+      "dense_grid_absolute_error_max": 0.3075967934837036,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.0034399062170149004,
+      "initial_qft_process_fidelity_diagnostic_only": 0.033182246779634494,
+      "n_components": 3,
+      "run_dir": "results/runs/20261017T020306500272Z_periodic-function-mse-k3-zero-offset_seed-0046_fea99a4e",
+      "initial_parameters": {
+        "u1_theta": 2.5484868318297726,
+        "u1_phi": -2.656362401161172,
+        "u1_lambda": -1.4289863680202823,
+        "controlled_phase": 0.7656091597216501,
+        "u0_theta": 2.727080917862276,
+        "u0_phi": -2.6078562500039575,
+        "u0_lambda": 0.811974571555377
+      },
+      "final_parameters": {
+        "u1_theta": 2.563700812316479,
+        "u1_phi": -2.6563622604286086,
+        "u1_lambda": -1.4289863680202823,
+        "controlled_phase": 0.9496863656666589,
+        "u0_theta": 1.0115890392690663,
+        "u0_phi": -2.607856328184139,
+        "u0_lambda": 1.00584573508587
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "f1": 0.5,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498952,
+          "4": 2.1726615721703016e-17,
+          "5": 2.08338919985173e-17,
+          "6": 7.086725680473781e-18,
+          "7": 1.617279816428843e-17,
+          "8": 3.84330175122779e-18,
+          "9": 9.78496767727623e-18,
+          "10": 2.5811241320803445e-18,
+          "11": 5.559232478380886e-18,
+          "12": 4.36389433120424e-18,
+          "13": 8.739851310843146e-19,
+          "14": 2.3793742160921822e-18,
+          "15": 1.2134355070255081e-17,
+          "16": 6.278752932072422e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5888200304526393,
+          "2": 1.2841597592369888e-17,
+          "3": 2.1202214594022127e-17,
+          "4": 8.745966285080675e-18,
+          "5": 1.0336935870660076e-17,
+          "6": 6.651835625918595e-18,
+          "7": 8.26928825321753e-18,
+          "8": 6.177408829769025e-18,
+          "9": 1.1817599206262348e-17,
+          "10": 6.744101021009053e-18,
+          "11": 1.722938470630775e-18,
+          "12": 6.451369301306512e-18,
+          "13": 1.2218768174292956e-17,
+          "14": 3.49645484692685e-18,
+          "15": 5.055292458744717e-18,
+          "16": 1.431501708154423e-17
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.015213980486706191,
+        "u1_phi": 1.407325633806522e-07,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.18407720594500887,
+        "u0_theta": -1.7154918785932096,
+        "u0_phi": -7.818018143979089e-08,
+        "u0_lambda": 0.19387116353049283
+      },
+      "plot_color": "#9467bd"
+    },
+    {
+      "run_id": "20261017T020307232297Z_periodic-function-mse-k3-zero-offset_seed-0047_fea99a4e",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k3-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 47,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        }
+      ],
+      "iterations": 9,
+      "function_evaluations": 104,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.1286031239942531,
+      "initial_train_mse": 1.1836942847823415,
+      "final_train_mse": 0.020081083481016535,
+      "validation_mse": 0.02267283848883349,
+      "test": {
+        "mse": 0.02246088494144853,
+        "rmse": 0.14986955975597088,
+        "r2": 0.8904240457459581
+      },
+      "constant_baseline_test": {
+        "mse": 0.20984084994548421,
+        "rmse": 0.4580838896375687,
+        "r2": -0.023713510584981945
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.126123450199506e-31,
+        "rmse": 4.610990620462707e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0006604349864351968,
+      "dense_grid_absolute_error_mae": 0.12348074090385794,
+      "dense_grid_absolute_error_max": 0.3075967987791298,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.0016542968757463673,
+      "initial_qft_process_fidelity_diagnostic_only": 0.0018887892252928541,
+      "n_components": 3,
+      "run_dir": "results/runs/20261017T020307232297Z_periodic-function-mse-k3-zero-offset_seed-0047_fea99a4e",
+      "initial_parameters": {
+        "u1_theta": 1.519286739984854,
+        "u1_phi": 1.5938481846155454,
+        "u1_lambda": -0.2187771306004107,
+        "controlled_phase": -2.489869071319391,
+        "u0_theta": 2.9333166834546605,
+        "u0_phi": -1.1262589501679572,
+        "u0_lambda": -1.8828723944096823
+      },
+      "final_parameters": {
+        "u1_theta": 1.5145041295083745,
+        "u1_phi": 1.5938482839304466,
+        "u1_lambda": -0.2187771306004107,
+        "controlled_phase": -2.5288730646294764,
+        "u0_theta": 1.0115890440683155,
+        "u0_phi": -1.1262590593809398,
+        "u0_lambda": -1.873169332065905
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "f1": 0.5,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498952,
+          "4": 2.1726615721703016e-17,
+          "5": 2.08338919985173e-17,
+          "6": 7.086725680473781e-18,
+          "7": 1.617279816428843e-17,
+          "8": 3.84330175122779e-18,
+          "9": 9.78496767727623e-18,
+          "10": 2.5811241320803445e-18,
+          "11": 5.559232478380886e-18,
+          "12": 4.36389433120424e-18,
+          "13": 8.739851310843146e-19,
+          "14": 2.3793742160921822e-18,
+          "15": 1.2134355070255081e-17,
+          "16": 6.278752932072422e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5888200236694385,
+          "2": 1.8027187125556252e-17,
+          "3": 2.3494251739236742e-17,
+          "4": 1.0067225898972022e-17,
+          "5": 1.5885807600336597e-17,
+          "6": 6.798348495088621e-18,
+          "7": 9.734279524513447e-18,
+          "8": 3.2388453591394034e-18,
+          "9": 1.1509569636902056e-17,
+          "10": 7.000249410767035e-18,
+          "11": 1.0784158941082111e-18,
+          "12": 3.0202582904451035e-18,
+          "13": 6.178904692103547e-18,
+          "14": 6.785415661041076e-18,
+          "15": 1.4605127687387305e-17,
+          "16": 3.824273445531596e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.004782610476479654,
+        "u1_phi": 9.931490119186037e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.039003993310085416,
+        "u0_theta": -1.921727639386345,
+        "u0_phi": -1.0921298265742507e-07,
+        "u0_lambda": 0.009703062343777269
+      },
+      "plot_color": "#8c564b"
+    },
+    {
+      "run_id": "20261017T020303658643Z_periodic-function-mse-k3-zero-offset_seed-0042_fea99a4e",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k3-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 42,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        }
+      ],
+      "iterations": 11,
+      "function_evaluations": 144,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "elapsed_seconds": 0.14599155099858763,
+      "initial_train_mse": 1.1166241694341132,
+      "final_train_mse": 0.02008108348101683,
+      "validation_mse": 0.022672837918489265,
+      "test": {
+        "mse": 0.022460884964982903,
+        "rmse": 0.14986955983448708,
+        "r2": 0.8904240456311452
+      },
+      "constant_baseline_test": {
+        "mse": 0.20984084994548421,
+        "rmse": 0.4580838896375687,
+        "r2": -0.023713510584981945
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.126123450199506e-31,
+        "rmse": 4.610990620462707e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0006604349862285462,
+      "dense_grid_absolute_error_mae": 0.12348074355147545,
+      "dense_grid_absolute_error_max": 0.3075967873880261,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.549678744079009,
+      "initial_qft_process_fidelity_diagnostic_only": 0.2993071074832549,
+      "n_components": 3,
+      "run_dir": "results/runs/20261017T020303658643Z_periodic-function-mse-k3-zero-offset_seed-0042_fea99a4e",
+      "initial_parameters": {
+        "u1_theta": 1.721316619099806,
+        "u1_phi": -0.38403808930179695,
+        "u1_lambda": 2.2531371815723604,
+        "controlled_phase": 1.2400999002927886,
+        "u0_theta": -2.5498589250729733,
+        "u0_phi": 2.988423371570267,
+        "u0_lambda": 1.6407891386670412
+      },
+      "final_parameters": {
+        "u1_theta": 1.1606154889339337,
+        "u1_phi": -0.38403809952277523,
+        "u1_lambda": 2.2531371815723604,
+        "controlled_phase": 1.1440068872895262,
+        "u0_theta": -1.0115890356322403,
+        "u0_phi": 2.988423321139041,
+        "u0_lambda": 0.8955441795764485
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "f1": 0.5,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498952,
+          "4": 2.1726615721703016e-17,
+          "5": 2.08338919985173e-17,
+          "6": 7.086725680473781e-18,
+          "7": 1.617279816428843e-17,
+          "8": 3.84330175122779e-18,
+          "9": 9.78496767727623e-18,
+          "10": 2.5811241320803445e-18,
+          "11": 5.559232478380886e-18,
+          "12": 4.36389433120424e-18,
+          "13": 8.739851310843146e-19,
+          "14": 2.3793742160921822e-18,
+          "15": 1.2134355070255081e-17,
+          "16": 6.278752932072422e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5888200406126515,
+          "2": 2.1126644443546408e-17,
+          "3": 1.9477638842598805e-17,
+          "4": 5.4236382210978255e-18,
+          "5": 9.272802749979319e-18,
+          "6": 9.094569526766195e-18,
+          "7": 1.651877006214235e-17,
+          "8": 3.3489460031559003e-18,
+          "9": 1.5460812202604524e-17,
+          "10": 8.115425527690867e-18,
+          "11": 9.656461526599968e-18,
+          "12": 4.905944397673342e-18,
+          "13": 8.189296315976675e-18,
+          "14": 8.976551994052235e-18,
+          "15": 1.784953820619435e-17,
+          "16": 1.0248158489767085e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.5607011301658722,
+        "u1_phi": -1.0220978285957472e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.09609301300326223,
+        "u0_theta": 1.5382698894407332,
+        "u0_phi": -5.043122586201321e-08,
+        "u0_lambda": -0.7452449590905927
+      },
+      "plot_color": "#1f77b4"
+    },
+    {
+      "run_id": "20261017T020305024413Z_periodic-function-mse-k3-zero-offset_seed-0044_fea99a4e",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k3-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 44,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        }
+      ],
+      "iterations": 7,
+      "function_evaluations": 64,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.0836073500031489,
+      "initial_train_mse": 0.5961464293496934,
+      "final_train_mse": 0.020081083481016573,
+      "validation_mse": 0.02267283845757188,
+      "test": {
+        "mse": 0.022460885089462604,
+        "rmse": 0.14986956024978054,
+        "r2": 0.8904240450238681
+      },
+      "constant_baseline_test": {
+        "mse": 0.20984084994548421,
+        "rmse": 0.4580838896375687,
+        "r2": -0.023713510584981945
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.126123450199506e-31,
+        "rmse": 4.610990620462707e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.000660434990806826,
+      "dense_grid_absolute_error_mae": 0.12348074061713621,
+      "dense_grid_absolute_error_max": 0.30759680269688494,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.05745003841806247,
+      "initial_qft_process_fidelity_diagnostic_only": 0.04906630204776559,
+      "n_components": 3,
+      "run_dir": "results/runs/20261017T020305024413Z_periodic-function-mse-k3-zero-offset_seed-0044_fea99a4e",
+      "initial_parameters": {
+        "u1_theta": -2.3714908440399456,
+        "u1_phi": -1.5198203745865597,
+        "u1_lambda": -0.5920599784604952,
+        "controlled_phase": 2.947969689345541,
+        "u0_theta": -2.1217240800334842,
+        "u0_phi": 2.2449423600401266,
+        "u0_lambda": -2.1171490019909616
+      },
+      "final_parameters": {
+        "u1_theta": -2.2782667800453966,
+        "u1_phi": -1.5198203518394395,
+        "u1_lambda": -0.5920599784604952,
+        "controlled_phase": 3.097408775328488,
+        "u0_theta": -1.011589050464423,
+        "u0_phi": 2.244942361545226,
+        "u0_lambda": -1.9967274188935407
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "f1": 0.5,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498952,
+          "4": 2.1726615721703016e-17,
+          "5": 2.08338919985173e-17,
+          "6": 7.086725680473781e-18,
+          "7": 1.617279816428843e-17,
+          "8": 3.84330175122779e-18,
+          "9": 9.78496767727623e-18,
+          "10": 2.5811241320803445e-18,
+          "11": 5.559232478380886e-18,
+          "12": 4.36389433120424e-18,
+          "13": 8.739851310843146e-19,
+          "14": 2.3793742160921822e-18,
+          "15": 1.2134355070255081e-17,
+          "16": 6.278752932072422e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5888200221958839,
+          "2": 2.3864610258271384e-17,
+          "3": 1.5953253903977404e-17,
+          "4": 6.355532092660937e-18,
+          "5": 6.96668593619581e-18,
+          "6": 5.126834076080972e-18,
+          "7": 1.9345869823049264e-17,
+          "8": 1.2384970823219348e-17,
+          "9": 1.0485680427159303e-17,
+          "10": 3.101194734865262e-18,
+          "11": 6.526300798514715e-18,
+          "12": 1.9640716089045705e-18,
+          "13": 1.2862559381959728e-17,
+          "14": 6.219267978608861e-18,
+          "15": 8.780832444111672e-18,
+          "16": 6.0409246018059345e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.09322406399454897,
+        "u1_phi": 2.2747120187460723e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.14943908598294664,
+        "u0_theta": 1.1101350295690615,
+        "u0_phi": 1.5050996005072648e-09,
+        "u0_lambda": 0.1204215830974209
+      },
+      "plot_color": "#2ca02c"
+    },
+    {
+      "run_id": "20261017T020309381446Z_periodic-function-mse-k3-zero-offset_seed-0050_fea99a4e",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k3-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 50,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        }
+      ],
+      "iterations": 8,
+      "function_evaluations": 72,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "elapsed_seconds": 0.10701286800031085,
+      "initial_train_mse": 0.20954512157891958,
+      "final_train_mse": 0.020081083481016723,
+      "validation_mse": 0.022672838934594767,
+      "test": {
+        "mse": 0.02246088526816547,
+        "rmse": 0.14986956084597522,
+        "r2": 0.8904240441520619
+      },
+      "constant_baseline_test": {
+        "mse": 0.20984084994548421,
+        "rmse": 0.4580838896375687,
+        "r2": -0.023713510584981945
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.126123450199506e-31,
+        "rmse": 4.610990620462707e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0006604349969058823,
+      "dense_grid_absolute_error_mae": 0.12348073781883573,
+      "dense_grid_absolute_error_max": 0.3075968183655521,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.0008363818397684415,
+      "initial_qft_process_fidelity_diagnostic_only": 0.0009141799603543556,
+      "n_components": 3,
+      "run_dir": "results/runs/20261017T020309381446Z_periodic-function-mse-k3-zero-offset_seed-0050_fea99a4e",
+      "initial_parameters": {
+        "u1_theta": 1.8059300346120386,
+        "u1_phi": 2.096506260511955,
+        "u1_lambda": 0.3009926003778922,
+        "controlled_phase": 2.9747684045650127,
+        "u0_theta": -1.6535235222677882,
+        "u0_phi": 0.9231465915914692,
+        "u0_lambda": -2.7330217992033035
+      },
+      "final_parameters": {
+        "u1_theta": 1.864430143901475,
+        "u1_phi": 2.09650625351104,
+        "u1_lambda": 0.3009926003778922,
+        "controlled_phase": 2.965229518111687,
+        "u0_theta": -1.0115890667935603,
+        "u0_phi": 0.9231465936988374,
+        "u0_lambda": -2.7332181837511675
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "f1": 0.5,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498952,
+          "4": 2.1726615721703016e-17,
+          "5": 2.08338919985173e-17,
+          "6": 7.086725680473781e-18,
+          "7": 1.617279816428843e-17,
+          "8": 3.84330175122779e-18,
+          "9": 9.78496767727623e-18,
+          "10": 2.5811241320803445e-18,
+          "11": 5.559232478380886e-18,
+          "12": 4.36389433120424e-18,
+          "13": 8.739851310843146e-19,
+          "14": 2.3793742160921822e-18,
+          "15": 1.2134355070255081e-17,
+          "16": 6.278752932072422e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5888200047768994,
+          "2": 1.542869219478104e-17,
+          "3": 2.7546392137288358e-17,
+          "4": 1.1718032145711886e-17,
+          "5": 5.173754872255711e-18,
+          "6": 1.0245544227198065e-17,
+          "7": 1.539606240589907e-17,
+          "8": 1.6436292224870845e-18,
+          "9": 3.3036911667826937e-18,
+          "10": 1.0475435384757504e-17,
+          "11": 7.589671468473698e-18,
+          "12": 1.5494904977227954e-18,
+          "13": 6.232562609198029e-18,
+          "14": 8.649913403485176e-18,
+          "15": 1.1623116606800698e-17,
+          "16": 8.085953209422195e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.05850010928943661,
+        "u1_phi": -7.000914958865678e-09,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.009538886453325901,
+        "u0_theta": 0.6419344554742281,
+        "u0_phi": 2.1073685019246113e-09,
+        "u0_lambda": -0.00019638454786408133
+      },
+      "plot_color": "#bcbd22"
+    },
+    {
+      "run_id": "20261017T020315316620Z_periodic-function-mse-k4-zero-offset_seed-0048_c5f42dc8",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k4-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 48,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        },
+        {
+          "frequency": 4,
+          "cosine": 0.07,
+          "sine": 0.035
+        }
+      ],
+      "iterations": 8,
+      "function_evaluations": 88,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.07260428300651256,
+      "initial_train_mse": 0.3797116630971138,
+      "final_train_mse": 0.021412565272450883,
+      "validation_mse": 0.025840599751922155,
+      "test": {
+        "mse": 0.026596856939535507,
+        "rmse": 0.16308542834826018,
+        "r2": 0.8710980178526478
+      },
+      "constant_baseline_test": {
+        "mse": 0.21216209706550593,
+        "rmse": 0.46061056985864524,
+        "r2": -0.028246116090146156
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.8845849053330533e-31,
+        "rmse": 5.370833180553137e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0007499733999099159,
+      "dense_grid_absolute_error_mae": 0.1270149704894014,
+      "dense_grid_absolute_error_max": 0.3800059468714123,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.015131675740850276,
+      "initial_qft_process_fidelity_diagnostic_only": 0.005913035419745105,
+      "n_components": 4,
+      "run_dir": "results/runs/20261017T020315316620Z_periodic-function-mse-k4-zero-offset_seed-0048_c5f42dc8",
+      "initial_parameters": {
+        "u1_theta": -0.7056025124495435,
+        "u1_phi": 0.6017625853696598,
+        "u1_lambda": 0.08671138191442607,
+        "controlled_phase": 1.2220286736246937,
+        "u0_theta": 0.958165337443142,
+        "u0_phi": 2.2815301750714383,
+        "u0_lambda": 0.5645002099909942
+      },
+      "final_parameters": {
+        "u1_theta": -1.2478387102517656,
+        "u1_phi": 0.6017625850493362,
+        "u1_lambda": 0.08671138191442607,
+        "controlled_phase": 1.4479898833779583,
+        "u0_theta": 1.007444030087612,
+        "u0_phi": 2.281530177311534,
+        "u0_lambda": 1.5281052684894778
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498951,
+          "4": 0.07826237921249267,
+          "5": 3.111669413838609e-17,
+          "6": 1.0782582689195332e-17,
+          "7": 1.9716710816326602e-17,
+          "8": 6.698493011886988e-18,
+          "9": 1.1635421212890542e-17,
+          "10": 2.525458054938055e-18,
+          "11": 8.020732245388063e-18,
+          "12": 4.685641790835123e-18,
+          "13": 4.924865114041699e-18,
+          "14": 3.888524730395962e-18,
+          "15": 1.488532939329537e-17,
+          "16": 8.37948952971858e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5943307453618442,
+          "2": 1.8971444078878298e-17,
+          "3": 1.094907410805976e-17,
+          "4": 4.638551741732016e-18,
+          "5": 1.2195993676617131e-17,
+          "6": 4.586440216624788e-18,
+          "7": 1.5278113148300393e-17,
+          "8": 6.045902839282704e-18,
+          "9": 7.311573920145898e-18,
+          "10": 2.467321841464093e-18,
+          "11": 2.1095171787507936e-18,
+          "12": 2.189867093656658e-18,
+          "13": 8.67768981839133e-18,
+          "14": 1.360566269021189e-18,
+          "15": 8.564685983731475e-18,
+          "16": 9.324777449769512e-19
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.5422361978022221,
+        "u1_phi": -3.2032332342168957e-10,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.2259612097532644,
+        "u0_theta": 0.049278692644469935,
+        "u0_phi": 2.240095664518549e-09,
+        "u0_lambda": 0.9636050584984837
+      },
+      "plot_color": "#e377c2"
+    },
+    {
+      "run_id": "20261017T020311658166Z_periodic-function-mse-k4-zero-offset_seed-0043_c5f42dc8",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k4-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 43,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        },
+        {
+          "frequency": 4,
+          "cosine": 0.07,
+          "sine": 0.035
+        }
+      ],
+      "iterations": 6,
+      "function_evaluations": 72,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.0625208819983527,
+      "initial_train_mse": 0.0864723758921241,
+      "final_train_mse": 0.021412565272450865,
+      "validation_mse": 0.025840599472144538,
+      "test": {
+        "mse": 0.026596857034717036,
+        "rmse": 0.16308542864007514,
+        "r2": 0.8710980173913494
+      },
+      "constant_baseline_test": {
+        "mse": 0.21216209706550593,
+        "rmse": 0.46061056985864524,
+        "r2": -0.028246116090146156
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.8845849053330533e-31,
+        "rmse": 5.370833180553137e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0007499734004579044,
+      "dense_grid_absolute_error_mae": 0.12701497372507609,
+      "dense_grid_absolute_error_max": 0.38000593737848853,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.016300834192252752,
+      "initial_qft_process_fidelity_diagnostic_only": 0.010632960674679542,
+      "n_components": 4,
+      "run_dir": "results/runs/20261017T020311658166Z_periodic-function-mse-k4-zero-offset_seed-0043_c5f42dc8",
+      "initial_parameters": {
+        "u1_theta": 0.9569244896966458,
+        "u1_phi": -2.8665441832842182,
+        "u1_lambda": -3.015743047632837,
+        "controlled_phase": 2.131335514443747,
+        "u0_theta": 0.5475359162281404,
+        "u0_phi": -1.7297280527279735,
+        "u0_lambda": 1.582057502752094
+      },
+      "final_parameters": {
+        "u1_theta": 1.0310539180699145,
+        "u1_phi": -2.866544181968013,
+        "u1_lambda": -3.015743047632837,
+        "controlled_phase": 2.103416856579846,
+        "u0_theta": 1.0074440210871451,
+        "u0_phi": -1.7297280472175443,
+        "u0_lambda": 1.7323204660784688
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498951,
+          "4": 0.07826237921249267,
+          "5": 3.111669413838609e-17,
+          "6": 1.0782582689195332e-17,
+          "7": 1.9716710816326602e-17,
+          "8": 6.698493011886988e-18,
+          "9": 1.1635421212890542e-17,
+          "10": 2.525458054938055e-18,
+          "11": 8.020732245388063e-18,
+          "12": 4.685641790835123e-18,
+          "13": 4.924865114041699e-18,
+          "14": 3.888524730395962e-18,
+          "15": 1.488532939329537e-17,
+          "16": 8.37948952971858e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5943307578658236,
+          "2": 1.5016160449522344e-17,
+          "3": 1.98318733746787e-17,
+          "4": 3.5726789630751965e-18,
+          "5": 3.2129650007540677e-18,
+          "6": 1.6908644656891623e-18,
+          "7": 1.8220024238962134e-17,
+          "8": 6.159755777499846e-18,
+          "9": 1.6333955672549615e-17,
+          "10": 7.79659267400355e-18,
+          "11": 6.201969301148475e-18,
+          "12": 5.2989161513810344e-18,
+          "13": 1.3801273878359939e-17,
+          "14": 1.379271225047216e-17,
+          "15": 1.2439859171325504e-17,
+          "16": 1.9593857579318606e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.07412942837326852,
+        "u1_phi": 1.316205366919121e-09,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.02791865786390124,
+        "u0_theta": 0.4599081048590046,
+        "u0_phi": 5.510429446076159e-09,
+        "u0_lambda": 0.1502629633263748
+      },
+      "plot_color": "#ff7f0e"
+    },
+    {
+      "run_id": "20261017T020313055836Z_periodic-function-mse-k4-zero-offset_seed-0045_c5f42dc8",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k4-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 45,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        },
+        {
+          "frequency": 4,
+          "cosine": 0.07,
+          "sine": 0.035
+        }
+      ],
+      "iterations": 7,
+      "function_evaluations": 72,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.07588305800163653,
+      "initial_train_mse": 0.1592335719791153,
+      "final_train_mse": 0.021412565272450806,
+      "validation_mse": 0.025840599615493596,
+      "test": {
+        "mse": 0.026596857059562398,
+        "rmse": 0.16308542871624798,
+        "r2": 0.8710980172709362
+      },
+      "constant_baseline_test": {
+        "mse": 0.21216209706550593,
+        "rmse": 0.46061056985864524,
+        "r2": -0.028246116090146156
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.8845849053330533e-31,
+        "rmse": 5.370833180553137e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0007499734026807851,
+      "dense_grid_absolute_error_mae": 0.12701497231398146,
+      "dense_grid_absolute_error_max": 0.3800059450669123,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.18623515566808135,
+      "initial_qft_process_fidelity_diagnostic_only": 0.20703761366933787,
+      "n_components": 4,
+      "run_dir": "results/runs/20261017T020313055836Z_periodic-function-mse-k4-zero-offset_seed-0045_c5f42dc8",
+      "initial_parameters": {
+        "u1_theta": 0.45949346923695833,
+        "u1_phi": 0.17901514471813895,
+        "u1_lambda": 1.6565633129578359,
+        "controlled_phase": 1.9584234140289132,
+        "u0_theta": 0.06426979270645461,
+        "u0_phi": 1.7551429253221373,
+        "u0_lambda": 1.8605347638437486
+      },
+      "final_parameters": {
+        "u1_theta": 0.4649123835842399,
+        "u1_phi": 0.17901514471813895,
+        "u1_lambda": 1.6565633129578359,
+        "controlled_phase": 1.9600651873693062,
+        "u0_theta": 1.0074440296205556,
+        "u0_phi": 1.7551430047898986,
+        "u0_lambda": 1.8567628091144839
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498951,
+          "4": 0.07826237921249267,
+          "5": 3.111669413838609e-17,
+          "6": 1.0782582689195332e-17,
+          "7": 1.9716710816326602e-17,
+          "8": 6.698493011886988e-18,
+          "9": 1.1635421212890542e-17,
+          "10": 2.525458054938055e-18,
+          "11": 8.020732245388063e-18,
+          "12": 4.685641790835123e-18,
+          "13": 4.924865114041699e-18,
+          "14": 3.888524730395962e-18,
+          "15": 1.488532939329537e-17,
+          "16": 8.37948952971858e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5943307497791429,
+          "2": 1.6461173971366833e-17,
+          "3": 1.835899242667492e-17,
+          "4": 1.2725529786351215e-17,
+          "5": 1.4519696522092565e-17,
+          "6": 3.623395926073388e-18,
+          "7": 1.0218116897261631e-17,
+          "8": 5.992675935244184e-18,
+          "9": 2.1943171539558302e-17,
+          "10": 8.441183565910002e-18,
+          "11": 1.0631957468937778e-17,
+          "12": 3.626923158593415e-18,
+          "13": 9.592791394453111e-18,
+          "14": 6.8217035474464215e-18,
+          "15": 1.7393107514711937e-17,
+          "16": 8.671444526178736e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.005418914347281589,
+        "u1_phi": 0.0,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.001641773340392838,
+        "u0_theta": 0.9431742369141007,
+        "u0_phi": 7.946776126033228e-08,
+        "u0_lambda": -0.003771954729264948
+      },
+      "plot_color": "#d62728"
+    },
+    {
+      "run_id": "20261017T020313697840Z_periodic-function-mse-k4-zero-offset_seed-0046_c5f42dc8",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k4-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 46,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        },
+        {
+          "frequency": 4,
+          "cosine": 0.07,
+          "sine": 0.035
+        }
+      ],
+      "iterations": 10,
+      "function_evaluations": 104,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.14922822600055952,
+      "initial_train_mse": 1.117238351938716,
+      "final_train_mse": 0.021412565272450803,
+      "validation_mse": 0.02584059965827875,
+      "test": {
+        "mse": 0.026596857061619406,
+        "rmse": 0.1630854287225545,
+        "r2": 0.8710980172609668
+      },
+      "constant_baseline_test": {
+        "mse": 0.21216209706550593,
+        "rmse": 0.46061056985864524,
+        "r2": -0.028246116090146156
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.8845849053330533e-31,
+        "rmse": 5.370833180553137e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0007499734031619958,
+      "dense_grid_absolute_error_mae": 0.12701497187485178,
+      "dense_grid_absolute_error_max": 0.3800059471560546,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.003452239589800258,
+      "initial_qft_process_fidelity_diagnostic_only": 0.033182246779634494,
+      "n_components": 4,
+      "run_dir": "results/runs/20261017T020313697840Z_periodic-function-mse-k4-zero-offset_seed-0046_c5f42dc8",
+      "initial_parameters": {
+        "u1_theta": 2.5484868318297726,
+        "u1_phi": -2.656362401161172,
+        "u1_lambda": -1.4289863680202823,
+        "controlled_phase": 0.7656091597216501,
+        "u0_theta": 2.727080917862276,
+        "u0_phi": -2.6078562500039575,
+        "u0_lambda": 0.811974571555377
+      },
+      "final_parameters": {
+        "u1_theta": 2.563798757826744,
+        "u1_phi": -2.6563624015491776,
+        "u1_lambda": -1.4289863680202823,
+        "controlled_phase": 0.9536380269222904,
+        "u0_theta": 1.007444031882023,
+        "u0_phi": -2.607856395884313,
+        "u0_lambda": 1.0099600361801004
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498951,
+          "4": 0.07826237921249267,
+          "5": 3.111669413838609e-17,
+          "6": 1.0782582689195332e-17,
+          "7": 1.9716710816326602e-17,
+          "8": 6.698493011886988e-18,
+          "9": 1.1635421212890542e-17,
+          "10": 2.525458054938055e-18,
+          "11": 8.020732245388063e-18,
+          "12": 4.685641790835123e-18,
+          "13": 4.924865114041699e-18,
+          "14": 3.888524730395962e-18,
+          "15": 1.488532939329537e-17,
+          "16": 8.37948952971858e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5943307474878204,
+          "2": 8.32903104838549e-18,
+          "3": 2.3580977526475622e-17,
+          "4": 1.4972761888452132e-17,
+          "5": 1.3698749452159662e-17,
+          "6": 6.138099606991439e-18,
+          "7": 1.636731438499351e-17,
+          "8": 4.633555225188792e-18,
+          "9": 8.087127052322128e-18,
+          "10": 3.628280344117013e-18,
+          "11": 2.9939301243647136e-18,
+          "12": 7.236335545049841e-18,
+          "13": 1.1901918005232817e-17,
+          "14": 7.165111729915798e-18,
+          "15": 1.4105790506604408e-17,
+          "16": 6.4090078115415915e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.015311925996971176,
+        "u1_phi": -3.8800562762730806e-10,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.18802886720064027,
+        "u0_theta": -1.7196368859802529,
+        "u0_phi": -1.4588035535112454e-07,
+        "u0_lambda": 0.19798546462472366
+      },
+      "plot_color": "#9467bd"
+    },
+    {
+      "run_id": "20261017T020316012653Z_periodic-function-mse-k4-zero-offset_seed-0049_c5f42dc8",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k4-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 49,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        },
+        {
+          "frequency": 4,
+          "cosine": 0.07,
+          "sine": 0.035
+        }
+      ],
+      "iterations": 5,
+      "function_evaluations": 56,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.05100179500004742,
+      "initial_train_mse": 0.02217479306260573,
+      "final_train_mse": 0.021412565272450793,
+      "validation_mse": 0.02584059964372476,
+      "test": {
+        "mse": 0.026596857095424406,
+        "rmse": 0.1630854288261965,
+        "r2": 0.8710980170971305
+      },
+      "constant_baseline_test": {
+        "mse": 0.21216209706550593,
+        "rmse": 0.46061056985864524,
+        "r2": -0.028246116090146156
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.8845849053330533e-31,
+        "rmse": 5.370833180553137e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0007499734041718401,
+      "dense_grid_absolute_error_mae": 0.12701497213989238,
+      "dense_grid_absolute_error_max": 0.38000594776935237,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.0013533300481676717,
+      "initial_qft_process_fidelity_diagnostic_only": 0.0014377045308242645,
+      "n_components": 4,
+      "run_dir": "results/runs/20261017T020316012653Z_periodic-function-mse-k4-zero-offset_seed-0049_c5f42dc8",
+      "initial_parameters": {
+        "u1_theta": -0.8617125240318573,
+        "u1_phi": 0.5857013194739991,
+        "u1_lambda": -0.6788968406304887,
+        "controlled_phase": 0.7772255342719081,
+        "u0_theta": 0.9790124832449649,
+        "u0_phi": -3.056230167109086,
+        "u0_lambda": 1.7362677989726425
+      },
+      "final_parameters": {
+        "u1_theta": -0.8702032508572358,
+        "u1_phi": 0.5857013207339606,
+        "u1_lambda": -0.6788968406304887,
+        "controlled_phase": 0.7807633427833625,
+        "u0_theta": 1.007444032951041,
+        "u0_phi": -3.056230165082077,
+        "u0_lambda": 1.768079281973818
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498951,
+          "4": 0.07826237921249267,
+          "5": 3.111669413838609e-17,
+          "6": 1.0782582689195332e-17,
+          "7": 1.9716710816326602e-17,
+          "8": 6.698493011886988e-18,
+          "9": 1.1635421212890542e-17,
+          "10": 2.525458054938055e-18,
+          "11": 8.020732245388063e-18,
+          "12": 4.685641790835123e-18,
+          "13": 4.924865114041699e-18,
+          "14": 3.888524730395962e-18,
+          "15": 1.488532939329537e-17,
+          "16": 8.37948952971858e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.594330747479763,
+          "2": 1.8339224856293705e-17,
+          "3": 2.1028263728761567e-17,
+          "4": 5.423773338372519e-18,
+          "5": 1.8145336950396713e-17,
+          "6": 5.531475552068441e-18,
+          "7": 1.812770251587161e-17,
+          "8": 6.622801709057092e-18,
+          "9": 1.0620556217535133e-17,
+          "10": 4.848989213479358e-18,
+          "11": 2.0808749701168e-18,
+          "12": 2.37220761099528e-18,
+          "13": 7.33825936811335e-18,
+          "14": 4.187588850266918e-18,
+          "15": 1.0846153049989271e-17,
+          "16": 6.691992256942704e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.008490726825378658,
+        "u1_phi": 1.2599614684916105e-09,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.0035378085114543545,
+        "u0_theta": 0.028431549706076087,
+        "u0_phi": 2.027008783045403e-09,
+        "u0_lambda": 0.03181148300117531
+      },
+      "plot_color": "#7f7f7f"
+    },
+    {
+      "run_id": "20261017T020317445643Z_periodic-function-mse-k4-zero-offset_seed-0051_c5f42dc8",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k4-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 51,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        },
+        {
+          "frequency": 4,
+          "cosine": 0.07,
+          "sine": 0.035
+        }
+      ],
+      "iterations": 7,
+      "function_evaluations": 104,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.08450573699519737,
+      "initial_train_mse": 0.9956586831081322,
+      "final_train_mse": 0.02141256527245078,
+      "validation_mse": 0.025840599625785606,
+      "test": {
+        "mse": 0.026596857111771,
+        "rmse": 0.16308542887631317,
+        "r2": 0.8710980170179066
+      },
+      "constant_baseline_test": {
+        "mse": 0.21216209706550593,
+        "rmse": 0.46061056985864524,
+        "r2": -0.028246116090146156
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.8845849053330533e-31,
+        "rmse": 5.370833180553137e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.000749973404555371,
+      "dense_grid_absolute_error_mae": 0.1270149723816995,
+      "dense_grid_absolute_error_max": 0.38000594755372163,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.06847503007213032,
+      "initial_qft_process_fidelity_diagnostic_only": 0.07936420216729839,
+      "n_components": 4,
+      "run_dir": "results/runs/20261017T020317445643Z_periodic-function-mse-k4-zero-offset_seed-0051_c5f42dc8",
+      "initial_parameters": {
+        "u1_theta": 2.7799400236972422,
+        "u1_phi": -1.2117854178107583,
+        "u1_lambda": -1.5399670335349012,
+        "controlled_phase": -1.7428392082652453,
+        "u0_theta": 1.7982741542662763,
+        "u0_phi": -1.7799758510131818,
+        "u0_lambda": 1.920936276761287
+      },
+      "final_parameters": {
+        "u1_theta": 1.8498769312504766,
+        "u1_phi": -1.2117855247426874,
+        "u1_lambda": -1.5399670335349012,
+        "controlled_phase": -1.112918587352835,
+        "u0_theta": 1.0074440329196812,
+        "u0_phi": -1.7799758501578247,
+        "u0_lambda": 2.6632323622598344
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498951,
+          "4": 0.07826237921249267,
+          "5": 3.111669413838609e-17,
+          "6": 1.0782582689195332e-17,
+          "7": 1.9716710816326602e-17,
+          "8": 6.698493011886988e-18,
+          "9": 1.1635421212890542e-17,
+          "10": 2.525458054938055e-18,
+          "11": 8.020732245388063e-18,
+          "12": 4.685641790835123e-18,
+          "13": 4.924865114041699e-18,
+          "14": 3.888524730395962e-18,
+          "15": 1.488532939329537e-17,
+          "16": 8.37948952971858e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5943307480477242,
+          "2": 1.8005943364876795e-17,
+          "3": 1.9579592010737125e-17,
+          "4": 1.26261513180138e-17,
+          "5": 1.4207661137181843e-17,
+          "6": 2.8530848118962064e-18,
+          "7": 1.1263360116322151e-17,
+          "8": 4.774411391304189e-18,
+          "9": 9.822384651999591e-18,
+          "10": 1.760891529744856e-18,
+          "11": 6.571574075312505e-18,
+          "12": 4.622997077832893e-18,
+          "13": 1.0344423191768707e-17,
+          "14": 7.729354178760177e-18,
+          "15": 1.4303498528337747e-17,
+          "16": 1.8825382549091646e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.9300630924467654,
+        "u1_phi": -1.0693192908917126e-07,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.6299206209124102,
+        "u0_theta": -0.7908301213465951,
+        "u0_phi": 8.553571184677367e-10,
+        "u0_lambda": 0.7422960854985474
+      },
+      "plot_color": "#17becf"
+    },
+    {
+      "run_id": "20261017T020314535707Z_periodic-function-mse-k4-zero-offset_seed-0047_c5f42dc8",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k4-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 47,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        },
+        {
+          "frequency": 4,
+          "cosine": 0.07,
+          "sine": 0.035
+        }
+      ],
+      "iterations": 9,
+      "function_evaluations": 104,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.1276565579973976,
+      "initial_train_mse": 1.1913497424026156,
+      "final_train_mse": 0.02141256527245078,
+      "validation_mse": 0.025840599672955076,
+      "test": {
+        "mse": 0.026596857162097254,
+        "rmse": 0.1630854290306073,
+        "r2": 0.8710980167739997
+      },
+      "constant_baseline_test": {
+        "mse": 0.21216209706550593,
+        "rmse": 0.46061056985864524,
+        "r2": -0.028246116090146156
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.8845849053330533e-31,
+        "rmse": 5.370833180553137e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0007499734067204018,
+      "dense_grid_absolute_error_mae": 0.12701497205866938,
+      "dense_grid_absolute_error_max": 0.38000595170095086,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.0016735614856710239,
+      "initial_qft_process_fidelity_diagnostic_only": 0.0018887892252928541,
+      "n_components": 4,
+      "run_dir": "results/runs/20261017T020314535707Z_periodic-function-mse-k4-zero-offset_seed-0047_c5f42dc8",
+      "initial_parameters": {
+        "u1_theta": 1.519286739984854,
+        "u1_phi": 1.5938481846155454,
+        "u1_lambda": -0.2187771306004107,
+        "controlled_phase": -2.489869071319391,
+        "u0_theta": 2.9333166834546605,
+        "u0_phi": -1.1262589501679572,
+        "u0_lambda": -1.8828723944096823
+      },
+      "final_parameters": {
+        "u1_theta": 1.5155874333081867,
+        "u1_phi": 1.5938481766343076,
+        "u1_lambda": -0.2187771306004107,
+        "controlled_phase": -2.513202387658015,
+        "u0_theta": 1.0074440379732694,
+        "u0_phi": -1.1262589227233673,
+        "u0_lambda": -1.8754925926985593
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498951,
+          "4": 0.07826237921249267,
+          "5": 3.111669413838609e-17,
+          "6": 1.0782582689195332e-17,
+          "7": 1.9716710816326602e-17,
+          "8": 6.698493011886988e-18,
+          "9": 1.1635421212890542e-17,
+          "10": 2.525458054938055e-18,
+          "11": 8.020732245388063e-18,
+          "12": 4.685641790835123e-18,
+          "13": 4.924865114041699e-18,
+          "14": 3.888524730395962e-18,
+          "15": 1.488532939329537e-17,
+          "16": 8.37948952971858e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5943307444247911,
+          "2": 2.0502551806743407e-17,
+          "3": 2.4939365415287558e-17,
+          "4": 8.677760357080367e-18,
+          "5": 1.3112333615919112e-17,
+          "6": 2.9983352910098858e-18,
+          "7": 7.992349466000408e-18,
+          "8": 4.2507767706283436e-18,
+          "9": 1.3709546563376805e-17,
+          "10": 5.706170802827328e-18,
+          "11": 1.1436456586507944e-17,
+          "12": 5.156656578944099e-18,
+          "13": 2.97705608954762e-18,
+          "14": 8.876991783095228e-18,
+          "15": 2.374762843232803e-17,
+          "16": 7.033978889897211e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.003699306676667291,
+        "u1_phi": -7.981237892806803e-09,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.023333316338624233,
+        "u0_theta": -1.925872645481391,
+        "u0_phi": 2.744458971193353e-08,
+        "u0_lambda": 0.0073798017111230685
+      },
+      "plot_color": "#8c564b"
+    },
+    {
+      "run_id": "20261017T020316662845Z_periodic-function-mse-k4-zero-offset_seed-0050_c5f42dc8",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k4-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 50,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        },
+        {
+          "frequency": 4,
+          "cosine": 0.07,
+          "sine": 0.035
+        }
+      ],
+      "iterations": 8,
+      "function_evaluations": 72,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.07440354599384591,
+      "initial_train_mse": 0.21309984749025776,
+      "final_train_mse": 0.021412565272450834,
+      "validation_mse": 0.02584059982921194,
+      "test": {
+        "mse": 0.02659685722396172,
+        "rmse": 0.1630854292202762,
+        "r2": 0.8710980164741728
+      },
+      "constant_baseline_test": {
+        "mse": 0.21216209706550593,
+        "rmse": 0.46061056985864524,
+        "r2": -0.028246116090146156
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.8845849053330533e-31,
+        "rmse": 5.370833180553137e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0007499734103264014,
+      "dense_grid_absolute_error_mae": 0.12701497063710773,
+      "dense_grid_absolute_error_max": 0.3800059614162492,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.0008428340674696168,
+      "initial_qft_process_fidelity_diagnostic_only": 0.0009141799603543556,
+      "n_components": 4,
+      "run_dir": "results/runs/20261017T020316662845Z_periodic-function-mse-k4-zero-offset_seed-0050_c5f42dc8",
+      "initial_parameters": {
+        "u1_theta": 1.8059300346120386,
+        "u1_phi": 2.096506260511955,
+        "u1_lambda": 0.3009926003778922,
+        "controlled_phase": 2.9747684045650127,
+        "u0_theta": -1.6535235222677882,
+        "u0_phi": 0.9231465915914692,
+        "u0_lambda": -2.7330217992033035
+      },
+      "final_parameters": {
+        "u1_theta": 1.8721487976513702,
+        "u1_phi": 2.096506250698604,
+        "u1_lambda": 0.3009926003778922,
+        "controlled_phase": 2.963969545801044,
+        "u0_theta": -1.0074440491281085,
+        "u0_phi": 0.923146590838957,
+        "u0_lambda": -2.733258736479289
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498951,
+          "4": 0.07826237921249267,
+          "5": 3.111669413838609e-17,
+          "6": 1.0782582689195332e-17,
+          "7": 1.9716710816326602e-17,
+          "8": 6.698493011886988e-18,
+          "9": 1.1635421212890542e-17,
+          "10": 2.525458054938055e-18,
+          "11": 8.020732245388063e-18,
+          "12": 4.685641790835123e-18,
+          "13": 4.924865114041699e-18,
+          "14": 3.888524730395962e-18,
+          "15": 1.488532939329537e-17,
+          "16": 8.37948952971858e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5943307348161492,
+          "2": 1.883091547571359e-17,
+          "3": 1.312408385784725e-17,
+          "4": 6.960660635410252e-18,
+          "5": 1.5387607251720915e-17,
+          "6": 8.427722141042488e-18,
+          "7": 1.632438351556461e-17,
+          "8": 7.711273126371321e-18,
+          "9": 5.732748569229516e-18,
+          "10": 5.986013328759352e-18,
+          "11": 5.502892935306553e-18,
+          "12": 6.6512729188534265e-18,
+          "13": 6.1402884085528925e-18,
+          "14": 4.739950419509408e-18,
+          "15": 1.2542795004384865e-17,
+          "16": 3.917670919289321e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.06621876303933139,
+        "u1_phi": -9.813351020682148e-09,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.010798858763968688,
+        "u0_theta": 0.6460794731396797,
+        "u0_phi": -7.525122747154001e-10,
+        "u0_lambda": -0.00023693727598539382
+      },
+      "plot_color": "#bcbd22"
+    },
+    {
+      "run_id": "20261017T020310872916Z_periodic-function-mse-k4-zero-offset_seed-0042_c5f42dc8",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k4-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 42,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        },
+        {
+          "frequency": 4,
+          "cosine": 0.07,
+          "sine": 0.035
+        }
+      ],
+      "iterations": 12,
+      "function_evaluations": 144,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.1943683770005009,
+      "initial_train_mse": 1.1258518871530476,
+      "final_train_mse": 0.021412565272450782,
+      "validation_mse": 0.02584059965964476,
+      "test": {
+        "mse": 0.026596857261156036,
+        "rmse": 0.16308542933430945,
+        "r2": 0.8710980162939101
+      },
+      "constant_baseline_test": {
+        "mse": 0.21216209706550593,
+        "rmse": 0.46061056985864524,
+        "r2": -0.028246116090146156
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.8845849053330533e-31,
+        "rmse": 5.370833180553137e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0007499734099615366,
+      "dense_grid_absolute_error_mae": 0.12701497252948424,
+      "dense_grid_absolute_error_max": 0.3800059548764725,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.5390420927322702,
+      "initial_qft_process_fidelity_diagnostic_only": 0.2993071074832549,
+      "n_components": 4,
+      "run_dir": "results/runs/20261017T020310872916Z_periodic-function-mse-k4-zero-offset_seed-0042_c5f42dc8",
+      "initial_parameters": {
+        "u1_theta": 1.721316619099806,
+        "u1_phi": -0.38403808930179695,
+        "u1_lambda": 2.2531371815723604,
+        "controlled_phase": 1.2400999002927886,
+        "u0_theta": -2.5498589250729733,
+        "u0_phi": 2.988423371570267,
+        "u0_lambda": 1.6407891386670412
+      },
+      "final_parameters": {
+        "u1_theta": 1.1299700649162219,
+        "u1_phi": -0.3840382305649719,
+        "u1_lambda": 2.2531371815723604,
+        "controlled_phase": 1.1256138617700928,
+        "u0_theta": -1.007444042581323,
+        "u0_phi": 2.988423498896538,
+        "u0_lambda": 0.9109471236709984
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498951,
+          "4": 0.07826237921249267,
+          "5": 3.111669413838609e-17,
+          "6": 1.0782582689195332e-17,
+          "7": 1.9716710816326602e-17,
+          "8": 6.698493011886988e-18,
+          "9": 1.1635421212890542e-17,
+          "10": 2.525458054938055e-18,
+          "11": 8.020732245388063e-18,
+          "12": 4.685641790835123e-18,
+          "13": 4.924865114041699e-18,
+          "14": 3.888524730395962e-18,
+          "15": 1.488532939329537e-17,
+          "16": 8.37948952971858e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5943307428622424,
+          "2": 2.247817559757274e-17,
+          "3": 1.938333617368457e-17,
+          "4": 3.730261263256742e-18,
+          "5": 6.8656793051412395e-18,
+          "6": 1.0034615022577756e-17,
+          "7": 1.5627968251800676e-17,
+          "8": 5.817364092610934e-18,
+          "9": 1.4856176344158596e-17,
+          "10": 7.207289190308816e-18,
+          "11": 3.6459546737883835e-18,
+          "12": 4.403910121845157e-18,
+          "13": 2.9107772147471908e-18,
+          "14": 3.867540906940647e-18,
+          "15": 1.1663156361207988e-17,
+          "16": 1.61250015954694e-17
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.5913465541835841,
+        "u1_phi": -1.4126317493534657e-07,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.11448603852269557,
+        "u0_theta": 1.5424148824916504,
+        "u0_phi": 1.273262708600953e-07,
+        "u0_lambda": -0.7298420149960427
+      },
+      "plot_color": "#1f77b4"
+    },
+    {
+      "run_id": "20261017T020312298930Z_periodic-function-mse-k4-zero-offset_seed-0044_c5f42dc8",
+      "status": "FINISHED",
+      "comparison_group": "periodic-function-mse-k4-zero-offset-components-ry-angle-encoding-z1-readout",
+      "protocol_version": "0.1.0",
+      "objective": "training-set mean squared error only",
+      "loss_excludes": [
+        "process fidelity",
+        "Frobenius/unitary alignment",
+        "PINN/physics residual",
+        "frequency labels"
+      ],
+      "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+      "ansatz": "qft2_trainable_u_cp_u_swap",
+      "readout": "Pauli-Z expectation on q1",
+      "seed": 44,
+      "data_seed": 314159,
+      "optimizer": "L-BFGS-B",
+      "dataset_sizes": {
+        "train": 64,
+        "validation": 128,
+        "test": 512
+      },
+      "target_offset": 0.0,
+      "target_components": [
+        {
+          "frequency": 1,
+          "cosine": 0.55,
+          "sine": 0.25
+        },
+        {
+          "frequency": 2,
+          "cosine": 0.16,
+          "sine": 0.08
+        },
+        {
+          "frequency": 3,
+          "cosine": 0.1,
+          "sine": 0.05
+        },
+        {
+          "frequency": 4,
+          "cosine": 0.07,
+          "sine": 0.035
+        }
+      ],
+      "iterations": 7,
+      "function_evaluations": 64,
+      "optimizer_success": true,
+      "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "elapsed_seconds": 0.08925346699834336,
+      "initial_train_mse": 0.6002600513463212,
+      "final_train_mse": 0.02141256527245082,
+      "validation_mse": 0.025840599583164564,
+      "test": {
+        "mse": 0.02659685734175564,
+        "rmse": 0.16308542958141797,
+        "r2": 0.8710980159032833
+      },
+      "constant_baseline_test": {
+        "mse": 0.21216209706550593,
+        "rmse": 0.46061056985864524,
+        "r2": -0.028246116090146156
+      },
+      "known_frequency_fourier_baseline_test": {
+        "mse": 2.8845849053330533e-31,
+        "rmse": 5.370833180553137e-16,
+        "r2": 1.0
+      },
+      "spectral_coefficient_mse_k0_to_16": 0.0007499734119676714,
+      "dense_grid_absolute_error_mae": 0.12701497359695244,
+      "dense_grid_absolute_error_max": 0.3800059543757439,
+      "target_peak_frequency": 1,
+      "predicted_peak_frequency": 1,
+      "frequency_peak_correct": true,
+      "qft_process_fidelity_diagnostic_only": 0.057405024054012065,
+      "initial_qft_process_fidelity_diagnostic_only": 0.04906630204776559,
+      "n_components": 4,
+      "run_dir": "results/runs/20261017T020312298930Z_periodic-function-mse-k4-zero-offset_seed-0044_c5f42dc8",
+      "initial_parameters": {
+        "u1_theta": -2.3714908440399456,
+        "u1_phi": -1.5198203745865597,
+        "u1_lambda": -0.5920599784604952,
+        "controlled_phase": 2.947969689345541,
+        "u0_theta": -2.1217240800334842,
+        "u0_phi": 2.2449423600401266,
+        "u0_lambda": -2.1171490019909616
+      },
+      "final_parameters": {
+        "u1_theta": -2.281236099352233,
+        "u1_phi": -1.5198203636743808,
+        "u1_lambda": -0.5920599784604952,
+        "controlled_phase": 3.0922286718457754,
+        "u0_theta": -1.0074440430288105,
+        "u0_phi": 2.244942344159584,
+        "u0_lambda": -2.00086112912643
+      },
+      "frequency_support": {
+        "threshold_function_amplitude": 0.001,
+        "target_non_dc_bins": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "predicted_non_dc_bins": [
+          1
+        ],
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "target_amplitude_by_frequency": {
+          "1": 0.6041522986797286,
+          "2": 0.1788854381999832,
+          "3": 0.11180339887498951,
+          "4": 0.07826237921249267,
+          "5": 3.111669413838609e-17,
+          "6": 1.0782582689195332e-17,
+          "7": 1.9716710816326602e-17,
+          "8": 6.698493011886988e-18,
+          "9": 1.1635421212890542e-17,
+          "10": 2.525458054938055e-18,
+          "11": 8.020732245388063e-18,
+          "12": 4.685641790835123e-18,
+          "13": 4.924865114041699e-18,
+          "14": 3.888524730395962e-18,
+          "15": 1.488532939329537e-17,
+          "16": 8.37948952971858e-18
+        },
+        "predicted_amplitude_by_frequency": {
+          "1": 0.5943307450346741,
+          "2": 1.951189071446004e-17,
+          "3": 1.7757776111606052e-17,
+          "4": 1.1096798283667915e-17,
+          "5": 1.3983550059230357e-17,
+          "6": 5.330470774047062e-18,
+          "7": 1.2438102105315263e-17,
+          "8": 1.1123512042743847e-17,
+          "9": 1.3429502405646061e-17,
+          "10": 5.0284930343093744e-18,
+          "11": 5.021769047672313e-18,
+          "12": 4.814185521018649e-18,
+          "13": 9.281971839235123e-18,
+          "14": 3.699579850216185e-18,
+          "15": 1.747962120583527e-17,
+          "16": 5.494285172463301e-18
+        }
+      },
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.09025474468771266,
+        "u1_phi": 1.0912178716182552e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.14425898250023428,
+        "u0_theta": 1.114280037004674,
+        "u0_phi": -1.58805426586639e-08,
+        "u0_lambda": 0.11628787286453157
+      },
+      "plot_color": "#2ca02c"
+    }
+  ]
+}

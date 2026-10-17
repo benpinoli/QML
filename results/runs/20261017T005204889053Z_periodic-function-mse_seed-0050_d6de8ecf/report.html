@@ -1,0 +1,54 @@
+<!doctype html><meta charset="utf-8"><title>20261017T005204889053Z_periodic-function-mse_seed-0050_d6de8ecf</title>
+<h1>Periodic function regression: 20261017T005204889053Z_periodic-function-mse_seed-0050_d6de8ecf</h1>
+<p><b>Comparison group:</b> periodic-function-mse-ry-angle-encoding<br><b>Training loss:</b> MSE only; no Frobenius/process-fidelity term or PINN residual.<br>
+<b>Encoding:</b> RY(2πx)|0⟩ on qubit 0, x∈[0,1), period 1.<br><b>Readout:</b> ideal Pauli-Z expectation on qubit 0.</p>
+<pre>{
+  "run_id": "20261017T005204889053Z_periodic-function-mse_seed-0050_d6de8ecf",
+  "status": "FINISHED",
+  "comparison_group": "periodic-function-mse-ry-angle-encoding",
+  "protocol_version": "0.1.0",
+  "objective": "training-set mean squared error only",
+  "loss_excludes": [
+    "process fidelity",
+    "Frobenius/unitary alignment",
+    "PINN/physics residual",
+    "frequency labels"
+  ],
+  "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+  "ansatz": "qft2_trainable_u_cp_u_swap",
+  "readout": "Pauli-Z expectation",
+  "seed": 50,
+  "data_seed": 314159,
+  "optimizer": "L-BFGS-B",
+  "iterations": 4,
+  "function_evaluations": 48,
+  "optimizer_success": true,
+  "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+  "elapsed_seconds": 0.03082620900386246,
+  "initial_train_mse": 0.24198309555528183,
+  "final_train_mse": 0.17671137610079835,
+  "validation_mse": 0.19584592815673868,
+  "test": {
+    "mse": 0.18989335838150465,
+    "rmse": 0.4357675508588319,
+    "r2": -0.03270329202740219
+  },
+  "constant_baseline_test": {
+    "mse": 0.1898933590235803,
+    "rmse": 0.43576755159555,
+    "r2": -0.03270329551922346
+  },
+  "known_frequency_fourier_baseline_test": {
+    "mse": 7.212394812967852e-32,
+    "rmse": 2.6855902168737234e-16,
+    "r2": 1.0
+  },
+  "spectral_coefficient_mse_k0_to_16": 0.005720862035472162,
+  "target_peak_frequency": 1,
+  "predicted_peak_frequency": 1,
+  "frequency_peak_correct": true,
+  "qft_process_fidelity_diagnostic_only": 0.0004066651417469083,
+  "initial_qft_process_fidelity_diagnostic_only": 0.0009141799603543556
+}</pre>
+<img src="loss.png" width="49%"><img src="function_fit.png" width="49%"><br>
+<img src="spectrum.png" width="49%"><img src="residual.png" width="49%"><br><img src="parameters.png" width="70%">

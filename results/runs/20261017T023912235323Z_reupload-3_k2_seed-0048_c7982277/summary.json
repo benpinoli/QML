@@ -1,0 +1,97 @@
+{
+  "run_id": "20261017T023912235323Z_reupload-3_k2_seed-0048_c7982277",
+  "comparison_group": "periodic-function-mse-zero-offset-reupload-sweep-z1-readout",
+  "data_uploads": 3,
+  "n_target_frequencies": 2,
+  "seed": 48,
+  "data_seed": 314159,
+  "dataset_sizes": {
+    "train": 64,
+    "validation": 128,
+    "test": 512
+  },
+  "target_components": [
+    [
+      1,
+      0.55,
+      0.25
+    ],
+    [
+      2,
+      0.16,
+      0.08
+    ]
+  ],
+  "target_offset": 0.0,
+  "objective": "training-set MSE only",
+  "optimizer": "L-BFGS-B",
+  "iterations": 82,
+  "function_evaluations": 2068,
+  "optimizer_success": true,
+  "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+  "initial_train_mse": 0.6240164460341929,
+  "final_train_mse": 1.2854112507523973e-13,
+  "validation_mse": 1.262933081565892e-13,
+  "test_mse": 1.4092959449952803e-13,
+  "known_frequency_fourier_baseline_test_mse": 1.9968722039537117e-32,
+  "target_support": [
+    1,
+    2
+  ],
+  "predicted_support": [
+    1,
+    2
+  ],
+  "frequency_support_threshold_function_amplitude": 0.001,
+  "support_precision": 1.0,
+  "support_recall": 1.0,
+  "target_amplitudes_k0_to_16": [
+    2.7755575615628914e-17,
+    0.6041522986797286,
+    0.1788854381999832,
+    3.402087014046196e-17,
+    1.1323340723711445e-17,
+    9.938690980430836e-18,
+    4.6922517800280036e-18,
+    9.373740922729999e-18,
+    1.7250611716194027e-18,
+    1.530158748162744e-17,
+    2.04244267811301e-18,
+    4.98898752229069e-18,
+    2.3501315884486092e-18,
+    7.198939290036171e-18,
+    1.065804665009402e-18,
+    1.2627840714523446e-17,
+    3.4240002976248174e-18
+  ],
+  "predicted_amplitudes_k0_to_16": [
+    1.1981634770352376e-07,
+    0.6041523826202352,
+    0.1788852228371435,
+    3.9680272361490763e-07,
+    1.5021944576848838e-17,
+    2.002373316880081e-17,
+    7.378133141248517e-18,
+    2.2773598598452893e-17,
+    6.801860617560922e-18,
+    6.660034479792842e-18,
+    7.068085280047507e-18,
+    1.3436468675825244e-17,
+    5.1331158716767584e-18,
+    5.555823583828052e-18,
+    1.2128672453279292e-17,
+    3.059719069306588e-17,
+    1.689940930922667e-17
+  ],
+  "frequency_amplitude_rmse_k0_to_16": 1.1510494443680496e-07,
+  "artifacts": [
+    "dataset.npz",
+    "metrics.jsonl",
+    "parameters.npz",
+    "parameters.json",
+    "evaluation_outputs.npz",
+    "function_fit.png",
+    "spectrum.png",
+    "report.html"
+  ]
+}

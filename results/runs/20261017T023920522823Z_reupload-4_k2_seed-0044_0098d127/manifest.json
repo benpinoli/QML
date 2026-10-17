@@ -1,0 +1,17 @@
+{
+  "run_id": "20261017T023920522823Z_reupload-4_k2_seed-0044_0098d127",
+  "created_at_utc": "20261017T023920522823Z",
+  "source_revision": "2d0b544427b4c76f5cfc279426ad164f3a59f265",
+  "python": "3.12.3",
+  "comparison_group": "periodic-function-mse-zero-offset-reupload-sweep-z1-readout",
+  "artifacts": [
+    "dataset.npz",
+    "metrics.jsonl",
+    "parameters.npz",
+    "parameters.json",
+    "evaluation_outputs.npz",
+    "function_fit.png",
+    "spectrum.png",
+    "report.html"
+  ]
+}

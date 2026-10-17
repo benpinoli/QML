@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "generator": "qftlab.data.synthetic",
+  "data_seed": 2026,
+  "state_dimension": 4,
+  "statevector_basis_order": "Qiskit little-endian qubit order; amplitudes indexed by |q1 q0> basis integer",
+  "arrays": {
+    "train_inputs": {
+      "shape": [
+        64,
+        4
+      ],
+      "dtype": "complex128"
+    },
+    "train_targets": {
+      "shape": [
+        64,
+        4
+      ],
+      "dtype": "complex128"
+    },
+    "validation_inputs": {
+      "shape": [
+        32,
+        4
+      ],
+      "dtype": "complex128"
+    },
+    "validation_targets": {
+      "shape": [
+        32,
+        4
+      ],
+      "dtype": "complex128"
+    },
+    "test_inputs": {
+      "shape": [
+        64,
+        4
+      ],
+      "dtype": "complex128"
+    },
+    "test_targets": {
+      "shape": [
+        64,
+        4
+      ],
+      "dtype": "complex128"
+    },
+    "frequencies": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64"
+    },
+    "inputs": {
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "complex128"
+    },
+    "target_states": {
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "complex128"
+    },
+    "target_probabilities": {
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "float64"
+    }
+  }
+}

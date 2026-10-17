@@ -1,0 +1,73 @@
+{
+  "run_id": "20261017T020309381446Z_periodic-function-mse-k3-zero-offset_seed-0050_fea99a4e",
+  "status": "FINISHED",
+  "comparison_group": "periodic-function-mse-k3-zero-offset-components-ry-angle-encoding-z1-readout",
+  "protocol_version": "0.1.0",
+  "objective": "training-set mean squared error only",
+  "loss_excludes": [
+    "process fidelity",
+    "Frobenius/unitary alignment",
+    "PINN/physics residual",
+    "frequency labels"
+  ],
+  "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+  "ansatz": "qft2_trainable_u_cp_u_swap",
+  "readout": "Pauli-Z expectation on q1",
+  "seed": 50,
+  "data_seed": 314159,
+  "optimizer": "L-BFGS-B",
+  "dataset_sizes": {
+    "train": 64,
+    "validation": 128,
+    "test": 512
+  },
+  "target_offset": 0.0,
+  "target_components": [
+    {
+      "frequency": 1,
+      "cosine": 0.55,
+      "sine": 0.25
+    },
+    {
+      "frequency": 2,
+      "cosine": 0.16,
+      "sine": 0.08
+    },
+    {
+      "frequency": 3,
+      "cosine": 0.1,
+      "sine": 0.05
+    }
+  ],
+  "iterations": 8,
+  "function_evaluations": 72,
+  "optimizer_success": true,
+  "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+  "elapsed_seconds": 0.10701286800031085,
+  "initial_train_mse": 0.20954512157891958,
+  "final_train_mse": 0.020081083481016723,
+  "validation_mse": 0.022672838934594767,
+  "test": {
+    "mse": 0.02246088526816547,
+    "rmse": 0.14986956084597522,
+    "r2": 0.8904240441520619
+  },
+  "constant_baseline_test": {
+    "mse": 0.20984084994548421,
+    "rmse": 0.4580838896375687,
+    "r2": -0.023713510584981945
+  },
+  "known_frequency_fourier_baseline_test": {
+    "mse": 2.126123450199506e-31,
+    "rmse": 4.610990620462707e-16,
+    "r2": 1.0
+  },
+  "spectral_coefficient_mse_k0_to_16": 0.0006604349969058823,
+  "dense_grid_absolute_error_mae": 0.12348073781883573,
+  "dense_grid_absolute_error_max": 0.3075968183655521,
+  "target_peak_frequency": 1,
+  "predicted_peak_frequency": 1,
+  "frequency_peak_correct": true,
+  "qft_process_fidelity_diagnostic_only": 0.0008363818397684415,
+  "initial_qft_process_fidelity_diagnostic_only": 0.0009141799603543556
+}

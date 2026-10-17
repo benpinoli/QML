@@ -1,0 +1,16 @@
+<!doctype html><meta charset="utf-8"><title>Periodic MSE trial group</title>
+<h1>Readout-control pilot (excluded)</h1>
+<p><strong style="color:#a00">Excluded control pilot:</strong> this group measured Z on qubit 0 after the final SWAP. For this circuit that output is independent of x, so it cannot fit a nonconstant function. The corrected, input-dependent qubit-1 readout results are in <a href="../periodic-function-mse-z1-readout/index.html">the Z1-readout group</a>.</p>
+<p>Objective: supervised MSE on (x,y) pairs only. No Frobenius/process-fidelity alignment or PINN residual is used in training.<br>
+Encoding: RY(2πx)|0⟩ on qubit 0, x∈[0,1), period 1. Readout: ideal Pauli-Z expectation on qubit 0.</p>
+<p>Seeds: [42, 43, 44, 45, 46, 47, 48, 49, 50, 51]. Mean test MSE: 0.18989336; population SD: 7.6956575e-10; peak-frequency accuracy: 1.000.</p>
+<table border="1" cellpadding="6"><thead><tr><th>Seed</th><th>Test MSE</th><th>Validation MSE</th><th>Peak frequency correct</th><th>Run</th></tr></thead><tbody><tr><td>42</td><td>0.18989336</td><td>0.19584593</td><td>True</td><td><a href="../runs/20261017T005200254900Z_periodic-function-mse_seed-0042_d6de8ecf/report.html">run report</a></td></tr>
+<tr><td>43</td><td>0.18989336</td><td>0.19584593</td><td>True</td><td><a href="../runs/20261017T005200862011Z_periodic-function-mse_seed-0043_d6de8ecf/report.html">run report</a></td></tr>
+<tr><td>44</td><td>0.18989336</td><td>0.19584593</td><td>True</td><td><a href="../runs/20261017T005201523363Z_periodic-function-mse_seed-0044_d6de8ecf/report.html">run report</a></td></tr>
+<tr><td>45</td><td>0.18989336</td><td>0.19584593</td><td>True</td><td><a href="../runs/20261017T005202021460Z_periodic-function-mse_seed-0045_d6de8ecf/report.html">run report</a></td></tr>
+<tr><td>46</td><td>0.18989336</td><td>0.19584593</td><td>True</td><td><a href="../runs/20261017T005202586065Z_periodic-function-mse_seed-0046_d6de8ecf/report.html">run report</a></td></tr>
+<tr><td>47</td><td>0.18989336</td><td>0.19584593</td><td>True</td><td><a href="../runs/20261017T005203171915Z_periodic-function-mse_seed-0047_d6de8ecf/report.html">run report</a></td></tr>
+<tr><td>48</td><td>0.18989336</td><td>0.19584593</td><td>True</td><td><a href="../runs/20261017T005203775433Z_periodic-function-mse_seed-0048_d6de8ecf/report.html">run report</a></td></tr>
+<tr><td>49</td><td>0.18989336</td><td>0.19584593</td><td>True</td><td><a href="../runs/20261017T005204349669Z_periodic-function-mse_seed-0049_d6de8ecf/report.html">run report</a></td></tr>
+<tr><td>50</td><td>0.18989336</td><td>0.19584593</td><td>True</td><td><a href="../runs/20261017T005204889053Z_periodic-function-mse_seed-0050_d6de8ecf/report.html">run report</a></td></tr>
+<tr><td>51</td><td>0.18989336</td><td>0.19584593</td><td>True</td><td><a href="../runs/20261017T005205458241Z_periodic-function-mse_seed-0051_d6de8ecf/report.html">run report</a></td></tr></tbody></table>

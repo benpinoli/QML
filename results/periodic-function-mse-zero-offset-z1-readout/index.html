@@ -1,0 +1,13 @@
+<!doctype html><meta charset="utf-8"><title>Zero-offset periodic MSE proof of concept</title>
+<h1>Zero-offset periodic scalar regression proof of concept</h1>
+<p>Objective: supervised training-set MSE only; no Frobenius/process-fidelity alignment or PINN residual. Encoding: RY(2πx)|0⟩ on q0, x∈[0,1), period 1. Readout: ideal Pauli-Z expectation on q1.</p>
+<p>Target: y=0.0+0.55 cos(2πx)+0.25 sin(2πx). Data seed: 314159; split sizes: 64/128/512.</p>
+<p>Five initialization seeds: [42, 43, 44, 45, 46]. Mean test MSE: 4.0429722e-17; population SD: 4.0896063e-17; mean iterations: 8.00; peak-frequency accuracy: 1.000.</p>
+<p>Paired comparison: <a href="../periodic-function-mse-z1-readout/index.html">nonzero-offset group</a>. The train/validation/test input points match exactly; labels differ by 0.10. This is a five-initialization proof of concept on one dataset.</p>
+<img src="trial_test_mse.png" width="75%">
+<p><a href="../../HYPOTHESIS_TREE.md">Research hypothesis tree</a></p>
+<table border="1" cellpadding="6"><thead><tr><th>Seed</th><th>Iterations</th><th>Test MSE</th><th>Validation MSE</th><th>Peak frequency correct</th><th>Run</th></tr></thead><tbody><tr><td>42</td><td>11</td><td>4.805494e-17</td><td>4.5374424e-17</td><td>True</td><td><a href="../runs/20261017T013023276805Z_periodic-function-mse-zero-offset_seed-0042_9aeae8ec/report.html">run report</a></td></tr>
+<tr><td>43</td><td>7</td><td>9.5164055e-18</td><td>9.2322204e-18</td><td>True</td><td><a href="../runs/20261017T013024160894Z_periodic-function-mse-zero-offset_seed-0043_9aeae8ec/report.html">run report</a></td></tr>
+<tr><td>44</td><td>7</td><td>1.8605304e-17</td><td>1.7806613e-17</td><td>True</td><td><a href="../runs/20261017T013024982018Z_periodic-function-mse-zero-offset_seed-0044_9aeae8ec/report.html">run report</a></td></tr>
+<tr><td>45</td><td>6</td><td>1.1709138e-16</td><td>1.1062537e-16</td><td>True</td><td><a href="../runs/20261017T013025714833Z_periodic-function-mse-zero-offset_seed-0045_9aeae8ec/report.html">run report</a></td></tr>
+<tr><td>46</td><td>9</td><td>8.8805842e-18</td><td>9.5272181e-18</td><td>True</td><td><a href="../runs/20261017T013026399016Z_periodic-function-mse-zero-offset_seed-0046_9aeae8ec/report.html">run report</a></td></tr></tbody></table>

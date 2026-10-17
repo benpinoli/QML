@@ -1,0 +1,29 @@
+{
+  "run_id": "20261017T005341339252Z_periodic-function-mse_seed-0049_1bb125fe",
+  "status": "FINISHED",
+  "created_at_utc": "20261017T005341339252Z",
+  "source_revision": "2d0b544427b4c76f5cfc279426ad164f3a59f265",
+  "python": "3.12.3",
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "qiskit": "2.5.2",
+    "matplotlib": "3.11.2"
+  },
+  "config_sha256": "1bb125fe2a1e4e611a22ac2ac208106809cc340c98b0c06e7752c7a408572181",
+  "comparison_group": "periodic-function-mse-ry-angle-encoding-z1-readout",
+  "summary": "summary.json",
+  "artifacts": [
+    "dataset.npz",
+    "dataset_manifest.json",
+    "metrics.jsonl",
+    "evaluation_outputs.npz",
+    "parameters.json",
+    "loss.png",
+    "function_fit.png",
+    "spectrum.png",
+    "residual.png",
+    "parameters.png",
+    "report.html"
+  ]
+}

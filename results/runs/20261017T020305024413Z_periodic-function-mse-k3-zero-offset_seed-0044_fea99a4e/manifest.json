@@ -1,0 +1,29 @@
+{
+  "run_id": "20261017T020305024413Z_periodic-function-mse-k3-zero-offset_seed-0044_fea99a4e",
+  "status": "FINISHED",
+  "created_at_utc": "20261017T020305024413Z",
+  "source_revision": "2d0b544427b4c76f5cfc279426ad164f3a59f265",
+  "python": "3.12.3",
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "qiskit": "2.5.2",
+    "matplotlib": "3.11.2"
+  },
+  "config_sha256": "fea99a4e35e95ae88dcb45f15b11db932e5d6f0848fcfad04d2e150c00d727bc",
+  "comparison_group": "periodic-function-mse-k3-zero-offset-components-ry-angle-encoding-z1-readout",
+  "summary": "summary.json",
+  "artifacts": [
+    "dataset.npz",
+    "dataset_manifest.json",
+    "metrics.jsonl",
+    "evaluation_outputs.npz",
+    "parameters.json",
+    "loss.png",
+    "function_fit.png",
+    "spectrum.png",
+    "residual.png",
+    "parameters.png",
+    "report.html"
+  ]
+}

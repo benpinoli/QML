@@ -1,0 +1,22 @@
+{
+  "generator": "qftlab.visualization.parameter_summaries.generate_parameter_summary_plots",
+  "plot_version": 3,
+  "input": "saved summary.json run records (initial/final parameter values and wrapped angle changes)",
+  "methods": {
+    "run_colors": "Matplotlib tab10 categorical palette assigned by initialization seed within each component-count group; palette reused across groups so corresponding seeds share colors.",
+    "parameter_change_histograms": "Grouped side-by-side counts in 10 equal bins spanning [-pi, pi]; blue/orange/green encode 2/3/4 target frequencies.",
+    "parameter_spider_profiles": "Seven polar spokes; radial coordinate maps wrapped angle [-pi,pi) linearly to [0,1]. Dashed is initial (1.95 pt), solid is final (2.4 pt); radial connectors are 1.95 pt. These line widths are 3x the original values.",
+    "per_gate_circular_changes": "For each parameter, draw all shortest signed angular arcs at radius one first, then draw all endpoints above every arc; hollow circles with thick colored outlines are initial and filled squares with dark outlines are final. Zero changes overlap exactly."
+  },
+  "outputs": [
+    "parameter_change_histograms.png",
+    "parameter_spider_profiles.png",
+    "u1_theta_circular_changes.png",
+    "u1_phi_circular_changes.png",
+    "u1_lambda_circular_changes.png",
+    "controlled_phase_circular_changes.png",
+    "u0_theta_circular_changes.png",
+    "u0_phi_circular_changes.png",
+    "u0_lambda_circular_changes.png"
+  ]
+}

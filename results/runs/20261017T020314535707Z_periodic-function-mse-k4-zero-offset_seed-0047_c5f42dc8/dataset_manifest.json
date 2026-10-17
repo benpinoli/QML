@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "generator": "qftlab.experiments.function_mse._make_dataset",
+  "data_seed": 314159,
+  "encoding": "RY(2*pi*x)|0> on q0, x in [0,1), period 1",
+  "readout": "ideal Pauli-Z expectation on q1",
+  "target": {
+    "target_offset": 0.0,
+    "components": [
+      {
+        "frequency": 1,
+        "cosine": 0.55,
+        "sine": 0.25
+      },
+      {
+        "frequency": 2,
+        "cosine": 0.16,
+        "sine": 0.08
+      },
+      {
+        "frequency": 3,
+        "cosine": 0.1,
+        "sine": 0.05
+      },
+      {
+        "frequency": 4,
+        "cosine": 0.07,
+        "sine": 0.035
+      }
+    ]
+  },
+  "dataset_sizes": {
+    "train": 64,
+    "validation": 128,
+    "test": 512
+  },
+  "arrays": {
+    "train_x": {
+      "shape": [
+        64
+      ],
+      "dtype": "float64"
+    },
+    "train_y": {
+      "shape": [
+        64
+      ],
+      "dtype": "float64"
+    },
+    "validation_x": {
+      "shape": [
+        128
+      ],
+      "dtype": "float64"
+    },
+    "validation_y": {
+      "shape": [
+        128
+      ],
+      "dtype": "float64"
+    },
+    "test_x": {
+      "shape": [
+        512
+      ],
+      "dtype": "float64"
+    },
+    "test_y": {
+      "shape": [
+        512
+      ],
+      "dtype": "float64"
+    }
+  }
+}

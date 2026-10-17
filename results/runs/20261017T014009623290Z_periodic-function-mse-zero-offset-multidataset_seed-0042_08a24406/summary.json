@@ -1,0 +1,50 @@
+{
+  "run_id": "20261017T014009623290Z_periodic-function-mse-zero-offset-multidataset_seed-0042_08a24406",
+  "status": "FINISHED",
+  "comparison_group": "periodic-function-mse-zero-offset-multidataset-ry-angle-encoding-z1-readout",
+  "protocol_version": "0.1.0",
+  "objective": "training-set mean squared error only",
+  "loss_excludes": [
+    "process fidelity",
+    "Frobenius/unitary alignment",
+    "PINN/physics residual",
+    "frequency labels"
+  ],
+  "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+  "ansatz": "qft2_trainable_u_cp_u_swap",
+  "readout": "Pauli-Z expectation on q1",
+  "seed": 42,
+  "data_seed": 8675309,
+  "optimizer": "L-BFGS-B",
+  "iterations": 11,
+  "function_evaluations": 128,
+  "optimizer_success": true,
+  "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+  "elapsed_seconds": 0.09499783400679007,
+  "initial_train_mse": 1.101440208246444,
+  "final_train_mse": 7.701643136020157e-17,
+  "validation_mse": 7.774803132667702e-17,
+  "test": {
+    "mse": 7.249680692497682e-17,
+    "rmse": 8.51450567707702e-09,
+    "r2": 0.9999999999999997
+  },
+  "constant_baseline_test": {
+    "mse": 0.18981262167646676,
+    "rmse": 0.43567490365692024,
+    "r2": -0.0009072946037564922
+  },
+  "known_frequency_fourier_baseline_test": {
+    "mse": 4.057989876157265e-32,
+    "rmse": 2.0144453023493254e-16,
+    "r2": 1.0
+  },
+  "spectral_coefficient_mse_k0_to_16": 2.2253680714198182e-18,
+  "dense_grid_absolute_error_mae": 7.831326348243703e-09,
+  "dense_grid_absolute_error_max": 1.2301423379934562e-08,
+  "target_peak_frequency": 1,
+  "predicted_peak_frequency": 1,
+  "frequency_peak_correct": true,
+  "qft_process_fidelity_diagnostic_only": 0.5351788609319107,
+  "initial_qft_process_fidelity_diagnostic_only": 0.2993071074832549
+}

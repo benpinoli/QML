@@ -4,7 +4,7 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .ruff_cache/
-results/
+# results/
 mlruns/
 mlflow.db
 slurm-*.out

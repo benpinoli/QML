@@ -1,0 +1,49 @@
+{
+  "experiment": {
+    "name": "periodic-function-mse",
+    "protocol_version": "0.1.0",
+    "comparison_group": "periodic-function-mse-ry-angle-encoding-z1-readout",
+    "description": "Two-qubit QFT-layout QNN trained on a period-one Fourier target with MSE only."
+  },
+  "encoding": {
+    "name": "ry-angle-period-one",
+    "domain": "[0, 1) with period 1",
+    "wire": 0,
+    "angle": "2*pi*x"
+  },
+  "data": {
+    "seed": 314159,
+    "train_size": 64,
+    "validation_size": 128,
+    "test_size": 512,
+    "target_frequency": 1,
+    "target_offset": 0.1,
+    "target_cosine": 0.55,
+    "target_sine": 0.25
+  },
+  "model": {
+    "qubits": 2,
+    "ansatz": "qft2_trainable_u_cp_u_swap",
+    "readout_wire": 1,
+    "readout": "Pauli-Z expectation on qubit 1",
+    "initialization": "uniform[-pi, pi]"
+  },
+  "optimizer": {
+    "name": "L-BFGS-B",
+    "max_iterations": 500,
+    "ftol": 1e-12,
+    "gtol": 1e-08
+  },
+  "tracking": {
+    "mode": "auto",
+    "experiment_name": "periodic-function-mse"
+  },
+  "output": {
+    "root": "results/runs"
+  },
+  "run": {
+    "id": "20261017T005337437102Z_periodic-function-mse_seed-0043_1bb125fe",
+    "seed": 43,
+    "data_seed": 314159
+  }
+}

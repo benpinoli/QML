@@ -1,0 +1,1110 @@
+{
+  "comparison_group": "periodic-function-mse-zero-offset-multidataset-ry-angle-encoding-z1-readout",
+  "n_runs": 25,
+  "finite_difference_method": "Central difference; h=1e-5 radians per parameter.",
+  "prediction_jacobian_grid": "512 equally spaced x values over [0,1).",
+  "warning": "This is a post-hoc diagnostic, not the exact gradient history used by L-BFGS-B. Parameter movement is an optimizer step and is not itself a sensitivity measure.",
+  "aggregate_by_parameter": {
+    "u1_theta": {
+      "mean_absolute_wrapped_change_radians": 0.22018487553978844,
+      "largest_change_count": 0,
+      "median_absolute_initial_loss_derivative": 0.027006185686351266,
+      "median_absolute_final_loss_derivative": 7.73222301700016e-10,
+      "median_final_prediction_jacobian_rms": 0.1579877484442638
+    },
+    "u1_phi": {
+      "mean_absolute_wrapped_change_radians": 1.0204781226264003e-07,
+      "largest_change_count": 0,
+      "median_absolute_initial_loss_derivative": 3.4694469519536137e-13,
+      "median_absolute_final_loss_derivative": 6.1194253845043076e-21,
+      "median_final_prediction_jacobian_rms": 4.153838740142648e-12
+    },
+    "u1_lambda": {
+      "mean_absolute_wrapped_change_radians": 0.0,
+      "largest_change_count": 0,
+      "median_absolute_initial_loss_derivative": 0.0,
+      "median_absolute_final_loss_derivative": 0.0,
+      "median_final_prediction_jacobian_rms": 0.0
+    },
+    "controlled_phase": {
+      "mean_absolute_wrapped_change_radians": 0.20883239212792173,
+      "largest_change_count": 0,
+      "median_absolute_initial_loss_derivative": 0.04576703789282987,
+      "median_absolute_final_loss_derivative": 4.194941543227358e-10,
+      "median_final_prediction_jacobian_rms": 0.1528010596268879
+    },
+    "u0_theta": {
+      "mean_absolute_wrapped_change_radians": 1.2070239199029684,
+      "largest_change_count": 24,
+      "median_absolute_initial_loss_derivative": 0.4925044749359841,
+      "median_absolute_final_loss_derivative": 4.271809493467809e-09,
+      "median_final_prediction_jacobian_rms": 0.6019159953990111
+    },
+    "u0_phi": {
+      "mean_absolute_wrapped_change_radians": 3.3765175135869185e-08,
+      "largest_change_count": 0,
+      "median_absolute_initial_loss_derivative": 3.4694469519536137e-13,
+      "median_absolute_final_loss_derivative": 1.187561183036823e-20,
+      "median_final_prediction_jacobian_rms": 7.141527042446646e-12
+    },
+    "u0_lambda": {
+      "mean_absolute_wrapped_change_radians": 0.3225208316474191,
+      "largest_change_count": 1,
+      "median_absolute_initial_loss_derivative": 0.08108616640356558,
+      "median_absolute_final_loss_derivative": 2.1017768743546506e-09,
+      "median_final_prediction_jacobian_rms": 0.49334302537743757
+    }
+  },
+  "runs": [
+    {
+      "run_id": "20261017T014017983244Z_periodic-function-mse-zero-offset-multidataset_seed-0043_08a24406",
+      "data_seed": 12345,
+      "initialization_seed": 43,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.07037388442478809,
+        "u1_phi": -3.152477834333922e-09,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.02215091204135078,
+        "u0_theta": 0.4408961715107047,
+        "u0_phi": 2.744378946317738e-09,
+        "u0_lambda": 0.13795353991082004
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.03334726480265504,
+        "u1_phi": -3.4694469519536137e-13,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.011281126581844101,
+        "u0_theta": -0.16353726482072617,
+        "u0_phi": -3.4694469519536137e-13,
+        "u0_lambda": -0.06620925925709953
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -8.416055234877756e-11,
+        "u1_phi": 1.496380592575066e-22,
+        "u1_lambda": 0.0,
+        "controlled_phase": 5.046625536850652e-11,
+        "u0_theta": -7.399353600227458e-10,
+        "u0_phi": 3.7174405134930384e-21,
+        "u0_lambda": -1.9933797573237135e-10
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.1577293110715383,
+        "u1_phi": 3.5572407267054274e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.0904927859113739,
+        "u0_theta": 0.6019159965058524,
+        "u0_phi": 7.141527042446646e-12,
+        "u0_lambda": 0.35250131917828187
+      }
+    },
+    {
+      "run_id": "20261017T014007154999Z_periodic-function-mse-zero-offset-multidataset_seed-0044_08a24406",
+      "data_seed": 271828,
+      "initialization_seed": 44,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.09207974079031844,
+        "u1_phi": 2.0874732165054866e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.15156740416149495,
+        "u0_theta": 1.1332919878744772,
+        "u0_phi": -2.2572630875572486e-08,
+        "u0_lambda": 0.12187698227230781
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.06268000433684584,
+        "u1_phi": 0.0,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.0956679488184342,
+        "u0_theta": -0.9994003911550918,
+        "u0_phi": 0.0,
+        "u0_lambda": -0.07748719115241443
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": 1.7097619996541428e-10,
+        "u1_phi": -1.6020930980335632e-20,
+        "u1_lambda": 0.0,
+        "controlled_phase": 3.8733252971961017e-10,
+        "u0_theta": -2.481741405803387e-09,
+        "u0_phi": -3.845299131381719e-21,
+        "u0_lambda": 3.024852200763794e-10
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.193171387501596,
+        "u1_phi": 1.0834039058162368e-11,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.4353450058902051,
+        "u0_theta": 0.6019159979445657,
+        "u0_phi": 7.33549108125973e-12,
+        "u0_lambda": 0.3413807332935118
+      }
+    },
+    {
+      "run_id": "20261017T014007944477Z_periodic-function-mse-zero-offset-multidataset_seed-0045_08a24406",
+      "data_seed": 271828,
+      "initialization_seed": 45,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.002246109077004732,
+        "u1_phi": -1.1425882462390291e-10,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.0015617515303363305,
+        "u0_theta": 0.924162293123933,
+        "u0_phi": 8.536704054762367e-08,
+        "u0_lambda": -0.013847172446361355
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.0014523708888325435,
+        "u1_phi": 0.0,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.0004313636170483192,
+        "u0_theta": -0.09729914924039294,
+        "u0_phi": 1.3877787807814455e-12,
+        "u0_lambda": -0.011627107449063699
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -2.2711911823393475e-10,
+        "u1_phi": 1.933414339262718e-21,
+        "u1_lambda": 0.0,
+        "controlled_phase": 6.430298201648985e-11,
+        "u0_theta": -2.8757601774201233e-09,
+        "u0_phi": -3.9282354140582675e-21,
+        "u0_lambda": -1.7569992253293513e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.06767601635994287,
+        "u1_phi": 1.5299932843733343e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.019082383509950146,
+        "u0_theta": 0.6019159956648563,
+        "u0_phi": 6.078846125269917e-12,
+        "u0_lambda": 0.519383034865708
+      }
+    },
+    {
+      "run_id": "20261017T014004789840Z_periodic-function-mse-zero-offset-multidataset_seed-0046_08a24406",
+      "data_seed": 314159,
+      "initialization_seed": 46,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.016957936864581136,
+        "u1_phi": 1.3807559007261716e-07,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.18261386087476694,
+        "u0_theta": -1.738648833808433,
+        "u0_phi": 4.32462954336188e-11,
+        "u0_lambda": 0.19254921765691968
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.020436980718852027,
+        "u1_phi": -1.1102230246251564e-11,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.09625244489219752,
+        "u0_theta": 0.5816272696135272,
+        "u0_phi": 0.0,
+        "u0_lambda": -0.10277397877178628
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": 1.9352440031828708e-10,
+        "u1_phi": -7.063854821727155e-21,
+        "u1_lambda": 0.0,
+        "controlled_phase": 6.676845471285835e-10,
+        "u0_theta": -3.243057442478355e-09,
+        "u0_phi": 5.881113817636544e-21,
+        "u0_lambda": 7.223807406790295e-10
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.14626215951374721,
+        "u1_phi": 9.52440599965042e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.5037630394331839,
+        "u0_theta": 0.6019159953990111,
+        "u0_phi": 6.96270549562973e-12,
+        "u0_lambda": 0.5439895613270231
+      }
+    },
+    {
+      "run_id": "20261017T014010353857Z_periodic-function-mse-zero-offset-multidataset_seed-0043_08a24406",
+      "data_seed": 8675309,
+      "initialization_seed": 43,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.0684169056900239,
+        "u1_phi": 1.397753024434678e-10,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.02518873674860922,
+        "u0_theta": 0.44089616913443797,
+        "u0_phi": 2.4470994119951683e-09,
+        "u0_lambda": 0.13805264739561451
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.02798630164072002,
+        "u1_phi": -3.4694469519536137e-13,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.009467553432548903,
+        "u0_theta": -0.18439049110675895,
+        "u0_phi": 3.4694469519536137e-13,
+        "u0_lambda": -0.05556534582035199
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -7.343038011180234e-10,
+        "u1_phi": -6.1194253845043076e-21,
+        "u1_lambda": 0.0,
+        "controlled_phase": 4.194941543227358e-10,
+        "u0_theta": -3.0472320208006293e-09,
+        "u0_phi": 3.488522727706922e-21,
+        "u0_lambda": -1.6532486256808075e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.1579877484442638,
+        "u1_phi": 3.82156274508428e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.08985601094740416,
+        "u0_theta": 0.6019159954600761,
+        "u0_phi": 6.1950367199175426e-12,
+        "u0_lambda": 0.35362028115418637
+      }
+    },
+    {
+      "run_id": "20261017T014002562342Z_periodic-function-mse-zero-offset-multidataset_seed-0043_08a24406",
+      "data_seed": 314159,
+      "initialization_seed": 43,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.0682485809342297,
+        "u1_phi": -3.9335734669521116e-10,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.02544504778528811,
+        "u0_theta": 0.4408961687396653,
+        "u0_phi": 5.10909980988572e-09,
+        "u0_lambda": 0.13806274486973535
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.027006185686351266,
+        "u1_phi": 0.0,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.009135987644875998,
+        "u0_theta": -0.1842614828030664,
+        "u0_phi": 3.4694469519536137e-13,
+        "u0_lambda": -0.05361937658841797
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -6.267580877347409e-10,
+        "u1_phi": -2.1375973489951706e-21,
+        "u1_lambda": 0.0,
+        "controlled_phase": 3.580451874362115e-10,
+        "u0_theta": -3.236810918856691e-09,
+        "u0_phi": 1.3859981345578778e-20,
+        "u0_lambda": -1.4126231085543433e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.15800838260534075,
+        "u1_phi": 3.428136858671325e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.08980204748231392,
+        "u0_theta": 0.6019159953668227,
+        "u0_phi": 7.591149732665698e-12,
+        "u0_lambda": 0.3537155857946927
+      }
+    },
+    {
+      "run_id": "20261017T014011015371Z_periodic-function-mse-zero-offset-multidataset_seed-0044_08a24406",
+      "data_seed": 8675309,
+      "initialization_seed": 44,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.09521580103148874,
+        "u1_phi": 2.7317638817692114e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.15052017669964268,
+        "u0_theta": 1.1332919871120746,
+        "u0_phi": 4.75661288135143e-10,
+        "u0_lambda": 0.12143123900095443
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.07112297545908142,
+        "u1_phi": 0.0,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.10855438268286831,
+        "u0_theta": -0.8611922891754719,
+        "u0_phi": 0.0,
+        "u0_lambda": -0.08792468433882482
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": 7.895502730010479e-10,
+        "u1_phi": 9.304851651650983e-22,
+        "u1_lambda": 0.0,
+        "controlled_phase": 1.76952755196313e-09,
+        "u0_theta": -2.2828135922438887e-09,
+        "u0_phi": -3.478919702040537e-20,
+        "u0_lambda": 1.3827595842450877e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.19408061000440316,
+        "u1_phi": 9.162887564143252e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.43438888270711945,
+        "u0_theta": 0.6019159980016031,
+        "u0_phi": 9.258858029841898e-12,
+        "u0_lambda": 0.33980213372823176
+      }
+    },
+    {
+      "run_id": "20261017T014013326483Z_periodic-function-mse-zero-offset-multidataset_seed-0042_08a24406",
+      "data_seed": 20261016,
+      "initialization_seed": 42,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.5259083567201839,
+        "u1_phi": -8.950819596620363e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.2033004989526943,
+        "u0_theta": 1.561426831763014,
+        "u0_phi": -2.5936919278990445e-09,
+        "u0_lambda": -0.7262933425298814
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": 0.1207047611306855,
+        "u1_phi": 1.1102230246251564e-11,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.04037557049807461,
+        "u0_theta": -0.6013533432325247,
+        "u0_phi": 2.2204460492503128e-11,
+        "u0_lambda": 0.15588061392790564
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -1.0018305616290008e-09,
+        "u1_phi": 5.557702185799713e-21,
+        "u1_lambda": 0.0,
+        "controlled_phase": -6.478764073047999e-10,
+        "u0_theta": -3.8701046860124606e-09,
+        "u0_phi": 2.6307442452076e-20,
+        "u0_lambda": -1.8297688384363017e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.26965199447614374,
+        "u1_phi": 4.153838740142648e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.17364186614063137,
+        "u0_theta": 0.6019159986480676,
+        "u0_phi": 1.1585774472090216e-11,
+        "u0_lambda": 0.49334302537743757
+      }
+    },
+    {
+      "run_id": "20261017T014006400332Z_periodic-function-mse-zero-offset-multidataset_seed-0043_08a24406",
+      "data_seed": 271828,
+      "initialization_seed": 43,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.06746630252405517,
+        "u1_phi": 9.75215463938639e-11,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.026619213956699195,
+        "u0_theta": 0.4408961676955929,
+        "u0_phi": -7.42809369569386e-10,
+        "u0_lambda": 0.13811457839586705
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.024221146829872527,
+        "u1_phi": 0.0,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.008193830138003566,
+        "u0_theta": -0.20389735726281108,
+        "u0_phi": -1.3877787807814455e-12,
+        "u0_lambda": -0.04808982683873752
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -4.850327413966786e-10,
+        "u1_phi": -7.536831399705979e-21,
+        "u1_lambda": 0.0,
+        "controlled_phase": 2.7632896828211495e-10,
+        "u0_theta": -4.353999917850508e-09,
+        "u0_phi": -7.80154161128426e-21,
+        "u0_lambda": -1.0948213227126741e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.15809924896953173,
+        "u1_phi": 3.325090925988958e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.0895538453962655,
+        "u0_theta": 0.6019159950558275,
+        "u0_phi": 6.517777646041388e-12,
+        "u0_lambda": 0.3541555323042144
+      }
+    },
+    {
+      "run_id": "20261017T014014166457Z_periodic-function-mse-zero-offset-multidataset_seed-0043_08a24406",
+      "data_seed": 20261016,
+      "initialization_seed": 43,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.06771229428624093,
+        "u1_phi": -1.9647172777581545e-09,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.0262532747323041,
+        "u0_theta": 0.440896167659961,
+        "u0_phi": 2.149795008676847e-09,
+        "u0_lambda": 0.13809734445903832
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.025480211031034258,
+        "u1_phi": 3.4694469519536137e-13,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.008619762000353082,
+        "u0_theta": -0.19864449710763063,
+        "u0_phi": 0.0,
+        "u0_lambda": -0.05058963330230314
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -5.235779915205821e-10,
+        "u1_phi": 7.355795140491544e-22,
+        "u1_lambda": 0.0,
+        "controlled_phase": 2.985492447283526e-10,
+        "u0_theta": -4.271809493467809e-09,
+        "u0_phi": 6.500095221736562e-22,
+        "u0_lambda": -1.1813118098617995e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.15807163497176255,
+        "u1_phi": 3.907221549003743e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.08963139855623926,
+        "u0_theta": 0.6019159950388291,
+        "u0_phi": 6.205426185362036e-12,
+        "u0_lambda": 0.35401775679758213
+      }
+    },
+    {
+      "run_id": "20261017T014012594942Z_periodic-function-mse-zero-offset-multidataset_seed-0046_08a24406",
+      "data_seed": 8675309,
+      "initialization_seed": 46,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.02040768898173484,
+        "u1_phi": 7.768411824926602e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.1819308556908812,
+        "u0_theta": -1.7386488332387229,
+        "u0_phi": 5.86481174735809e-09,
+        "u0_lambda": 0.192257486597879
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.01922141222854279,
+        "u1_phi": 0.0,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.090527458407319,
+        "u0_theta": 0.5744065249335684,
+        "u0_phi": 1.1102230246251564e-11,
+        "u0_lambda": -0.09666109883621486
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -7.467446537621995e-10,
+        "u1_phi": -8.081562734808826e-21,
+        "u1_lambda": 0.0,
+        "controlled_phase": -2.590058870034858e-09,
+        "u0_theta": -3.618784618046973e-09,
+        "u0_phi": -1.187561183036823e-20,
+        "u0_lambda": -2.792772354397851e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.14537927865684455,
+        "u1_phi": 1.038446101432302e-11,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.5044738261154567,
+        "u0_theta": 0.6019159951830996,
+        "u0_phi": 6.977816019825959e-12,
+        "u0_lambda": 0.544225894753245
+      }
+    },
+    {
+      "run_id": "20261017T014011802329Z_periodic-function-mse-zero-offset-multidataset_seed-0045_08a24406",
+      "data_seed": 8675309,
+      "initialization_seed": 45,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.0038207993968617515,
+        "u1_phi": -1.9489565517005758e-10,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.001964494028317443,
+        "u0_theta": 0.9241622914328076,
+        "u0_phi": 1.06673021527115e-07,
+        "u0_lambda": -0.014037899381929453
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.0016785041592748404,
+        "u1_phi": 0.0,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.0004985266727208781,
+        "u0_theta": -0.1031249363708797,
+        "u0_phi": 1.3877787807814455e-12,
+        "u0_lambda": -0.01343744107373812
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -3.857872052457382e-10,
+        "u1_phi": 1.010959454556539e-21,
+        "u1_lambda": 0.0,
+        "controlled_phase": 1.0949127699579052e-10,
+        "u0_theta": -4.029209262545019e-09,
+        "u0_phi": 1.398474663108728e-20,
+        "u0_lambda": -2.965663787972737e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.06789703983616441,
+        "u1_phi": 1.5025688752622375e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.019215612694956835,
+        "u0_theta": 0.6019159949965208,
+        "u0_phi": 6.913470221399275e-12,
+        "u0_lambda": 0.5190792326329998
+      }
+    },
+    {
+      "run_id": "20261017T014005586611Z_periodic-function-mse-zero-offset-multidataset_seed-0042_08a24406",
+      "data_seed": 271828,
+      "initialization_seed": 42,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.5217533516194135,
+        "u1_phi": 3.360667744090051e-09,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.20670422406790223,
+        "u0_theta": 1.5614268293522624,
+        "u0_phi": 2.333535054077629e-08,
+        "u0_lambda": -0.7273594493179028
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": 0.1156302977145529,
+        "u1_phi": 0.0,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.0386781697114813,
+        "u0_theta": -0.6442359101965778,
+        "u0_phi": 0.0,
+        "u0_lambda": 0.14932734739847575
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -2.0440553127550686e-10,
+        "u1_phi": 1.0404003906518483e-20,
+        "u1_lambda": 0.0,
+        "controlled_phase": -1.3551388446369413e-10,
+        "u0_theta": -5.527369567538963e-09,
+        "u0_phi": 4.4053763456149217e-20,
+        "u0_lambda": -3.717275764833035e-10
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.2691805260265531,
+        "u1_phi": 5.454733083113575e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.17501313586609396,
+        "u0_theta": 0.6019159992296017,
+        "u0_phi": 9.402877341563478e-12,
+        "u0_lambda": 0.49354730055425616
+      }
+    },
+    {
+      "run_id": "20261017T014020218222Z_periodic-function-mse-zero-offset-multidataset_seed-0046_08a24406",
+      "data_seed": 12345,
+      "initialization_seed": 46,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.008459379762727703,
+        "u1_phi": 2.439373147922197e-10,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.1845250939192904,
+        "u0_theta": -1.7386488341561188,
+        "u0_phi": -3.826588379496343e-08,
+        "u0_lambda": 0.1930849349946384
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.021146292072948825,
+        "u1_phi": 0.0,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.09959310243168316,
+        "u0_theta": 0.4713682037249533,
+        "u0_phi": 0.0,
+        "u0_lambda": -0.10634098080997133
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -9.449339572598108e-10,
+        "u1_phi": -4.882255366106579e-21,
+        "u1_lambda": 0.0,
+        "controlled_phase": -3.193736355572364e-09,
+        "u0_theta": -3.832511085631568e-09,
+        "u0_phi": -1.0278950039667114e-21,
+        "u0_lambda": -3.455464868971314e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.14846629980224382,
+        "u1_phi": 1.1638818161557431e-11,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.5019907616560221,
+        "u0_theta": 0.6019159948653643,
+        "u0_phi": 6.72415159778752e-12,
+        "u0_lambda": 0.5433926291612722
+      }
+    },
+    {
+      "run_id": "20261017T014003363761Z_periodic-function-mse-zero-offset-multidataset_seed-0044_08a24406",
+      "data_seed": 314159,
+      "initialization_seed": 44,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.09436960787196425,
+        "u1_phi": 2.5167495643074744e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.1508024916388906,
+        "u0_theta": 1.1332919860682829,
+        "u0_phi": -1.5493655247666993e-09,
+        "u0_lambda": 0.12155314414647744
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.06559124400284944,
+        "u1_phi": 5.551115123125782e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.10011134877196957,
+        "u0_theta": -0.8735798739778476,
+        "u0_phi": 0.0,
+        "u0_lambda": -0.08108616640356558
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -1.1976412948624377e-09,
+        "u1_phi": -1.3687984862262913e-20,
+        "u1_lambda": 0.0,
+        "controlled_phase": -2.6832107578118847e-09,
+        "u0_theta": -4.303923704062814e-09,
+        "u0_phi": -8.341480693425088e-21,
+        "u0_lambda": -2.1017768743546506e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.19383467323554912,
+        "u1_phi": 9.408376363823898e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.4346473408722287,
+        "u0_theta": 0.6019159990037717,
+        "u0_phi": 7.276022538386834e-12,
+        "u0_lambda": 0.34022862489398487
+      }
+    },
+    {
+      "run_id": "20261017T014017102990Z_periodic-function-mse-zero-offset-multidataset_seed-0042_08a24406",
+      "data_seed": 12345,
+      "initialization_seed": 42,
+      "largest_wrapped_change_parameter": "u0_lambda",
+      "wrapped_angle_change_radians": {
+        "u1_theta": -2.3404677915717613,
+        "u1_phi": -1.885824148395443e-06,
+        "u1_lambda": 0.0,
+        "controlled_phase": -2.7752428689419535,
+        "u0_theta": -2.7448942997596433,
+        "u0_phi": -5.487126308878487e-10,
+        "u0_lambda": 2.839915418770694
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": 0.15603259365670752,
+        "u1_phi": 1.1102230246251564e-11,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.052192680077833835,
+        "u0_theta": -0.3192722824341132,
+        "u0_phi": 1.1102230246251564e-11,
+        "u0_lambda": 0.20150370428351214
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -6.585949463410966e-10,
+        "u1_phi": 5.8388908080565674e-21,
+        "u1_lambda": 0.0,
+        "controlled_phase": 5.432551322821258e-11,
+        "u0_theta": -3.096947055724556e-09,
+        "u0_phi": 6.735508094556188e-20,
+        "u0_lambda": -2.5915858030888136e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.12873174899121945,
+        "u1_phi": 2.6473410941995286e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.010676081773190184,
+        "u0_theta": 0.6019159950208514,
+        "u0_phi": 1.451873625509338e-11,
+        "u0_lambda": 0.5107485459901553
+      }
+    },
+    {
+      "run_id": "20261017T014016306678Z_periodic-function-mse-zero-offset-multidataset_seed-0046_08a24406",
+      "data_seed": 20261016,
+      "initialization_seed": 46,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.030605723529182782,
+        "u1_phi": 5.060539098877825e-09,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.17996861609073855,
+        "u0_theta": -1.738648837668607,
+        "u0_phi": -7.310312577502032e-08,
+        "u0_lambda": 0.19138090198524704
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.01652970779142393,
+        "u1_phi": 0.0,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.07785028580675757,
+        "u0_theta": 0.6358541513873384,
+        "u0_phi": 0.0,
+        "u0_lambda": -0.08312499104601301
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -7.73222301700016e-10,
+        "u1_phi": -1.6048086438477097e-20,
+        "u1_lambda": 0.0,
+        "controlled_phase": -2.742181626163426e-09,
+        "u0_theta": -7.374059692624247e-09,
+        "u0_phi": -2.853273070403863e-20,
+        "u0_lambda": -2.9486662954539985e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.14277362145539493,
+        "u1_phi": 1.0338719065410936e-11,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.5065499070183657,
+        "u0_theta": 0.6019159936649523,
+        "u0_phi": 8.32847949227958e-12,
+        "u0_lambda": 0.5449146454323125
+      }
+    },
+    {
+      "run_id": "20261017T014014858492Z_periodic-function-mse-zero-offset-multidataset_seed-0044_08a24406",
+      "data_seed": 20261016,
+      "initialization_seed": 44,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.09304604253624049,
+        "u1_phi": 2.45375897378608e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.15124937424424356,
+        "u0_theta": 1.1332919836247966,
+        "u0_phi": -1.0746104450731764e-08,
+        "u0_lambda": 0.1217351127479338
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.06631663492240314,
+        "u1_phi": -5.551115123125782e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.10121850667066389,
+        "u0_theta": -0.9589384252661758,
+        "u0_phi": 5.551115123125782e-12,
+        "u0_lambda": -0.08198291978622763
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -1.879472367023271e-09,
+        "u1_phi": -1.5554541776101393e-20,
+        "u1_lambda": 0.0,
+        "controlled_phase": -4.224589162620327e-09,
+        "u0_theta": -7.031689365658924e-09,
+        "u0_phi": -1.312307864062063e-20,
+        "u0_lambda": -3.311591190293617e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.1934524491993239,
+        "u1_phi": 1.02825359071253e-11,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.4350506097501895,
+        "u0_theta": 0.601916000100022,
+        "u0_phi": 6.98239667300738e-12,
+        "u0_lambda": 0.34089488204294616
+      }
+    },
+    {
+      "run_id": "20261017T014001703931Z_periodic-function-mse-zero-offset-multidataset_seed-0042_08a24406",
+      "data_seed": 314159,
+      "initialization_seed": 42,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.5835405948780075,
+        "u1_phi": 4.617974003195968e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.11815736549726896,
+        "u0_theta": 1.5614268290601592,
+        "u0_phi": 1.1197152405273414e-07,
+        "u0_lambda": -0.7220618205037992
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": 0.13955496349637997,
+        "u1_phi": 1.1102230246251564e-11,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.04668093627202551,
+        "u0_theta": -0.49979750076367674,
+        "u0_phi": 1.1102230246251564e-11,
+        "u0_lambda": 0.18022415341212292
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -3.120724210728276e-09,
+        "u1_phi": -2.3649304834749046e-20,
+        "u1_lambda": 0.0,
+        "controlled_phase": -1.682228947483356e-09,
+        "u0_theta": -6.317932204009266e-09,
+        "u0_phi": -5.757491147845448e-20,
+        "u0_lambda": -5.337973392211484e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.2839977900633068,
+        "u1_phi": 4.747864790287192e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.1528010596268879,
+        "u0_theta": 0.6019159999986012,
+        "u0_phi": 8.846611390062671e-12,
+        "u0_lambda": 0.4859755121824997
+      }
+    },
+    {
+      "run_id": "20261017T014008779190Z_periodic-function-mse-zero-offset-multidataset_seed-0046_08a24406",
+      "data_seed": 271828,
+      "initialization_seed": 46,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.031119434911582644,
+        "u1_phi": 8.70008420861268e-09,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.1798610563540648,
+        "u0_theta": -1.738648840442794,
+        "u0_phi": -6.212813552508578e-08,
+        "u0_lambda": 0.19134636303426067
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.015936329533783322,
+        "u1_phi": 0.0,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.07505564063592374,
+        "u0_theta": 0.6611007725143558,
+        "u0_phi": 0.0,
+        "u0_lambda": -0.08014099615039072
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -1.0551534840317838e-09,
+        "u1_phi": -3.599248507773787e-20,
+        "u1_lambda": 0.0,
+        "controlled_phase": -3.746747392103013e-09,
+        "u0_theta": -1.0086064986677787e-08,
+        "u0_phi": 2.507687498375082e-20,
+        "u0_lambda": -4.028804212990851e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.14264106690946934,
+        "u1_phi": 9.445883929247432e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.5066536487910169,
+        "u0_theta": 0.6019159925822134,
+        "u0_phi": 9.897809838191987e-12,
+        "u0_lambda": 0.544949355027166
+      }
+    },
+    {
+      "run_id": "20261017T014009623290Z_periodic-function-mse-zero-offset-multidataset_seed-0042_08a24406",
+      "data_seed": 8675309,
+      "initialization_seed": 42,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": -0.5858265157201421,
+        "u1_phi": -1.606292880929061e-07,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.12221514610727002,
+        "u0_theta": 1.5614268278855272,
+        "u0_phi": 5.922720980322538e-09,
+        "u0_lambda": -0.7194566656498154
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": 0.136822819130078,
+        "u1_phi": 2.2204460492503128e-11,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.04576703789282987,
+        "u0_theta": -0.4925044749359841,
+        "u0_phi": 2.2204460492503128e-11,
+        "u0_lambda": 0.1766958059201684
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -4.132350588445349e-09,
+        "u1_phi": 2.0783748491308673e-20,
+        "u1_lambda": 0.0,
+        "controlled_phase": -2.229659041494819e-09,
+        "u0_theta": -7.619166492148364e-09,
+        "u0_phi": 1.5789155788587524e-21,
+        "u0_lambda": -7.10957324399996e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.28279509087735005,
+        "u1_phi": 4.079482665878311e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.15236722081373733,
+        "u0_theta": 0.6019160006110382,
+        "u0_phi": 7.946499306585435e-12,
+        "u0_lambda": 0.4866908988478351
+      }
+    },
+    {
+      "run_id": "20261017T014015542380Z_periodic-function-mse-zero-offset-multidataset_seed-0045_08a24406",
+      "data_seed": 20261016,
+      "initialization_seed": 45,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.002716086183461641,
+        "u1_phi": 3.006217497159014e-11,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.001682523683220083,
+        "u0_theta": 0.9241622845321009,
+        "u0_phi": 5.529234980983233e-08,
+        "u0_lambda": -0.01390401047800216
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.0015277622875120576,
+        "u1_phi": 1.3877787807814455e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.00045375535412395246,
+        "u0_theta": -0.09946933273302648,
+        "u0_phi": 2.775557561562891e-12,
+        "u0_lambda": -0.012230661194934099
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -8.020659939412612e-10,
+        "u1_phi": 5.450394068567522e-22,
+        "u1_lambda": 0.0,
+        "controlled_phase": 2.266825660950129e-10,
+        "u0_theta": -1.0484851293262864e-08,
+        "u0_phi": 1.693743528077404e-20,
+        "u0_lambda": -6.163069769036835e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.06774193110503779,
+        "u1_phi": 1.416969698307627e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.019122113082654754,
+        "u0_theta": 0.6019159922342957,
+        "u0_phi": 6.715037468151073e-12,
+        "u0_lambda": 0.5192924509825186
+      }
+    },
+    {
+      "run_id": "20261017T014019470062Z_periodic-function-mse-zero-offset-multidataset_seed-0045_08a24406",
+      "data_seed": 12345,
+      "initialization_seed": 45,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.005327955974847587,
+        "u1_phi": 2.6969271260668393e-10,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.0023548912100288533,
+        "u0_theta": 0.924162286733293,
+        "u0_phi": 9.78638672322063e-08,
+        "u0_lambda": -0.01422090865805048
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.001999242028871695,
+        "u1_phi": 0.0,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.0005937879105077926,
+        "u0_theta": -0.11262981889428868,
+        "u0_phi": 1.3877787807814455e-12,
+        "u0_lambda": -0.01600514171473666
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -1.4752933756971369e-09,
+        "u1_phi": 5.5319869380706616e-21,
+        "u1_lambda": 0.0,
+        "controlled_phase": 4.1936834832997085e-10,
+        "u0_theta": -8.327495339956038e-09,
+        "u0_phi": -5.186093617844207e-21,
+        "u0_lambda": -1.1256498108678119e-08
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.06810815827617737,
+        "u1_phi": 1.7048885245898834e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.01934368087104402,
+        "u0_theta": 0.6019159926224151,
+        "u0_phi": 6.759746227002105e-12,
+        "u0_lambda": 0.5187873471364562
+      }
+    },
+    {
+      "run_id": "20261017T014004092974Z_periodic-function-mse-zero-offset-multidataset_seed-0045_08a24406",
+      "data_seed": 314159,
+      "initialization_seed": 45,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.0037259259599062844,
+        "u1_phi": -2.761724182676062e-10,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.001937911462967179,
+        "u0_theta": 0.9241622850779585,
+        "u0_phi": 1.1019639689635596e-07,
+        "u0_lambda": -0.014026484647973625
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.0016205708663896699,
+        "u1_phi": -1.3877787807814455e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.00048132010738166636,
+        "u0_theta": -0.10069820076952228,
+        "u0_phi": 0.0,
+        "u0_lambda": -0.012973650009850955
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -1.1598617780803806e-09,
+        "u1_phi": -1.0533819904787544e-21,
+        "u1_lambda": 0.0,
+        "controlled_phase": 3.2848436944386235e-10,
+        "u0_theta": -9.855329426027137e-09,
+        "u0_phi": 3.81168961236642e-22,
+        "u0_lambda": -8.885382958686004e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.06788393140845977,
+        "u1_phi": 1.3632522028773824e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.019207513701003955,
+        "u0_theta": 0.6019159921411831,
+        "u0_phi": 8.067458682606642e-12,
+        "u0_lambda": 0.519097636828877
+      }
+    },
+    {
+      "run_id": "20261017T014018739033Z_periodic-function-mse-zero-offset-multidataset_seed-0044_08a24406",
+      "data_seed": 12345,
+      "initialization_seed": 44,
+      "largest_wrapped_change_parameter": "u0_theta",
+      "wrapped_angle_change_radians": {
+        "u1_theta": 0.10480907725396316,
+        "u1_phi": 3.139860993428556e-08,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.1469920127778197,
+        "u0_theta": 1.133291970118841,
+        "u0_phi": -1.642255442746432e-08,
+        "u0_lambda": 0.1204013813333753
+      },
+      "initial_training_loss_gradient_central_difference": {
+        "u1_theta": -0.08757606373976932,
+        "u1_phi": 5.551115123125782e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": -0.13366658910274332,
+        "u0_theta": -0.6957636508819752,
+        "u0_phi": -5.551115123125782e-12,
+        "u0_lambda": -0.10826456162127406
+      },
+      "final_training_loss_gradient_central_difference": {
+        "u1_theta": -1.217425226053231e-09,
+        "u1_phi": -4.917846890442526e-20,
+        "u1_lambda": 0.0,
+        "controlled_phase": -2.6663096255518138e-09,
+        "u0_theta": -1.2931294360167683e-08,
+        "u0_phi": -3.444018924034725e-20,
+        "u0_lambda": -2.0715904656189964e-09
+      },
+      "final_prediction_jacobian_rms_on_512_point_grid": {
+        "u1_theta": 0.19679077994809957,
+        "u1_phi": 9.81001080063624e-12,
+        "u1_lambda": 0.0,
+        "controlled_phase": 0.4314555875162777,
+        "u0_theta": 0.6019160042066884,
+        "u0_phi": 6.63942607092785e-12,
+        "u0_lambda": 0.33494115893995235
+      }
+    }
+  ]
+}

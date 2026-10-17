@@ -1,0 +1,68 @@
+{
+  "run_id": "20261017T020300719861Z_periodic-function-mse-k2-zero-offset_seed-0048_cbc825e0",
+  "status": "FINISHED",
+  "comparison_group": "periodic-function-mse-k2-zero-offset-components-ry-angle-encoding-z1-readout",
+  "protocol_version": "0.1.0",
+  "objective": "training-set mean squared error only",
+  "loss_excludes": [
+    "process fidelity",
+    "Frobenius/unitary alignment",
+    "PINN/physics residual",
+    "frequency labels"
+  ],
+  "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+  "ansatz": "qft2_trainable_u_cp_u_swap",
+  "readout": "Pauli-Z expectation on q1",
+  "seed": 48,
+  "data_seed": 314159,
+  "optimizer": "L-BFGS-B",
+  "dataset_sizes": {
+    "train": 64,
+    "validation": 128,
+    "test": 512
+  },
+  "target_offset": 0.0,
+  "target_components": [
+    {
+      "frequency": 1,
+      "cosine": 0.55,
+      "sine": 0.25
+    },
+    {
+      "frequency": 2,
+      "cosine": 0.16,
+      "sine": 0.08
+    }
+  ],
+  "iterations": 9,
+  "function_evaluations": 104,
+  "optimizer_success": true,
+  "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+  "elapsed_seconds": 0.10043845399923157,
+  "initial_train_mse": 0.35231170920136634,
+  "final_train_mse": 0.016317001290239705,
+  "validation_mse": 0.01755291029476862,
+  "test": {
+    "mse": 0.016271891990647887,
+    "rmse": 0.12756132639106527,
+    "r2": 0.9174045893316459
+  },
+  "constant_baseline_test": {
+    "mse": 0.2032802999417505,
+    "rmse": 0.450866166330709,
+    "r2": -0.031841894238542556
+  },
+  "known_frequency_fourier_baseline_test": {
+    "mse": 1.9968722039537117e-32,
+    "rmse": 1.413107286781054e-16,
+    "r2": 1.0
+  },
+  "spectral_coefficient_mse_k0_to_16": 0.00047730933635465624,
+  "dense_grid_absolute_error_mae": 0.11428876839338184,
+  "dense_grid_absolute_error_max": 0.19650303988067597,
+  "target_peak_frequency": 1,
+  "predicted_peak_frequency": 1,
+  "frequency_peak_correct": true,
+  "qft_process_fidelity_diagnostic_only": 0.014671977940153076,
+  "initial_qft_process_fidelity_diagnostic_only": 0.005913035419745105
+}

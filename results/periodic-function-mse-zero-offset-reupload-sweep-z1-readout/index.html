@@ -1,0 +1,191 @@
+<!doctype html><meta charset="utf-8"><title>Two-qubit data re-uploading sweep</title>
+<h1>Two-qubit data re-uploading sweep</h1>
+<p>Controlled comparison of 1–4 data uploads with 2–4 nested target frequencies. Qubit count, target coefficients, sampled data (seed 314159), and ten initialization seeds are paired across upload counts. Each run uses 10 initializations; 64 train, 128 validation, and 512 test examples.</p>
+<p>The per-layer structure is RY(2πx) on q0, trainable U on q1, controlled phase, trainable U on q0; after the final layer, apply SWAP and measure ideal Z1. L=1 is the original ansatz. Training objective is empirical MSE only. Because L&gt;1 makes the circuit input-dependent at multiple locations, a single process-fidelity-to-QFT score is not defined for this comparison.</p>
+<p><b>Interpreting the MSE plot:</b> connected points show mean test MSE over ten initializations and whiskers show ±1 population standard deviation (not a minimum or boxplot). The abrupt drop for the four-frequency target at four uploads is the mean reaching about 1.8e-13. Extra-upload changes for the already-fit two-frequency target are tiny residuals near numerical precision. On the logarithmic axis a lower whisker cannot be drawn if mean minus SD is zero or negative.</p>
+<p><b>Frequency count versus bandwidth:</b> these nested targets contain every harmonic from k=1 through k=N, so component count equals maximum harmonic. The sweep shows uploads expanding support through k=L and does not test a one-upload-per-arbitrary-component rule. A sparse-target experiment is needed to separate those explanations.</p>
+<p><b>Design caveat:</b> each added upload also adds one trainable block (7 parameters), so depth and parameter count rise with upload count. The random-parameter spectrum check separately verifies that the accessible frequency ceiling expands. A depth-matched circuit with one upload is still needed to isolate upload effects on optimizer performance.</p>
+<h2>Aggregate results</h2><table border="1" cellpadding="5"><thead><tr><th>Target frequencies</th><th>Uploads</th><th>Runs</th><th>Test MSE mean ± SD</th><th>Omitted-power floor</th><th>Support precision</th><th>Support recall</th><th>Amplitude RMSE</th></tr></thead><tbody><tr><td>2</td><td>1</td><td>10</td><td>0.01627189 ± 6.1e-11</td><td>0.016</td><td>1.000</td><td>0.500</td><td>0.043643</td></tr>
+<tr><td>2</td><td>2</td><td>10</td><td>2.923355e-15 ± 4.1e-15</td><td>0</td><td>1.000</td><td>1.000</td><td>9.312e-09</td></tr>
+<tr><td>2</td><td>3</td><td>10</td><td>5.698681e-14 ± 4.6e-14</td><td>0</td><td>1.000</td><td>1.000</td><td>5.5603e-08</td></tr>
+<tr><td>2</td><td>4</td><td>10</td><td>5.49759e-11 ± 1.1e-10</td><td>0</td><td>1.000</td><td>1.000</td><td>1.3754e-06</td></tr>
+<tr><td>3</td><td>1</td><td>10</td><td>0.02246088 ± 1.5e-10</td><td>0.02225</td><td>1.000</td><td>0.333</td><td>0.051298</td></tr>
+<tr><td>3</td><td>2</td><td>10</td><td>0.007097916 ± 1.8e-09</td><td>0.00625</td><td>1.000</td><td>0.667</td><td>0.027353</td></tr>
+<tr><td>3</td><td>3</td><td>10</td><td>1.976148e-13 ± 1.7e-13</td><td>0</td><td>1.000</td><td>1.000</td><td>9.508e-08</td></tr>
+<tr><td>3</td><td>4</td><td>10</td><td>3.471163e-13 ± 5.3e-13</td><td>0</td><td>1.000</td><td>1.000</td><td>1.2653e-07</td></tr>
+<tr><td>4</td><td>1</td><td>10</td><td>0.02659686 ± 1.2e-10</td><td>0.0253125</td><td>1.000</td><td>0.250</td><td>0.054622</td></tr>
+<tr><td>4</td><td>2</td><td>10</td><td>0.01062687 ± 4.5e-09</td><td>0.0093125</td><td>1.000</td><td>0.500</td><td>0.033324</td></tr>
+<tr><td>4</td><td>3</td><td>10</td><td>0.003268346 ± 5.3e-09</td><td>0.0030625</td><td>1.000</td><td>0.750</td><td>0.019267</td></tr>
+<tr><td>4</td><td>4</td><td>10</td><td>1.78303e-13 ± 2.4e-13</td><td>0</td><td>1.000</td><td>1.000</td><td>8.1809e-08</td></tr></tbody></table>
+<h2>Function error and spectral recovery</h2><img src="test_mse_vs_uploads.png" width="96%"><br><img src="frequency_support_recall.png" width="72%"><br><img src="learned_spectra_by_uploads.png" width="96%">
+<h2>Random-parameter expressivity check</h2><p>Twenty-four random parameter settings per upload count were evaluated on a dense 2048-point period. The union of detected non-DC bins (amplitude threshold 1e-8) is in summary.json. This is a numerical check of accessible support, separate from the trained-run support threshold of 0.001.</p><pre>{
+  "1": {
+    "random_parameter_samples": 24,
+    "amplitude_threshold": 1e-08,
+    "union_non_dc_support": [
+      1
+    ],
+    "maximum_frequency_per_sample": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "max_observed_frequency": 1
+  },
+  "2": {
+    "random_parameter_samples": 24,
+    "amplitude_threshold": 1e-08,
+    "union_non_dc_support": [
+      1,
+      2
+    ],
+    "maximum_frequency_per_sample": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "max_observed_frequency": 2
+  },
+  "3": {
+    "random_parameter_samples": 24,
+    "amplitude_threshold": 1e-08,
+    "union_non_dc_support": [
+      1,
+      2,
+      3
+    ],
+    "maximum_frequency_per_sample": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "max_observed_frequency": 3
+  },
+  "4": {
+    "random_parameter_samples": 24,
+    "amplitude_threshold": 1e-08,
+    "union_non_dc_support": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "maximum_frequency_per_sample": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "max_observed_frequency": 4
+  }
+}</pre>
+<h2>One-upload baseline check</h2><pre>{
+  "one_upload_exact_prediction_equivalence_max_abs_delta": 6.661338147750939e-16,
+  "paired_prior_sweep_test_mse_delta_mean": 1.6362458841549336e-12,
+  "paired_prior_sweep_test_mse_delta_max_abs": 3.6378948464754757e-11,
+  "paired_runs_compared": 30
+}</pre>
+<h2>Lowest-MSE example runs</h2><table border="1" cellpadding="5"><thead><tr><th>Uploads</th><th>Target frequencies</th><th>Seed</th><th>Test MSE</th><th>Learned support</th><th>Run</th></tr></thead><tbody><tr><td>2</td><td>2</td><td>48</td><td>4.608235e-17</td><td>[1, 2]</td><td><a href="../runs/20261017T023903590820Z_reupload-2_k2_seed-0048_0134a429/report.html">report</a></td></tr>
+<tr><td>2</td><td>2</td><td>43</td><td>2.984166e-16</td><td>[1, 2]</td><td><a href="../runs/20261017T023900568675Z_reupload-2_k2_seed-0043_2e0cbe34/report.html">report</a></td></tr>
+<tr><td>2</td><td>2</td><td>46</td><td>5.031798e-16</td><td>[1, 2]</td><td><a href="../runs/20261017T023902420700Z_reupload-2_k2_seed-0046_5905f1b6/report.html">report</a></td></tr>
+<tr><td>2</td><td>2</td><td>45</td><td>6.97883e-16</td><td>[1, 2]</td><td><a href="../runs/20261017T023901699675Z_reupload-2_k2_seed-0045_fd473089/report.html">report</a></td></tr>
+<tr><td>2</td><td>2</td><td>44</td><td>1.131949e-15</td><td>[1, 2]</td><td><a href="../runs/20261017T023901073712Z_reupload-2_k2_seed-0044_088df35d/report.html">report</a></td></tr>
+<tr><td>2</td><td>2</td><td>42</td><td>1.132117e-15</td><td>[1, 2]</td><td><a href="../runs/20261017T023900108995Z_reupload-2_k2_seed-0042_f7c4a276/report.html">report</a></td></tr>
+<tr><td>3</td><td>3</td><td>47</td><td>1.176452e-15</td><td>[1, 2, 3]</td><td><a href="../runs/20261017T023957425587Z_reupload-3_k3_seed-0047_73f55107/report.html">report</a></td></tr>
+<tr><td>3</td><td>3</td><td>50</td><td>1.512686e-15</td><td>[1, 2, 3]</td><td><a href="../runs/20261017T023959860474Z_reupload-3_k3_seed-0050_61f5d15d/report.html">report</a></td></tr>
+<tr><td>3</td><td>2</td><td>47</td><td>1.559873e-15</td><td>[1, 2]</td><td><a href="../runs/20261017T023910819993Z_reupload-3_k2_seed-0047_c6918c57/report.html">report</a></td></tr>
+<tr><td>2</td><td>2</td><td>49</td><td>2.473249e-15</td><td>[1, 2]</td><td><a href="../runs/20261017T023904278292Z_reupload-2_k2_seed-0049_60fa0d36/report.html">report</a></td></tr>
+<tr><td>4</td><td>3</td><td>43</td><td>2.482879e-15</td><td>[1, 2, 3]</td><td><a href="../runs/20261017T024003595022Z_reupload-4_k3_seed-0043_9ce48317/report.html">report</a></td></tr>
+<tr><td>4</td><td>4</td><td>46</td><td>2.825059e-15</td><td>[1, 2, 3, 4]</td><td><a href="../runs/20261017T024041139221Z_reupload-4_k4_seed-0046_eb163b0d/report.html">report</a></td></tr>
+<tr><td>2</td><td>2</td><td>50</td><td>3.979373e-15</td><td>[1, 2]</td><td><a href="../runs/20261017T023904783938Z_reupload-2_k2_seed-0050_1ffc9567/report.html">report</a></td></tr>
+<tr><td>2</td><td>2</td><td>47</td><td>4.650431e-15</td><td>[1, 2]</td><td><a href="../runs/20261017T023902976798Z_reupload-2_k2_seed-0047_a4dbfb3b/report.html">report</a></td></tr>
+<tr><td>4</td><td>3</td><td>42</td><td>6.262307e-15</td><td>[1, 2, 3]</td><td><a href="../runs/20261017T024001747389Z_reupload-4_k3_seed-0042_df8ed29b/report.html">report</a></td></tr>
+<tr><td>3</td><td>2</td><td>45</td><td>7.666167e-15</td><td>[1, 2]</td><td><a href="../runs/20261017T023909039835Z_reupload-3_k2_seed-0045_e197a5b0/report.html">report</a></td></tr>
+<tr><td>3</td><td>3</td><td>49</td><td>1.022492e-14</td><td>[1, 2, 3]</td><td><a href="../runs/20261017T023959147998Z_reupload-3_k3_seed-0049_38d785c6/report.html">report</a></td></tr>
+<tr><td>2</td><td>2</td><td>51</td><td>1.432087e-14</td><td>[1, 2]</td><td><a href="../runs/20261017T023905394445Z_reupload-2_k2_seed-0051_c090154e/report.html">report</a></td></tr>
+<tr><td>4</td><td>3</td><td>45</td><td>2.803468e-14</td><td>[1, 2, 3]</td><td><a href="../runs/20261017T024007115290Z_reupload-4_k3_seed-0045_e8467b9e/report.html">report</a></td></tr>
+<tr><td>3</td><td>2</td><td>43</td><td>2.892508e-14</td><td>[1, 2]</td><td><a href="../runs/20261017T023907131712Z_reupload-3_k2_seed-0043_618686f2/report.html">report</a></td></tr></tbody></table>
+<p><a href="metrics.csv">All run metrics CSV</a> · <a href="summary.json">Machine-readable summary</a> · <a href="../../HYPOTHESIS_TREE.md">Hypothesis tree</a></p>

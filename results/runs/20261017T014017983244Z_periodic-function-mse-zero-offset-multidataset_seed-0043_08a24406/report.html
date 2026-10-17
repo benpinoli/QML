@@ -1,0 +1,57 @@
+<!doctype html><meta charset="utf-8"><title>20261017T014017983244Z_periodic-function-mse-zero-offset-multidataset_seed-0043_08a24406</title>
+<h1>Periodic function regression: 20261017T014017983244Z_periodic-function-mse-zero-offset-multidataset_seed-0043_08a24406</h1>
+<p><b>Comparison group:</b> periodic-function-mse-zero-offset-multidataset-ry-angle-encoding-z1-readout<br><b>Training loss:</b> MSE only; no Frobenius/process-fidelity term or PINN residual.<br>
+<b>Encoding:</b> RY(2πx)|0⟩ on qubit 0, x∈[0,1), period 1.<br><b>Readout:</b> ideal Pauli-Z expectation on qubit 1.</p>
+<p><b>Absolute error over one period:</b> mean=6.59674e-10, max=1.03622e-09; defined pointwise as |QNN prediction − target| on the 2048-point periodic grid.</p>
+<pre>{
+  "run_id": "20261017T014017983244Z_periodic-function-mse-zero-offset-multidataset_seed-0043_08a24406",
+  "status": "FINISHED",
+  "comparison_group": "periodic-function-mse-zero-offset-multidataset-ry-angle-encoding-z1-readout",
+  "protocol_version": "0.1.0",
+  "objective": "training-set mean squared error only",
+  "loss_excludes": [
+    "process fidelity",
+    "Frobenius/unitary alignment",
+    "PINN/physics residual",
+    "frequency labels"
+  ],
+  "encoding": "RY(2*pi*x)|0> on q0; x in [0,1), period 1",
+  "ansatz": "qft2_trainable_u_cp_u_swap",
+  "readout": "Pauli-Z expectation on q1",
+  "seed": 43,
+  "data_seed": 12345,
+  "optimizer": "L-BFGS-B",
+  "iterations": 7,
+  "function_evaluations": 72,
+  "optimizer_success": true,
+  "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+  "elapsed_seconds": 0.05828553999890573,
+  "initial_train_mse": 0.053324013171647686,
+  "final_train_mse": 4.692746162886675e-19,
+  "validation_mse": 5.345943771174586e-19,
+  "test": {
+    "mse": 5.422967258620874e-19,
+    "rmse": 7.364079887277754e-10,
+    "r2": 1.0
+  },
+  "constant_baseline_test": {
+    "mse": 0.1836448677457323,
+    "rmse": 0.42853805868992817,
+    "r2": -0.007169559567183015
+  },
+  "known_frequency_fourier_baseline_test": {
+    "mse": 7.423650006229753e-33,
+    "rmse": 8.61606058836041e-17,
+    "r2": 1.0
+  },
+  "spectral_coefficient_mse_k0_to_16": 1.579031872600355e-20,
+  "dense_grid_absolute_error_mae": 6.596744338323714e-10,
+  "dense_grid_absolute_error_max": 1.0362150582032825e-09,
+  "target_peak_frequency": 1,
+  "predicted_peak_frequency": 1,
+  "frequency_peak_correct": true,
+  "qft_process_fidelity_diagnostic_only": 0.016138254032800243,
+  "initial_qft_process_fidelity_diagnostic_only": 0.010632960674679542
+}</pre>
+<img src="loss.png" width="49%"><img src="function_fit.png" width="49%"><br>
+<img src="spectrum.png" width="49%"><img src="residual.png" width="49%"><br><img src="parameters.png" width="70%">
